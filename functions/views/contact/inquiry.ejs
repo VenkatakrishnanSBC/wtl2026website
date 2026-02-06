@@ -1,0 +1,178 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('contactInquiry.pageTitle'); locals.pageSubtitle = t('contactInquiry.pageSubtitle'); locals.breadcrumb = [{label: t('contactInquiry.breadcrumbParent'), url: (locals.langPrefix || '') + '/contact'}, {label: t('contactInquiry.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Inquiry Form Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('contactInquiry.sectionLabel') %></div>
+      <h2><%= t('contactInquiry.heading') %></h2>
+      <p><%= t('contactInquiry.headingText') %></p>
+    </div>
+
+    <div class="quote-form" style="max-width: 900px; margin: 0 auto; background: #f8f9fa; padding: 45px; border-radius: 10px;">
+      <form action="<%= locals.langPrefix || '' %>/contact/inquiry" method="POST">
+
+        <!-- Company & Contact Info -->
+        <h3 style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #1a3a5c; color: #1a3a5c;"><%= t('contactInquiry.companyInfoHeading') %></h3>
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div class="form-group">
+            <label for="company_name"><%= t('contactInquiry.labelCompanyName') %> <span style="color: red;">*</span></label>
+            <input type="text" id="company_name" name="company_name" placeholder="<%= t('contactInquiry.placeholderCompanyName') %>" required>
+          </div>
+          <div class="form-group">
+            <label for="contact_person"><%= t('contactInquiry.labelContactPerson') %> <span style="color: red;">*</span></label>
+            <input type="text" id="contact_person" name="contact_person" placeholder="<%= t('contactInquiry.placeholderContactPerson') %>" required>
+          </div>
+        </div>
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div class="form-group">
+            <label for="email"><%= t('contactInquiry.labelEmail') %> <span style="color: red;">*</span></label>
+            <input type="email" id="email" name="email" placeholder="<%= t('contactInquiry.placeholderEmail') %>" required>
+          </div>
+          <div class="form-group">
+            <label for="phone"><%= t('contactInquiry.labelPhone') %> <span style="color: red;">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+221 XX XXX XX XX" required>
+          </div>
+        </div>
+
+        <!-- Shipment Details -->
+        <h3 style="margin-top: 35px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #1a3a5c; color: #1a3a5c;"><%= t('contactInquiry.shipmentDetailsHeading') %></h3>
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div class="form-group">
+            <label for="shipment_type"><%= t('contactInquiry.labelShipmentType') %> <span style="color: red;">*</span></label>
+            <select id="shipment_type" name="shipment_type" required>
+              <option value=""><%= t('contactInquiry.selectType') %></option>
+              <option value="sea-fcl"><%= t('contactInquiry.typeSeaFCL') %></option>
+              <option value="sea-lcl"><%= t('contactInquiry.typeSeaLCL') %></option>
+              <option value="air"><%= t('contactInquiry.typeAir') %></option>
+              <option value="road"><%= t('contactInquiry.typeRoad') %></option>
+              <option value="multimodal"><%= t('contactInquiry.typeMultimodal') %></option>
+              <option value="project-cargo"><%= t('contactInquiry.typeProjectCargo') %></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="origin_country"><%= t('contactInquiry.labelOriginCountry') %> <span style="color: red;">*</span></label>
+            <input type="text" id="origin_country" name="origin_country" placeholder="<%= t('contactInquiry.placeholderOriginCountry') %>" required>
+          </div>
+          <div class="form-group">
+            <label for="destination_country"><%= t('contactInquiry.labelDestinationCountry') %> <span style="color: red;">*</span></label>
+            <input type="text" id="destination_country" name="destination_country" placeholder="<%= t('contactInquiry.placeholderDestinationCountry') %>" required>
+          </div>
+        </div>
+        <div class="form-row" style="margin-bottom: 20px;">
+          <div class="form-group">
+            <label for="cargo_description"><%= t('contactInquiry.labelCargoDescription') %> <span style="color: red;">*</span></label>
+            <textarea id="cargo_description" name="cargo_description" rows="3" placeholder="<%= t('contactInquiry.placeholderCargoDescription') %>" required></textarea>
+          </div>
+        </div>
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div class="form-group">
+            <label for="weight"><%= t('contactInquiry.labelWeight') %> <span style="color: red;">*</span></label>
+            <input type="text" id="weight" name="weight" placeholder="<%= t('contactInquiry.placeholderWeight') %>" required>
+          </div>
+          <div class="form-group">
+            <label for="dimensions"><%= t('contactInquiry.labelDimensions') %></label>
+            <input type="text" id="dimensions" name="dimensions" placeholder="<%= t('contactInquiry.placeholderDimensions') %>">
+          </div>
+          <div class="form-group">
+            <label for="shipping_date"><%= t('contactInquiry.labelShippingDate') %> <span style="color: red;">*</span></label>
+            <input type="date" id="shipping_date" name="shipping_date" required>
+          </div>
+        </div>
+
+        <!-- Special Handling & Incoterms -->
+        <h3 style="margin-top: 35px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #1a3a5c; color: #1a3a5c;"><%= t('contactInquiry.specialReqHeading') %></h3>
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div class="form-group">
+            <label for="special_handling"><%= t('contactInquiry.labelSpecialHandling') %></label>
+            <select id="special_handling" name="special_handling">
+              <option value="none"><%= t('contactInquiry.handlingNone') %></option>
+              <option value="fragile"><%= t('contactInquiry.handlingFragile') %></option>
+              <option value="hazardous"><%= t('contactInquiry.handlingHazardous') %></option>
+              <option value="temperature"><%= t('contactInquiry.handlingTemperature') %></option>
+              <option value="oversized"><%= t('contactInquiry.handlingOversized') %></option>
+              <option value="high-value"><%= t('contactInquiry.handlingHighValue') %></option>
+              <option value="livestock"><%= t('contactInquiry.handlingLivestock') %></option>
+              <option value="perishable"><%= t('contactInquiry.handlingPerishable') %></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="incoterms"><%= t('contactInquiry.labelIncoterms') %></label>
+            <select id="incoterms" name="incoterms">
+              <option value=""><%= t('contactInquiry.selectIncoterm') %></option>
+              <option value="EXW">EXW - <%= t('contactInquiry.incotermEXW') %></option>
+              <option value="FCA">FCA - <%= t('contactInquiry.incotermFCA') %></option>
+              <option value="FAS">FAS - <%= t('contactInquiry.incotermFAS') %></option>
+              <option value="FOB">FOB - <%= t('contactInquiry.incotermFOB') %></option>
+              <option value="CFR">CFR - <%= t('contactInquiry.incotermCFR') %></option>
+              <option value="CIF">CIF - <%= t('contactInquiry.incotermCIF') %></option>
+              <option value="CPT">CPT - <%= t('contactInquiry.incotermCPT') %></option>
+              <option value="CIP">CIP - <%= t('contactInquiry.incotermCIP') %></option>
+              <option value="DAP">DAP - <%= t('contactInquiry.incotermDAP') %></option>
+              <option value="DPU">DPU - <%= t('contactInquiry.incotermDPU') %></option>
+              <option value="DDP">DDP - <%= t('contactInquiry.incotermDDP') %></option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="form-group" style="margin-bottom: 25px;">
+          <label style="display: block; margin-bottom: 12px; font-weight: 600;"><%= t('contactInquiry.additionalServicesLabel') %></label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+              <input type="checkbox" name="services[]" value="cargo-insurance" style="margin-right: 10px;"> <%= t('contactInquiry.serviceInsurance') %>
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+              <input type="checkbox" name="services[]" value="customs-clearance" style="margin-right: 10px;"> <%= t('contactInquiry.serviceCustoms') %>
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+              <input type="checkbox" name="services[]" value="door-to-door" style="margin-right: 10px;"> <%= t('contactInquiry.serviceDoorToDoor') %>
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+              <input type="checkbox" name="services[]" value="warehousing" style="margin-right: 10px;"> <%= t('contactInquiry.serviceWarehousing') %>
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+              <input type="checkbox" name="services[]" value="packaging" style="margin-right: 10px;"> <%= t('contactInquiry.servicePackaging') %>
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+              <input type="checkbox" name="services[]" value="fumigation" style="margin-right: 10px;"> <%= t('contactInquiry.serviceFumigation') %>
+            </label>
+          </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="form-row" style="margin-bottom: 30px;">
+          <div class="form-group">
+            <label for="comments"><%= t('contactInquiry.labelComments') %></label>
+            <textarea id="comments" name="comments" rows="4" placeholder="<%= t('contactInquiry.placeholderComments') %>"></textarea>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div style="text-align: center;">
+          <button type="submit" class="btn-submit" style="padding: 15px 50px; font-size: 1.05rem;"><%= t('contactInquiry.submitButton') %></button>
+          <p style="margin-top: 15px; font-size: 0.9rem; color: #888;"><%= t('contactInquiry.privacyNotice') %></p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Info Section -->
+<section class="section" style="padding: 60px 0; background-color: #f8f9fa;">
+  <div class="container" style="text-align: center;">
+    <h3><%= t('contactInquiry.immediateTitle') %></h3>
+    <p style="max-width: 600px; margin: 15px auto; color: #666;"><%= t('contactInquiry.immediateText') %></p>
+    <p style="margin-top: 20px;">
+      <a href="tel:+221338227111" style="font-size: 1.3rem; color: #1a3a5c; font-weight: 700; text-decoration: none;">
+        <i class="fas fa-phone-alt" style="margin-right: 10px;"></i>+221 33 822 71 11
+      </a>
+    </p>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

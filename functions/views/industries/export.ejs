@@ -1,0 +1,126 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('industriesExport.pageTitle'); locals.pageSubtitle = t('industriesExport.pageSubtitle'); locals.breadcrumb = [{label: t('industriesExport.breadcrumbParent'), url: (locals.langPrefix || '') + '/industries'}, {label: t('industriesExport.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label"><%= t('industriesExport.overviewLabel') %></div>
+        <h2><%= t('industriesExport.overviewTitle') %></h2>
+        <p><%= t('industriesExport.overviewText1') %></p>
+        <p><%= t('industriesExport.overviewText2') %></p>
+        <p><%= t('industriesExport.overviewText3') %></p>
+      </div>
+      <div class="about-image">
+        <img src="/images/a-large-tanker-cargo-ship-is-being-renovated-and-painted-in-shipyard-dry-dock.jpg" alt="<%= t('industriesExport.overviewImageAlt') %>">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Export Process Steps -->
+<section class="section" style="padding: 80px 0; background-color: #f8f9fa;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('industriesExport.processLabel') %></div>
+      <h2><%= t('industriesExport.processTitle') %></h2>
+      <p><%= t('industriesExport.processSubtitle') %></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesExport.step1Title') %></h3>
+          <p><%= t('industriesExport.step1Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesExport.step2Title') %></h3>
+          <p><%= t('industriesExport.step2Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesExport.step3Title') %></h3>
+          <p><%= t('industriesExport.step3Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesExport.step4Title') %></h3>
+          <p><%= t('industriesExport.step4Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesExport.step5Title') %></h3>
+          <p><%= t('industriesExport.step5Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesExport.step6Title') %></h3>
+          <p><%= t('industriesExport.step6Text') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Markets -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('industriesExport.marketsLabel') %></div>
+      <h2><%= t('industriesExport.marketsTitle') %></h2>
+      <p><%= t('industriesExport.marketsSubtitle') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-flag"></i>
+        </div>
+        <h3><%= t('industriesExport.market1Title') %></h3>
+        <p><%= t('industriesExport.market1Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-globe-asia"></i>
+        </div>
+        <h3><%= t('industriesExport.market2Title') %></h3>
+        <p><%= t('industriesExport.market2Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-globe-americas"></i>
+        </div>
+        <h3><%= t('industriesExport.market3Title') %></h3>
+        <p><%= t('industriesExport.market3Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-globe-africa"></i>
+        </div>
+        <h3><%= t('industriesExport.market4Title') %></h3>
+        <p><%= t('industriesExport.market4Text') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: #fff; text-align: center;">
+  <div class="container">
+    <h2><%= t('industriesExport.ctaTitle') %></h2>
+    <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem; opacity: 0.9;"><%= t('industriesExport.ctaText') %></p>
+    <div style="margin-top: 30px;">
+      <a href="<%= locals.langPrefix || '' %>/contact/inquiry" class="btn-primary" style="margin-right: 15px;"><%= t('industriesExport.ctaButton1') %></a>
+      <a href="<%= locals.langPrefix || '' %>/contact/contact" class="btn-quote"><%= t('industriesExport.ctaButton2') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

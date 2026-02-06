@@ -1,0 +1,125 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('servicesNvocc.pageTitle'); locals.pageSubtitle = t('servicesNvocc.pageSubtitle'); locals.breadcrumb = [{label: t('servicesNvocc.breadcrumbParent'), url: (locals.langPrefix || '') + '/services'}, {label: t('servicesNvocc.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div class="about-text">
+        <span class="section-label"><%= t('servicesNvocc.sectionLabel') %></span>
+        <h2><%= t('servicesNvocc.overviewTitle') %></h2>
+        <p>
+          <%= t('servicesNvocc.overviewText1') %>
+        </p>
+        <p>
+          <%= t('servicesNvocc.overviewText2') %>
+        </p>
+        <p>
+          <%= t('servicesNvocc.overviewText3') %>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/images/aerial-view-of-containers-loading-and-unloading-to-the-ship-in-the-sea-port-logistic-and.jpg" alt="NVOCC Container Operations" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Services Section -->
+<section class="section" style="padding: 80px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesNvocc.coreCapabilities') %></span>
+      <h2><%= t('servicesNvocc.coreTitle') %></h2>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesNvocc.bolTitle') %></h3>
+          <p><%= t('servicesNvocc.bolText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesNvocc.bolFeature1') %></li>
+            <li><%= t('servicesNvocc.bolFeature2') %></li>
+            <li><%= t('servicesNvocc.bolFeature3') %></li>
+            <li><%= t('servicesNvocc.bolFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesNvocc.consolidationTitle') %></h3>
+          <p><%= t('servicesNvocc.consolidationText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesNvocc.consolidationFeature1') %></li>
+            <li><%= t('servicesNvocc.consolidationFeature2') %></li>
+            <li><%= t('servicesNvocc.consolidationFeature3') %></li>
+            <li><%= t('servicesNvocc.consolidationFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesNvocc.deconsolidationTitle') %></h3>
+          <p><%= t('servicesNvocc.deconsolidationText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesNvocc.deconsolidationFeature1') %></li>
+            <li><%= t('servicesNvocc.deconsolidationFeature2') %></li>
+            <li><%= t('servicesNvocc.deconsolidationFeature3') %></li>
+            <li><%= t('servicesNvocc.deconsolidationFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesNvocc.advantage') %></span>
+      <h2><%= t('servicesNvocc.whyTitle') %></h2>
+    </div>
+
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128176;</div>
+        <h4><%= t('servicesNvocc.whyRatesTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesNvocc.whyRatesText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128260;</div>
+        <h4><%= t('servicesNvocc.whyFlexTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesNvocc.whyFlexText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128220;</div>
+        <h4><%= t('servicesNvocc.whyContactTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesNvocc.whyContactText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128737;</div>
+        <h4><%= t('servicesNvocc.whyLiabilityTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesNvocc.whyLiabilityText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2a5a8c); text-align: center; color: #fff;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><%= t('servicesNvocc.ctaTitle') %></h2>
+    <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <%= t('servicesNvocc.ctaText') %>
+    </p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote" style="display: inline-block; padding: 15px 40px; background: #f0a500; color: #1a3a5c; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1.1rem;"><%= t('servicesNvocc.ctaButton') %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

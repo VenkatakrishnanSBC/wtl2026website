@@ -1,0 +1,23 @@
+{
+  "name": "wtl2026website",
+  "version": "1.0.0",
+  "description": "World Trans & Logistics - ShanCDN UI Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seo:audit": "npx tsx tools/seo-audit.ts"
+  },
+  "keywords": [
+    "logistics",
+    "freight",
+    "wtl"
+  ],
+  "author": "WTL",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}

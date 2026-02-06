@@ -1,0 +1,148 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('servicesInland.pageTitle'); locals.pageSubtitle = t('servicesInland.pageSubtitle'); locals.breadcrumb = [{label: t('servicesInland.breadcrumbParent'), url: (locals.langPrefix || '') + '/services'}, {label: t('servicesInland.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div class="about-text">
+        <span class="section-label"><%= t('servicesInland.sectionLabel') %></span>
+        <h2><%= t('servicesInland.overviewTitle') %></h2>
+        <p>
+          <%= t('servicesInland.overviewText1') %>
+        </p>
+        <p>
+          <%= t('servicesInland.overviewText2') %>
+        </p>
+        <p>
+          <%= t('servicesInland.overviewText3') %>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/images/4-front-view-of-a-commercial-truck-on-the-road-at-sunset-in-eastern-washington-usa-e1665412064608.jpg" alt="WTL Inland Transportation" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="section" style="padding: 80px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesInland.ourServices') %></span>
+      <h2><%= t('servicesInland.servicesTitle') %></h2>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesInland.domesticTitle') %></h3>
+          <p><%= t('servicesInland.domesticText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesInland.domesticFeature1') %></li>
+            <li><%= t('servicesInland.domesticFeature2') %></li>
+            <li><%= t('servicesInland.domesticFeature3') %></li>
+            <li><%= t('servicesInland.domesticFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesInland.firstLastTitle') %></h3>
+          <p><%= t('servicesInland.firstLastText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesInland.firstLastFeature1') %></li>
+            <li><%= t('servicesInland.firstLastFeature2') %></li>
+            <li><%= t('servicesInland.firstLastFeature3') %></li>
+            <li><%= t('servicesInland.firstLastFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesInland.intermodalTitle') %></h3>
+          <p><%= t('servicesInland.intermodalText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesInland.intermodalFeature1') %></li>
+            <li><%= t('servicesInland.intermodalFeature2') %></li>
+            <li><%= t('servicesInland.intermodalFeature3') %></li>
+            <li><%= t('servicesInland.intermodalFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesInland.capabilities') %></span>
+      <h2><%= t('servicesInland.capabilitiesTitle') %></h2>
+    </div>
+
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128666;</div>
+        <h4><%= t('servicesInland.fleetTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesInland.fleetText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128225;</div>
+        <h4><%= t('servicesInland.trackingTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesInland.trackingText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128344;</div>
+        <h4><%= t('servicesInland.schedulesTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesInland.schedulesText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128200;</div>
+        <h4><%= t('servicesInland.routeOptTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesInland.routeOptText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Coverage Section -->
+<section class="section" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+      <span class="section-label"><%= t('servicesInland.coverage') %></span>
+      <h2><%= t('servicesInland.coverageTitle') %></h2>
+      <p style="max-width: 700px; margin: 0 auto; color: #666;">
+        <%= t('servicesInland.coverageText') %>
+      </p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 800px; margin: 0 auto;">
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Dakar</strong></div>
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Thies</strong></div>
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Saint-Louis</strong></div>
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Kaolack</strong></div>
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Ziguinchor</strong></div>
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Tambacounda</strong></div>
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Louga</strong></div>
+      <div style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);"><strong>Matam</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2a5a8c); text-align: center; color: #fff;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><%= t('servicesInland.ctaTitle') %></h2>
+    <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <%= t('servicesInland.ctaText') %>
+    </p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote" style="display: inline-block; padding: 15px 40px; background: #f0a500; color: #1a3a5c; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1.1rem;"><%= t('servicesInland.ctaButton') %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,114 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('aboutOverview.pageTitle'); locals.pageSubtitle = t('aboutOverview.pageSubtitle'); locals.breadcrumb = [{label: t('aboutOverview.breadcrumbParent'), url: (locals.langPrefix || '') + '/about'}, {label: t('aboutOverview.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- COMPANY OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/images/634ab3e0-733d-430f-8c37-31a6e151f386.jpeg" alt="WTL logistics operations in Dakar">
+        <div class="about-badge">
+          <span class="number">25+</span>
+          <span><%= t('aboutOverview.yearsOfExcellence') %></span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label"><%= t('aboutOverview.whoWeAre') %></span>
+        <h2><%= t('aboutOverview.legacyTitle') %></h2>
+        <p><%= t('aboutOverview.legacyP1') %></p>
+        <p><%= t('aboutOverview.legacyP2') %></p>
+        <p><%= t('aboutOverview.legacyP3') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION STATEMENT -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutOverview.missionLabel') %></span>
+      <h2><%= t('aboutOverview.missionTitle') %></h2>
+      <p><%= t('aboutOverview.missionText') %></p>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutOverview.keyFactsLabel') %></span>
+      <h2><%= t('aboutOverview.keyFactsTitle') %></h2>
+      <p><%= t('aboutOverview.keyFactsText') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div>
+          <h3><%= t('aboutOverview.yearsExpTitle') %></h3>
+          <p><%= t('aboutOverview.yearsExpText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe-africa"></i></div>
+        <div>
+          <h3><%= t('aboutOverview.countriesTitle') %></h3>
+          <p><%= t('aboutOverview.countriesText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h3><%= t('aboutOverview.hqTitle') %></h3>
+          <p><%= t('aboutOverview.hqText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-ship"></i></div>
+        <div>
+          <h3><%= t('aboutOverview.shipmentsTitle') %></h3>
+          <p><%= t('aboutOverview.shipmentsText') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT SETS US APART -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutOverview.apartLabel') %></span>
+      <h2><%= t('aboutOverview.apartTitle') %></h2>
+      <p><%= t('aboutOverview.apartText') %></p>
+    </div>
+    <div class="content-grid">
+      <div>
+        <h3><%= t('aboutOverview.deepKnowledgeTitle') %></h3>
+        <p><%= t('aboutOverview.deepKnowledgeText') %></p>
+        <h3><%= t('aboutOverview.endToEndTitle') %></h3>
+        <p><%= t('aboutOverview.endToEndText') %></p>
+      </div>
+      <div>
+        <h3><%= t('aboutOverview.techTitle') %></h3>
+        <p><%= t('aboutOverview.techText') %></p>
+        <h3><%= t('aboutOverview.sustainTitle') %></h3>
+        <p><%= t('aboutOverview.sustainText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2><%= t('aboutOverview.ctaTitle') %></h2>
+    <p><%= t('aboutOverview.ctaText') %></p>
+    <a href="<%= locals.langPrefix || '' %>/contact" class="btn-primary"><%= t('aboutOverview.ctaButton') %> <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

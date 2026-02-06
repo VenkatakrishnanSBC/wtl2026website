@@ -1,0 +1,86 @@
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="tel:+221338227111"><i class="fas fa-phone"></i> +221 33 822 71 11</a>
+      <a href="mailto:info@worldtransgroup.com"><i class="fas fa-envelope"></i> info@worldtransgroup.com</a>
+    </div>
+    <div class="top-bar-right">
+      <div class="lang-toggle">
+        <a href="/set-lang/en?redirect=<%= encodeURIComponent(locals.currentPath || '/') %>" class="lang-btn <%= (locals.lang || 'en') === 'en' ? 'active' : '' %>">EN</a>
+        <a href="/set-lang/fr?redirect=<%= encodeURIComponent(locals.currentPath || '/') %>" class="lang-btn <%= (locals.lang || 'en') === 'fr' ? 'active' : '' %>">FR</a>
+        <a href="/set-lang/de?redirect=<%= encodeURIComponent(locals.currentPath || '/') %>" class="lang-btn <%= (locals.lang || 'en') === 'de' ? 'active' : '' %>">DE</a>
+      </div>
+      <a href="https://www.facebook.com/worldtransgroup" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/worldtransgroup" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <a href="<%= locals.langPrefix || '' %>/" class="logo">
+      <img src="/images/WORLD-TRANS-AND-LOGISTICS-1.png" alt="World Trans & Logistics">
+    </a>
+    <nav>
+      <ul class="nav-menu" id="navMenu">
+        <li class="<%= currentPage === 'home' ? 'active' : '' %>"><a href="<%= locals.langPrefix || '' %>/"><%= locals.t ? t('nav.home') : 'Home' %></a></li>
+        <li class="dropdown <%= currentPage === 'about' ? 'active' : '' %>">
+          <a href="<%= locals.langPrefix || '' %>/about"><%= locals.t ? t('nav.about') : 'About' %> <i class="fas fa-chevron-down" style="font-size:.55rem;margin-left:4px;opacity:.5"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= locals.langPrefix || '' %>/about/overview"><%= locals.t ? t('nav.overview') : 'Overview' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/about/vision"><%= locals.t ? t('nav.vision') : 'Our Vision' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/about/mission"><%= locals.t ? t('nav.mission') : 'Our Mission' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/about/team"><%= locals.t ? t('nav.team') : 'Our Team' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/about/values"><%= locals.t ? t('nav.values') : 'Our Values' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/about/networks"><%= locals.t ? t('nav.networks') : 'Networks' %></a></li>
+          </ul>
+        </li>
+        <li class="dropdown <%= currentPage === 'services' ? 'active' : '' %>">
+          <a href="<%= locals.langPrefix || '' %>/services"><%= locals.t ? t('nav.services') : 'Services' %> <i class="fas fa-chevron-down" style="font-size:.55rem;margin-left:4px;opacity:.5"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= locals.langPrefix || '' %>/services/freight"><%= locals.t ? t('nav.freight') : 'Freight Services' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/ocean-freight"><%= locals.t ? t('nav.oceanFreight') : 'Ocean Freight' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/land-freight"><%= locals.t ? t('nav.landFreight') : 'Land & Rail Freight' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/warehousing"><%= locals.t ? t('nav.warehousing') : 'Warehousing' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/nvocc"><%= locals.t ? t('nav.nvocc') : 'NVOCC' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/project-cargo"><%= locals.t ? t('nav.projectCargo') : 'Project Cargo' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/door-to-door"><%= locals.t ? t('nav.doorToDoor') : 'Door to Door' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/inland-transportation"><%= locals.t ? t('nav.inlandTransportation') : 'Inland Transportation' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/forwarding"><%= locals.t ? t('nav.forwarding') : 'Forwarding' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/services/distribution"><%= locals.t ? t('nav.distribution') : 'Distribution' %></a></li>
+          </ul>
+        </li>
+        <li class="dropdown <%= currentPage === 'industries' ? 'active' : '' %>">
+          <a href="<%= locals.langPrefix || '' %>/industries"><%= locals.t ? t('nav.industries') : 'Industries' %> <i class="fas fa-chevron-down" style="font-size:.55rem;margin-left:4px;opacity:.5"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= locals.langPrefix || '' %>/industries/foreign-freight"><%= locals.t ? t('nav.foreignFreight') : 'Foreign to Foreign' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/industries/export"><%= locals.t ? t('nav.export') : 'Export' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/industries/import"><%= locals.t ? t('nav.import') : 'Import' %></a></li>
+          </ul>
+        </li>
+        <li class="<%= currentPage === 'blog' ? 'active' : '' %>"><a href="<%= locals.langPrefix || '' %>/blog"><%= locals.t ? t('nav.blog') : 'Blog' %></a></li>
+        <li class="dropdown <%= currentPage === 'contact' ? 'active' : '' %>">
+          <a href="<%= locals.langPrefix || '' %>/contact"><%= locals.t ? t('nav.contact') : 'Contact' %> <i class="fas fa-chevron-down" style="font-size:.55rem;margin-left:4px;opacity:.5"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= locals.langPrefix || '' %>/contact"><%= locals.t ? t('nav.contactUs') : 'Contact Us' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/contact/faqs"><%= locals.t ? t('nav.faqs') : 'FAQs' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/contact/portal"><%= locals.t ? t('nav.customerPortal') : 'Customer Portal' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/contact/inquiry"><%= locals.t ? t('nav.inquiryForm') : 'Inquiry Form' %></a></li>
+            <li><a href="<%= locals.langPrefix || '' %>/contact/locations"><%= locals.t ? t('nav.officeLocations') : 'Office Locations' %></a></li>
+          </ul>
+        </li>
+        <li><a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote"><i class="fas fa-file-invoice"></i> <%= locals.t ? t('nav.getQuote') : 'Get a Quote' %></a></li>
+      </ul>
+    </nav>
+    <div class="header-lang-toggle lang-toggle">
+      <a href="/set-lang/en?redirect=<%= encodeURIComponent(locals.currentPath || '/') %>" class="lang-btn <%= (locals.lang || 'en') === 'en' ? 'active' : '' %>">EN</a>
+      <a href="/set-lang/fr?redirect=<%= encodeURIComponent(locals.currentPath || '/') %>" class="lang-btn <%= (locals.lang || 'en') === 'fr' ? 'active' : '' %>">FR</a>
+      <a href="/set-lang/de?redirect=<%= encodeURIComponent(locals.currentPath || '/') %>" class="lang-btn <%= (locals.lang || 'en') === 'de' ? 'active' : '' %>">DE</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>

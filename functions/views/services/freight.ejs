@@ -1,0 +1,148 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('servicesFreight.pageTitle'); locals.pageSubtitle = t('servicesFreight.pageSubtitle'); locals.breadcrumb = [{label: t('servicesFreight.breadcrumbParent'), url: (locals.langPrefix || '') + '/services'}, {label: t('servicesFreight.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesFreight.coreExpertise') %></span>
+      <h2><%= t('servicesFreight.overviewTitle') %></h2>
+      <p style="max-width: 750px; margin: 0 auto; color: #666; font-size: 1.1rem;">
+        <%= t('servicesFreight.overviewText') %>
+      </p>
+    </div>
+
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px;">
+      <div class="about-text">
+        <h3><%= t('servicesFreight.trustedPartnerTitle') %></h3>
+        <p>
+          <%= t('servicesFreight.trustedPartnerText1') %>
+        </p>
+        <p>
+          <%= t('servicesFreight.trustedPartnerText2') %>
+        </p>
+        <ul style="list-style: none; padding: 0; margin-top: 20px;">
+          <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#10003; <%= t('servicesFreight.featureGlobal') %></li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#10003; <%= t('servicesFreight.featureTracking') %></li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#10003; <%= t('servicesFreight.featureCustoms') %></li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#10003; <%= t('servicesFreight.featureAccount') %></li>
+          <li style="padding: 8px 0;">&#10003; <%= t('servicesFreight.featureRates') %></li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <img src="/images/608468a5-4b88-4999-85f1-990bf2000d51.jpeg" alt="WTL Freight Operations" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Freight Modes Section -->
+<section class="section" style="padding: 80px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesFreight.freightModes') %></span>
+      <h2><%= t('servicesFreight.freightModesTitle') %></h2>
+      <p style="max-width: 700px; margin: 0 auto; color: #666;">
+        <%= t('servicesFreight.freightModesText') %>
+      </p>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <!-- Air Freight Card -->
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s;">
+        <img src="/images/6e541ab7-cd52-4f32-9beb-1ae2e81a5954.jpg" alt="Air Freight Services" style="width: 100%; height: 220px; object-fit: cover;">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3><%= t('servicesFreight.airFreightTitle') %></h3>
+          <p><%= t('servicesFreight.airFreightText') %></p>
+          <ul style="padding-left: 20px; color: #555;">
+            <li><%= t('servicesFreight.airFeature1') %></li>
+            <li><%= t('servicesFreight.airFeature2') %></li>
+            <li><%= t('servicesFreight.airFeature3') %></li>
+            <li><%= t('servicesFreight.airFeature4') %></li>
+          </ul>
+          <a href="<%= locals.langPrefix || '' %>/services/air-freight" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 25px; text-decoration: none; border-radius: 6px;"><%= t('servicesFreight.learnMore') %></a>
+        </div>
+      </div>
+
+      <!-- Ocean Freight Card -->
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s;">
+        <img src="/images/a-large-tanker-cargo-ship-is-being-renovated-and-painted-in-shipyard-dry-dock.jpg" alt="Ocean Freight Services" style="width: 100%; height: 220px; object-fit: cover;">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3><%= t('servicesFreight.oceanFreightTitle') %></h3>
+          <p><%= t('servicesFreight.oceanFreightText') %></p>
+          <ul style="padding-left: 20px; color: #555;">
+            <li><%= t('servicesFreight.oceanFeature1') %></li>
+            <li><%= t('servicesFreight.oceanFeature2') %></li>
+            <li><%= t('servicesFreight.oceanFeature3') %></li>
+            <li><%= t('servicesFreight.oceanFeature4') %></li>
+          </ul>
+          <a href="<%= locals.langPrefix || '' %>/services/ocean-freight" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 25px; text-decoration: none; border-radius: 6px;"><%= t('servicesFreight.learnMore') %></a>
+        </div>
+      </div>
+
+      <!-- Land Freight Card -->
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s;">
+        <img src="/images/4-front-view-of-a-commercial-truck-on-the-road-at-sunset-in-eastern-washington-usa-e1665412064608.jpg" alt="Land Freight Services" style="width: 100%; height: 220px; object-fit: cover;">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3><%= t('servicesFreight.landFreightTitle') %></h3>
+          <p><%= t('servicesFreight.landFreightText') %></p>
+          <ul style="padding-left: 20px; color: #555;">
+            <li><%= t('servicesFreight.landFeature1') %></li>
+            <li><%= t('servicesFreight.landFeature2') %></li>
+            <li><%= t('servicesFreight.landFeature3') %></li>
+            <li><%= t('servicesFreight.landFeature4') %></li>
+          </ul>
+          <a href="<%= locals.langPrefix || '' %>/services/land-freight" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 25px; text-decoration: none; border-radius: 6px;"><%= t('servicesFreight.learnMore') %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Benefits Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesFreight.whyChoose') %></span>
+      <h2><%= t('servicesFreight.keyBenefitsTitle') %></h2>
+    </div>
+
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128640;</div>
+        <h4><%= t('servicesFreight.benefitSpeedTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesFreight.benefitSpeedText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128176;</div>
+        <h4><%= t('servicesFreight.benefitCostTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesFreight.benefitCostText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128269;</div>
+        <h4><%= t('servicesFreight.benefitVisibilityTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesFreight.benefitVisibilityText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#127758;</div>
+        <h4><%= t('servicesFreight.benefitGlobalTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesFreight.benefitGlobalText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2a5a8c); text-align: center; color: #fff;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><%= t('servicesFreight.ctaTitle') %></h2>
+    <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <%= t('servicesFreight.ctaText') %>
+    </p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote" style="display: inline-block; padding: 15px 40px; background: #f0a500; color: #1a3a5c; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1.1rem;"><%= t('servicesFreight.ctaButton') %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

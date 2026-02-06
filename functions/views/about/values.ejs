@@ -1,0 +1,113 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('aboutValues.pageTitle'); locals.pageSubtitle = t('aboutValues.pageSubtitle'); locals.breadcrumb = [{label: t('aboutValues.breadcrumbParent'), url: (locals.langPrefix || '') + '/about'}, {label: t('aboutValues.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- VALUES INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutValues.introLabel') %></span>
+      <h2><%= t('aboutValues.introTitle') %></h2>
+      <p><%= t('aboutValues.introText') %></p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES GRID -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="why-grid">
+
+      <!-- Integrity -->
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-balance-scale"></i></div>
+        <div>
+          <h3><%= t('aboutValues.integrityTitle') %></h3>
+          <p><%= t('aboutValues.integrityP1') %></p>
+          <p><%= t('aboutValues.integrityP2') %></p>
+        </div>
+      </div>
+
+      <!-- Excellence -->
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-award"></i></div>
+        <div>
+          <h3><%= t('aboutValues.excellenceTitle') %></h3>
+          <p><%= t('aboutValues.excellenceP1') %></p>
+          <p><%= t('aboutValues.excellenceP2') %></p>
+        </div>
+      </div>
+
+      <!-- Innovation -->
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-rocket"></i></div>
+        <div>
+          <h3><%= t('aboutValues.innovationTitle') %></h3>
+          <p><%= t('aboutValues.innovationP1') %></p>
+          <p><%= t('aboutValues.innovationP2') %></p>
+        </div>
+      </div>
+
+      <!-- Customer First -->
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-heart"></i></div>
+        <div>
+          <h3><%= t('aboutValues.customerFirstTitle') %></h3>
+          <p><%= t('aboutValues.customerFirstP1') %></p>
+          <p><%= t('aboutValues.customerFirstP2') %></p>
+        </div>
+      </div>
+
+      <!-- Teamwork -->
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-people-carry"></i></div>
+        <div>
+          <h3><%= t('aboutValues.teamworkTitle') %></h3>
+          <p><%= t('aboutValues.teamworkP1') %></p>
+          <p><%= t('aboutValues.teamworkP2') %></p>
+        </div>
+      </div>
+
+      <!-- Sustainability -->
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe-americas"></i></div>
+        <div>
+          <h3><%= t('aboutValues.sustainabilityTitle') %></h3>
+          <p><%= t('aboutValues.sustainabilityP1') %></p>
+          <p><%= t('aboutValues.sustainabilityP2') %></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VALUES IN PRACTICE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutValues.practiceLabel') %></span>
+      <h2><%= t('aboutValues.practiceTitle') %></h2>
+    </div>
+    <div class="content-grid">
+      <div>
+        <p><%= t('aboutValues.practiceP1') %></p>
+      </div>
+      <div>
+        <p><%= t('aboutValues.practiceP2') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2><%= t('aboutValues.ctaTitle') %></h2>
+    <p><%= t('aboutValues.ctaText') %></p>
+    <a href="<%= locals.langPrefix || '' %>/contact" class="btn-primary"><%= t('aboutValues.ctaButton') %> <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

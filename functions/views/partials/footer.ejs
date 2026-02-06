@@ -1,0 +1,116 @@
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/WORLD-TRANS-AND-LOGISTICS-1.png" alt="WTL Logo" class="logo-footer">
+        <p><%= locals.t ? t('footer.tagline') : 'Connecting your business to a world of possibilities. Comprehensive logistics solutions by sea, air, and land across West Africa and beyond.' %></p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/worldtransgroup" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/worldtransgroup" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4><%= locals.t ? t('footer.company') : 'Company' %></h4>
+        <ul>
+          <li><a href="<%= locals.langPrefix || '' %>/about/overview"><%= locals.t ? t('nav.overview') : 'Overview' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/about/vision"><%= locals.t ? t('nav.vision') : 'Our Vision' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/about/mission"><%= locals.t ? t('nav.mission') : 'Our Mission' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/about/team"><%= locals.t ? t('nav.team') : 'Our Team' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/about/values"><%= locals.t ? t('nav.values') : 'Our Values' %></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><%= locals.t ? t('footer.services') : 'Services' %></h4>
+        <ul>
+          <li><a href="<%= locals.langPrefix || '' %>/services/ocean-freight"><%= locals.t ? t('footer.oceanFreight') : 'Ocean Freight' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/services/freight"><%= locals.t ? t('footer.airFreight') : 'Air Freight' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/services/land-freight"><%= locals.t ? t('footer.landFreight') : 'Land Freight' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/services/warehousing"><%= locals.t ? t('footer.warehousing') : 'Warehousing' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/services/forwarding"><%= locals.t ? t('footer.forwarding') : 'Forwarding' %></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><%= locals.t ? t('footer.quickLinks') : 'Quick Links' %></h4>
+        <ul>
+          <li><a href="<%= locals.langPrefix || '' %>/quote"><%= locals.t ? t('nav.getQuote') : 'Get a Quote' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/contact"><%= locals.t ? t('nav.contactUs') : 'Contact Us' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/contact/faqs"><%= locals.t ? t('nav.faqs') : 'FAQs' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/contact/portal"><%= locals.t ? t('nav.customerPortal') : 'Customer Portal' %></a></li>
+          <li><a href="<%= locals.langPrefix || '' %>/blog"><%= locals.t ? t('nav.blog') : 'Blog' %></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><%- locals.t ? t('footer.copyright') : '&copy; 2026 World Trans & Logistics. All rights reserved.' %></span>
+      <div class="footer-bottom-links">
+        <a href="<%= locals.langPrefix || '' %>/privacy-policy"><%= locals.t ? t('footer.privacyPolicy') : 'Privacy Policy' %></a>
+        <a href="<%= locals.langPrefix || '' %>/terms-of-service"><%= locals.t ? t('footer.termsOfService') : 'Terms of Service' %></a>
+        <a href="/sitemap.xml"><%= locals.t ? t('footer.sitemap') : 'Sitemap' %></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE CONSENT BANNER -->
+<div class="cookie-consent" id="cookieConsent">
+  <div class="cookie-consent-inner">
+    <div class="cookie-consent-text">
+      <i class="fas fa-cookie-bite"></i>
+      <p><%= locals.t ? t('cookie.message') : 'We use cookies to enhance your experience and analyze site traffic. By clicking "Accept All", you consent to our use of cookies.' %></p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-btn cookie-btn-reject" id="cookieReject"><%= locals.t ? t('cookie.rejectAll') : 'Reject All' %></button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieAccept"><%= locals.t ? t('cookie.acceptAll') : 'Accept All' %></button>
+    </div>
+  </div>
+</div>
+
+<% if (locals.lang && locals.t) { %>
+<script>
+  window.__lang = '<%= locals.lang %>';
+  window.__langPrefix = '<%= locals.langPrefix || "" %>';
+  window.__testimonials = <%- JSON.stringify(t('testimonials')) %>;
+</script>
+<% } %>
+<script src="/js/main.js"></script>
+<script>
+window.addEventListener('load', function() {
+  var loader = document.getElementById('pageLoader');
+  if (loader) {
+    setTimeout(function() { loader.classList.add('loaded'); }, 300);
+  }
+});
+
+// Cookie consent
+(function() {
+  var banner = document.getElementById('cookieConsent');
+  var acceptBtn = document.getElementById('cookieAccept');
+  var rejectBtn = document.getElementById('cookieReject');
+
+  if (document.cookie.indexOf('wtl_consent=') !== -1) {
+    banner.style.display = 'none';
+    return;
+  }
+
+  banner.classList.add('visible');
+
+  acceptBtn.addEventListener('click', function() {
+    document.cookie = 'wtl_consent=granted;path=/;max-age=' + (365*24*60*60) + ';SameSite=Lax';
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted'
+    });
+    banner.classList.remove('visible');
+  });
+
+  rejectBtn.addEventListener('click', function() {
+    document.cookie = 'wtl_consent=denied;path=/;max-age=' + (365*24*60*60) + ';SameSite=Lax';
+    banner.classList.remove('visible');
+  });
+})();
+</script>
+</body>
+</html>

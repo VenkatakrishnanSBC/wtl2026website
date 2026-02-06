@@ -1,0 +1,95 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('aboutVision.pageTitle'); locals.pageSubtitle = t('aboutVision.pageSubtitle'); locals.breadcrumb = [{label: t('aboutVision.breadcrumbParent'), url: (locals.langPrefix || '') + '/about'}, {label: t('aboutVision.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- VISION STATEMENT -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutVision.visionLabel') %></span>
+      <h2><%= t('aboutVision.visionHeading') %></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text" style="max-width:100%">
+        <blockquote style="font-size:1.35rem;line-height:1.8;color:var(--primary);border-left:4px solid var(--accent);padding:20px 30px;margin:0 0 30px;background:rgba(0,83,159,.05);border-radius:0 8px 8px 0;">
+          <%= t('aboutVision.visionQuote') %>
+        </blockquote>
+        <p><%= t('aboutVision.visionP1') %></p>
+        <p><%= t('aboutVision.visionP2') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION PILLARS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutVision.pillarsLabel') %></span>
+      <h2><%= t('aboutVision.pillarsTitle') %></h2>
+      <p><%= t('aboutVision.pillarsText') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe"></i></div>
+        <div>
+          <h3><%= t('aboutVision.globalReachTitle') %></h3>
+          <p><%= t('aboutVision.globalReachText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-microchip"></i></div>
+        <div>
+          <h3><%= t('aboutVision.techInnovTitle') %></h3>
+          <p><%= t('aboutVision.techInnovText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-leaf"></i></div>
+        <div>
+          <h3><%= t('aboutVision.sustainabilityTitle') %></h3>
+          <p><%= t('aboutVision.sustainabilityText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-handshake"></i></div>
+        <div>
+          <h3><%= t('aboutVision.communityTitle') %></h3>
+          <p><%= t('aboutVision.communityText') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKING AHEAD -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutVision.lookingAheadLabel') %></span>
+      <h2><%= t('aboutVision.lookingAheadTitle') %></h2>
+    </div>
+    <div class="content-grid">
+      <div>
+        <p><%= t('aboutVision.lookingAheadP1') %></p>
+        <p><%= t('aboutVision.lookingAheadP2') %></p>
+      </div>
+      <div>
+        <p><%= t('aboutVision.lookingAheadP3') %></p>
+        <p><%= t('aboutVision.lookingAheadP4') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2><%= t('aboutVision.ctaTitle') %></h2>
+    <p><%= t('aboutVision.ctaText') %></p>
+    <a href="<%= locals.langPrefix || '' %>/contact" class="btn-primary"><%= t('aboutVision.ctaButton') %> <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

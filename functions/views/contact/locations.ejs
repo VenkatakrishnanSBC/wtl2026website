@@ -1,0 +1,187 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('contactLocations.pageTitle'); locals.pageSubtitle = t('contactLocations.pageSubtitle'); locals.breadcrumb = [{label: t('contactLocations.breadcrumbParent'), url: (locals.langPrefix || '') + '/contact'}, {label: t('contactLocations.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Headquarters Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label"><%= t('contactLocations.headquartersLabel') %></div>
+        <h2><%= t('contactLocations.headquartersHeading') %></h2>
+        <p><%= t('contactLocations.headquartersText1') %></p>
+        <p><%= t('contactLocations.headquartersText2') %></p>
+
+        <div style="margin-top: 30px; background: #f8f9fa; padding: 25px; border-radius: 8px; border-left: 4px solid #1a3a5c;">
+          <h4 style="margin-bottom: 15px; color: #1a3a5c;"><%= t('contactLocations.headOfficeDetails') %></h4>
+          <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt" style="width: 20px; color: #1a3a5c;"></i> <strong><%= t('contactLocations.labelAddress') %></strong> RUE Du Liban X Brazza, Dakar, Senegal</p>
+          <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt" style="width: 20px; color: #1a3a5c;"></i> <strong><%= t('contactLocations.labelPhone') %></strong> <a href="tel:+221338227111" style="color: inherit; text-decoration: none;">+221 33 822 71 11</a></p>
+          <p style="margin-bottom: 8px;"><i class="fas fa-envelope" style="width: 20px; color: #1a3a5c;"></i> <strong><%= t('contactLocations.labelEmail') %></strong> <a href="mailto:info@worldtransgroup.com" style="color: inherit; text-decoration: none;">info@worldtransgroup.com</a></p>
+          <p style="margin-bottom: 8px;"><i class="fas fa-clock" style="width: 20px; color: #1a3a5c;"></i> <strong><%= t('contactLocations.labelHours') %></strong> <%= t('contactLocations.hoursValue') %></p>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="/images/853d7894-c185-403b-896f-a5b174ab99e8.jpeg" alt="WTL Head Office in Dakar, Senegal">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Regional Offices -->
+<section class="section" style="padding: 80px 0; background-color: #f8f9fa;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('contactLocations.regionalLabel') %></div>
+      <h2><%= t('contactLocations.regionalHeading') %></h2>
+      <p><%= t('contactLocations.regionalText') %></p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Abidjan -->
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2rem; color: #1a3a5c; margin-bottom: 12px;">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3><%= t('contactLocations.abidjanTitle') %></h3>
+          <p style="color: #666; margin-bottom: 15px;"><%= t('contactLocations.abidjanText') %></p>
+          <div style="border-top: 1px solid #eee; padding-top: 15px; font-size: 0.95rem;">
+            <p style="margin-bottom: 5px;"><i class="fas fa-map-marker-alt" style="width: 18px; color: #1a3a5c;"></i> Zone Portuaire, Boulevard de Marseille, Abidjan</p>
+            <p style="margin-bottom: 0;"><i class="fas fa-phone-alt" style="width: 18px; color: #1a3a5c;"></i> +225 27 21 35 XX XX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bamako -->
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2rem; color: #1a3a5c; margin-bottom: 12px;">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3><%= t('contactLocations.bamakoTitle') %></h3>
+          <p style="color: #666; margin-bottom: 15px;"><%= t('contactLocations.bamakoText') %></p>
+          <div style="border-top: 1px solid #eee; padding-top: 15px; font-size: 0.95rem;">
+            <p style="margin-bottom: 5px;"><i class="fas fa-map-marker-alt" style="width: 18px; color: #1a3a5c;"></i> Quartier du Fleuve, Avenue Moussa Travele, Bamako</p>
+            <p style="margin-bottom: 0;"><i class="fas fa-phone-alt" style="width: 18px; color: #1a3a5c;"></i> +223 20 22 XX XX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conakry -->
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2rem; color: #1a3a5c; margin-bottom: 12px;">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3><%= t('contactLocations.conakryTitle') %></h3>
+          <p style="color: #666; margin-bottom: 15px;"><%= t('contactLocations.conakryText') %></p>
+          <div style="border-top: 1px solid #eee; padding-top: 15px; font-size: 0.95rem;">
+            <p style="margin-bottom: 5px;"><i class="fas fa-map-marker-alt" style="width: 18px; color: #1a3a5c;"></i> Quartier Almamya, Commune de Kaloum, Conakry</p>
+            <p style="margin-bottom: 0;"><i class="fas fa-phone-alt" style="width: 18px; color: #1a3a5c;"></i> +224 622 XX XX XX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banjul -->
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2rem; color: #1a3a5c; margin-bottom: 12px;">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3><%= t('contactLocations.banjulTitle') %></h3>
+          <p style="color: #666; margin-bottom: 15px;"><%= t('contactLocations.banjulText') %></p>
+          <div style="border-top: 1px solid #eee; padding-top: 15px; font-size: 0.95rem;">
+            <p style="margin-bottom: 5px;"><i class="fas fa-map-marker-alt" style="width: 18px; color: #1a3a5c;"></i> Liberation Avenue, Banjul</p>
+            <p style="margin-bottom: 0;"><i class="fas fa-phone-alt" style="width: 18px; color: #1a3a5c;"></i> +220 422 XX XX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nouakchott -->
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2rem; color: #1a3a5c; margin-bottom: 12px;">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3><%= t('contactLocations.nouakchottTitle') %></h3>
+          <p style="color: #666; margin-bottom: 15px;"><%= t('contactLocations.nouakchottText') %></p>
+          <div style="border-top: 1px solid #eee; padding-top: 15px; font-size: 0.95rem;">
+            <p style="margin-bottom: 5px;"><i class="fas fa-map-marker-alt" style="width: 18px; color: #1a3a5c;"></i> Avenue Gamal Abdel Nasser, Nouakchott</p>
+            <p style="margin-bottom: 0;"><i class="fas fa-phone-alt" style="width: 18px; color: #1a3a5c;"></i> +222 45 25 XX XX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agent Network Card -->
+      <div class="service-card" style="background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: #fff;">
+        <div class="service-card-body">
+          <div style="font-size: 2rem; margin-bottom: 12px;">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3 style="color: #fff;"><%= t('contactLocations.globalNetworkTitle') %></h3>
+          <p style="color: rgba(255,255,255,0.85); margin-bottom: 15px;"><%= t('contactLocations.globalNetworkText') %></p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
+            <p style="color: rgba(255,255,255,0.9); font-weight: 600; margin-bottom: 0;"><%= t('contactLocations.globalNetworkStats') %></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Coverage Map Description -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('contactLocations.coverageLabel') %></div>
+      <h2><%= t('contactLocations.coverageHeading') %></h2>
+      <p><%= t('contactLocations.coverageText') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-ship"></i>
+        </div>
+        <h3><%= t('contactLocations.corridorDakarBamako') %></h3>
+        <p><%= t('contactLocations.corridorDakarBamakoText') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <h3><%= t('contactLocations.corridorCoastal') %></h3>
+        <p><%= t('contactLocations.corridorCoastalText') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-plane"></i>
+        </div>
+        <h3><%= t('contactLocations.corridorEurope') %></h3>
+        <p><%= t('contactLocations.corridorEuropeText') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-anchor"></i>
+        </div>
+        <h3><%= t('contactLocations.corridorAsia') %></h3>
+        <p><%= t('contactLocations.corridorAsiaText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: #fff; text-align: center;">
+  <div class="container">
+    <h2><%= t('contactLocations.ctaTitle') %></h2>
+    <p style="max-width: 600px; margin: 15px auto; opacity: 0.9;"><%= t('contactLocations.ctaText') %></p>
+    <div style="margin-top: 25px;">
+      <a href="<%= locals.langPrefix || '' %>/contact/contact" class="btn-primary" style="margin-right: 15px;"><%= t('contactLocations.ctaContactButton') %></a>
+      <a href="<%= locals.langPrefix || '' %>/contact/inquiry" class="btn-quote"><%= t('contactLocations.ctaQuoteButton') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

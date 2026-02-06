@@ -1,0 +1,217 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('contactFaqs.pageTitle'); locals.pageSubtitle = t('contactFaqs.pageSubtitle'); locals.breadcrumb = [{label: t('contactFaqs.breadcrumbParent'), url: (locals.langPrefix || '') + '/contact'}, {label: t('contactFaqs.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<style>
+  .faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+  }
+  .faq-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+  .faq-item summary {
+    padding: 20px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #1a3a5c;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #1a3a5c;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 15px;
+  }
+  .faq-item[open] summary::after {
+    content: '-';
+  }
+  .faq-item[open] summary {
+    border-bottom: 1px solid #e0e0e0;
+    background: #f8f9fa;
+  }
+  .faq-answer {
+    padding: 20px 25px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .faq-answer p {
+    margin-bottom: 10px;
+  }
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+</style>
+
+<!-- FAQs Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('contactFaqs.knowledgeBase') %></div>
+      <h2><%= t('contactFaqs.heading') %></h2>
+      <p><%- t('contactFaqs.headingText').replace('{contactLink}', '<a href="' + (locals.langPrefix || '') + '/contact" style="color: #1a3a5c; text-decoration: underline;">' + t('contactFaqs.contactUsLink') + '</a>') %></p>
+    </div>
+
+    <div class="faq-container">
+
+      <!-- FAQ 1 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq1Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq1A1') %></p>
+          <p><strong><%= t('contactFaqs.faq1OceanLabel') %></strong> <%= t('contactFaqs.faq1OceanText') %></p>
+          <p><strong><%= t('contactFaqs.faq1AirLabel') %></strong> <%= t('contactFaqs.faq1AirText') %></p>
+          <p><strong><%= t('contactFaqs.faq1RoadLabel') %></strong> <%= t('contactFaqs.faq1RoadText') %></p>
+          <p><%= t('contactFaqs.faq1Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq2Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq2A1') %></p>
+          <p><strong><%= t('contactFaqs.faq2PortalLabel') %></strong> <%= t('contactFaqs.faq2PortalText') %></p>
+          <p><strong><%= t('contactFaqs.faq2EmailLabel') %></strong> <%= t('contactFaqs.faq2EmailText') %></p>
+          <p><strong><%= t('contactFaqs.faq2ManagerLabel') %></strong> <%= t('contactFaqs.faq2ManagerText') %></p>
+          <p><%= t('contactFaqs.faq2Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq3Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq3A1') %></p>
+          <p><strong><%= t('contactFaqs.faq3HSLabel') %></strong> <%= t('contactFaqs.faq3HSText') %></p>
+          <p><strong><%= t('contactFaqs.faq3ValueLabel') %></strong> <%= t('contactFaqs.faq3ValueText') %></p>
+          <p><strong><%= t('contactFaqs.faq3LeviesLabel') %></strong> <%= t('contactFaqs.faq3LeviesText') %></p>
+          <p><%= t('contactFaqs.faq3Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq4Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq4A1') %></p>
+          <p><strong><%= t('contactFaqs.faq4AllRiskLabel') %></strong> <%= t('contactFaqs.faq4AllRiskText') %></p>
+          <p><strong><%= t('contactFaqs.faq4NamedLabel') %></strong> <%= t('contactFaqs.faq4NamedText') %></p>
+          <p><strong><%= t('contactFaqs.faq4WarLabel') %></strong> <%= t('contactFaqs.faq4WarText') %></p>
+          <p><%= t('contactFaqs.faq4Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq5Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq5A1') %></p>
+          <p><strong><%= t('contactFaqs.faq5OceanLabel') %></strong> <%= t('contactFaqs.faq5OceanText') %></p>
+          <p><strong><%= t('contactFaqs.faq5AirLabel') %></strong> <%= t('contactFaqs.faq5AirText') %></p>
+          <p><strong><%= t('contactFaqs.faq5HazLabel') %></strong> <%= t('contactFaqs.faq5HazText') %></p>
+          <p><%= t('contactFaqs.faq5Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 6 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq6Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq6A1') %></p>
+          <p><strong><%= t('contactFaqs.faq6ProhibitedLabel') %></strong> <%= t('contactFaqs.faq6ProhibitedText') %></p>
+          <p><strong><%= t('contactFaqs.faq6RestrictedLabel') %></strong> <%= t('contactFaqs.faq6RestrictedText') %></p>
+          <p><strong><%= t('contactFaqs.faq6CitesLabel') %></strong> <%= t('contactFaqs.faq6CitesText') %></p>
+          <p><%= t('contactFaqs.faq6Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 7 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq7Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq7A1') %></p>
+          <p><strong><%= t('contactFaqs.faq7EXWLabel') %></strong> <%= t('contactFaqs.faq7EXWText') %></p>
+          <p><strong><%= t('contactFaqs.faq7FOBLabel') %></strong> <%= t('contactFaqs.faq7FOBText') %></p>
+          <p><strong><%= t('contactFaqs.faq7CIFLabel') %></strong> <%= t('contactFaqs.faq7CIFText') %></p>
+          <p><strong><%= t('contactFaqs.faq7DDPLabel') %></strong> <%= t('contactFaqs.faq7DDPText') %></p>
+          <p><%= t('contactFaqs.faq7Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 8 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq8Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq8A1') %></p>
+          <p><strong><%= t('contactFaqs.faq8BankLabel') %></strong> <%= t('contactFaqs.faq8BankText') %></p>
+          <p><strong><%= t('contactFaqs.faq8CorporateLabel') %></strong> <%= t('contactFaqs.faq8CorporateText') %></p>
+          <p><strong><%= t('contactFaqs.faq8LCLabel') %></strong> <%= t('contactFaqs.faq8LCText') %></p>
+          <p><strong><%= t('contactFaqs.faq8MobileLabel') %></strong> <%= t('contactFaqs.faq8MobileText') %></p>
+          <p><%= t('contactFaqs.faq8Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 9 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq9Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq9A1') %></p>
+          <p><strong><%= t('contactFaqs.faq9Step1Label') %></strong> <%= t('contactFaqs.faq9Step1Text') %></p>
+          <p><strong><%= t('contactFaqs.faq9Step2Label') %></strong> <%= t('contactFaqs.faq9Step2Text') %></p>
+          <p><strong><%= t('contactFaqs.faq9Step3Label') %></strong> <%= t('contactFaqs.faq9Step3Text') %></p>
+          <p><strong><%= t('contactFaqs.faq9Step4Label') %></strong> <%= t('contactFaqs.faq9Step4Text') %></p>
+          <p><%= t('contactFaqs.faq9Closing') %></p>
+        </div>
+      </details>
+
+      <!-- FAQ 10 -->
+      <details class="faq-item">
+        <summary><%= t('contactFaqs.faq10Q') %></summary>
+        <div class="faq-answer">
+          <p><%= t('contactFaqs.faq10A1') %></p>
+          <p><strong><%= t('contactFaqs.faq10ShortLabel') %></strong> <%= t('contactFaqs.faq10ShortText') %></p>
+          <p><strong><%= t('contactFaqs.faq10LongLabel') %></strong> <%= t('contactFaqs.faq10LongText') %></p>
+          <p><strong><%= t('contactFaqs.faq10SpecialLabel') %></strong> <%= t('contactFaqs.faq10SpecialText') %></p>
+          <p><strong><%= t('contactFaqs.faq10ValueLabel') %></strong> <%= t('contactFaqs.faq10ValueText') %></p>
+          <p><%= t('contactFaqs.faq10Closing') %></p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-banner" style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: #fff; text-align: center;">
+  <div class="container">
+    <h2><%= t('contactFaqs.ctaTitle') %></h2>
+    <p style="max-width: 600px; margin: 15px auto; opacity: 0.9;"><%= t('contactFaqs.ctaText') %></p>
+    <div style="margin-top: 25px;">
+      <a href="<%= locals.langPrefix || '' %>/contact" class="btn-primary" style="margin-right: 15px;"><%= t('contactFaqs.ctaContact') %></a>
+      <a href="<%= locals.langPrefix || '' %>/contact/inquiry" class="btn-quote"><%= t('contactFaqs.ctaInquiry') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

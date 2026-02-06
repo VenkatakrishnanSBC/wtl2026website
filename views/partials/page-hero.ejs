@@ -1,0 +1,21 @@
+<!-- PAGE HERO BANNER -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="/images/aerial-view-of-containers-loading-and-unloading-to-the-ship-in-the-sea-port-logistic-and.jpg" alt="Logistics background">
+  </div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb">
+        <a href="<%= locals.langPrefix || '' %>/"><%= locals.t ? t('common.home') : 'Home' %></a>
+        <% if (typeof breadcrumb !== 'undefined' && breadcrumb.length > 0) { %>
+          <% breadcrumb.forEach(function(item) { %>
+            <span>/</span>
+            <% if (item.url) { %><a href="<%= (locals.langPrefix || '') + item.url %>"><%= item.label %></a><% } else { %><span class="current"><%= item.label %></span><% } %>
+          <% }) %>
+        <% } %>
+      </nav>
+      <h1><%= pageTitle %></h1>
+      <% if (typeof pageSubtitle !== 'undefined') { %><p><%= pageSubtitle %></p><% } %>
+    </div>
+  </div>
+</section>

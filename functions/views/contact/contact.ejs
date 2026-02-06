@@ -1,0 +1,145 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('contactMain.pageTitle'); locals.pageSubtitle = t('contactMain.pageSubtitle'); locals.breadcrumb = [{label: t('contactMain.breadcrumbParent'), url: (locals.langPrefix || '') + '/contact'}, {label: t('contactMain.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Contact Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="quote-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+
+      <!-- Left Column: Contact Information -->
+      <div>
+        <div class="section-label"><%= t('contactMain.sectionLabel') %></div>
+        <h2><%= t('contactMain.heading') %></h2>
+        <p style="margin-bottom: 30px;"><%= t('contactMain.introText') %></p>
+
+        <!-- Office Address -->
+        <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+          <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+            <i class="fas fa-map-marker-alt" style="color: #fff; font-size: 1.2rem;"></i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 5px;"><%= t('contactMain.headOffice') %></h4>
+            <p style="margin: 0; color: #666;">RUE Du Liban X Brazza<br>Dakar, Senegal</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+          <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+            <i class="fas fa-phone-alt" style="color: #fff; font-size: 1.2rem;"></i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 5px;"><%= t('contactMain.phone') %></h4>
+            <p style="margin: 0;"><a href="tel:+221338227111" style="color: #666; text-decoration: none;">+221 33 822 71 11</a></p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+          <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+            <i class="fas fa-envelope" style="color: #fff; font-size: 1.2rem;"></i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 5px;"><%= t('contactMain.email') %></h4>
+            <p style="margin: 0;"><a href="mailto:info@worldtransgroup.com" style="color: #666; text-decoration: none;">info@worldtransgroup.com</a></p>
+          </div>
+        </div>
+
+        <!-- Business Hours -->
+        <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+          <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+            <i class="fas fa-clock" style="color: #fff; font-size: 1.2rem;"></i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 5px;"><%= t('contactMain.businessHours') %></h4>
+            <p style="margin: 0; color: #666;"><%= t('contactMain.hoursWeekday') %><br><%= t('contactMain.hoursSaturday') %><br><%= t('contactMain.hoursSunday') %></p>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div style="margin-top: 35px;">
+          <h4 style="margin-bottom: 15px;"><%= t('contactMain.followUs') %></h4>
+          <div style="display: flex; gap: 12px;">
+            <a href="#" style="width: 45px; height: 45px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.3s;" aria-label="Facebook">
+              <i class="fab fa-facebook-f" style="color: #fff; font-size: 1.1rem;"></i>
+            </a>
+            <a href="#" style="width: 45px; height: 45px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.3s;" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in" style="color: #fff; font-size: 1.1rem;"></i>
+            </a>
+            <a href="#" style="width: 45px; height: 45px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.3s;" aria-label="Twitter">
+              <i class="fab fa-twitter" style="color: #fff; font-size: 1.1rem;"></i>
+            </a>
+            <a href="#" style="width: 45px; height: 45px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.3s;" aria-label="Instagram">
+              <i class="fab fa-instagram" style="color: #fff; font-size: 1.1rem;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Contact Form -->
+      <div>
+        <div class="quote-form" style="background: #f8f9fa; padding: 40px; border-radius: 10px;">
+          <h3 style="margin-bottom: 5px;"><%= t('contactMain.formTitle') %></h3>
+          <p style="color: #666; margin-bottom: 25px;"><%= t('contactMain.formSubtitle') %></p>
+          <form action="<%= locals.langPrefix || '' %>/contact/contact" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name"><%= t('contactMain.labelFullName') %> <span style="color: red;">*</span></label>
+                <input type="text" id="name" name="name" placeholder="<%= t('contactMain.placeholderFullName') %>" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email"><%= t('contactMain.labelEmail') %> <span style="color: red;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="<%= t('contactMain.placeholderEmail') %>" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone"><%= t('contactMain.labelPhone') %></label>
+                <input type="tel" id="phone" name="phone" placeholder="+221 XX XXX XX XX">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="subject"><%= t('contactMain.labelSubject') %> <span style="color: red;">*</span></label>
+                <select id="subject" name="subject" required>
+                  <option value=""><%= t('contactMain.selectSubject') %></option>
+                  <option value="freight-quote"><%= t('contactMain.subjectFreightQuote') %></option>
+                  <option value="customs-clearance"><%= t('contactMain.subjectCustomsClearance') %></option>
+                  <option value="warehousing"><%= t('contactMain.subjectWarehousing') %></option>
+                  <option value="tracking"><%= t('contactMain.subjectTracking') %></option>
+                  <option value="partnership"><%= t('contactMain.subjectPartnership') %></option>
+                  <option value="complaint"><%= t('contactMain.subjectComplaint') %></option>
+                  <option value="general"><%= t('contactMain.subjectGeneral') %></option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="message"><%= t('contactMain.labelMessage') %> <span style="color: red;">*</span></label>
+                <textarea id="message" name="message" rows="6" placeholder="<%= t('contactMain.placeholderMessage') %>" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn-submit" style="width: 100%;"><%= t('contactMain.sendMessage') %></button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="section" style="padding: 0; margin-bottom: 0;">
+  <div style="width: 100%; height: 400px; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5!2d-17.4441!3d14.6937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDQxJzM3LjMiTiAxN8KwMjYnMzguOCJX!5e0!3m2!1sen!2ssn!4v1"
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

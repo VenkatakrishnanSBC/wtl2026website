@@ -1,0 +1,167 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('servicesProjectCargo.pageTitle'); locals.pageSubtitle = t('servicesProjectCargo.pageSubtitle'); locals.breadcrumb = [{label: t('servicesProjectCargo.breadcrumbParent'), url: (locals.langPrefix || '') + '/services'}, {label: t('servicesProjectCargo.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div class="about-text">
+        <span class="section-label"><%= t('servicesProjectCargo.sectionLabel') %></span>
+        <h2><%= t('servicesProjectCargo.overviewTitle') %></h2>
+        <p>
+          <%= t('servicesProjectCargo.overviewText1') %>
+        </p>
+        <p>
+          <%= t('servicesProjectCargo.overviewText2') %>
+        </p>
+        <p>
+          <%= t('servicesProjectCargo.overviewText3') %>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/images/853d7894-c185-403b-896f-a5b174ab99e8.jpeg" alt="Project Cargo Operations" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="section" style="padding: 80px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesProjectCargo.capabilities') %></span>
+      <h2><%= t('servicesProjectCargo.servicesTitle') %></h2>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesProjectCargo.heavyLiftTitle') %></h3>
+          <p><%= t('servicesProjectCargo.heavyLiftText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesProjectCargo.heavyLiftFeature1') %></li>
+            <li><%= t('servicesProjectCargo.heavyLiftFeature2') %></li>
+            <li><%= t('servicesProjectCargo.heavyLiftFeature3') %></li>
+            <li><%= t('servicesProjectCargo.heavyLiftFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesProjectCargo.oversizedTitle') %></h3>
+          <p><%= t('servicesProjectCargo.oversizedText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesProjectCargo.oversizedFeature1') %></li>
+            <li><%= t('servicesProjectCargo.oversizedFeature2') %></li>
+            <li><%= t('servicesProjectCargo.oversizedFeature3') %></li>
+            <li><%= t('servicesProjectCargo.oversizedFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesProjectCargo.routeSurveyTitle') %></h3>
+          <p><%= t('servicesProjectCargo.routeSurveyText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesProjectCargo.routeSurveyFeature1') %></li>
+            <li><%= t('servicesProjectCargo.routeSurveyFeature2') %></li>
+            <li><%= t('servicesProjectCargo.routeSurveyFeature3') %></li>
+            <li><%= t('servicesProjectCargo.routeSurveyFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Card -->
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesProjectCargo.industrialTitle') %></h3>
+          <p><%= t('servicesProjectCargo.industrialText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesProjectCargo.industrialFeature1') %></li>
+            <li><%= t('servicesProjectCargo.industrialFeature2') %></li>
+            <li><%= t('servicesProjectCargo.industrialFeature3') %></li>
+            <li><%= t('servicesProjectCargo.industrialFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesProjectCargo.charteringTitle') %></h3>
+          <p><%= t('servicesProjectCargo.charteringText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesProjectCargo.charteringFeature1') %></li>
+            <li><%= t('servicesProjectCargo.charteringFeature2') %></li>
+            <li><%= t('servicesProjectCargo.charteringFeature3') %></li>
+            <li><%= t('servicesProjectCargo.charteringFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesProjectCargo.projectMgmtTitle') %></h3>
+          <p><%= t('servicesProjectCargo.projectMgmtText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesProjectCargo.projectMgmtFeature1') %></li>
+            <li><%= t('servicesProjectCargo.projectMgmtFeature2') %></li>
+            <li><%= t('servicesProjectCargo.projectMgmtFeature3') %></li>
+            <li><%= t('servicesProjectCargo.projectMgmtFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why WTL Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesProjectCargo.edge') %></span>
+      <h2><%= t('servicesProjectCargo.whyTitle') %></h2>
+    </div>
+
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128736;</div>
+        <h4><%= t('servicesProjectCargo.whyTechTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesProjectCargo.whyTechText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#127758;</div>
+        <h4><%= t('servicesProjectCargo.whySpecialistTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesProjectCargo.whySpecialistText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#129309;</div>
+        <h4><%= t('servicesProjectCargo.whyTrackTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesProjectCargo.whyTrackText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128737;</div>
+        <h4><%= t('servicesProjectCargo.whySafetyTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesProjectCargo.whySafetyText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2a5a8c); text-align: center; color: #fff;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><%= t('servicesProjectCargo.ctaTitle') %></h2>
+    <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <%= t('servicesProjectCargo.ctaText') %>
+    </p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote" style="display: inline-block; padding: 15px 40px; background: #f0a500; color: #1a3a5c; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1.1rem;"><%= t('servicesProjectCargo.ctaButton') %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

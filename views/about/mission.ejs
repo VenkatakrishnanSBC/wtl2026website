@@ -1,0 +1,98 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('aboutMission.pageTitle'); locals.pageSubtitle = t('aboutMission.pageSubtitle'); locals.breadcrumb = [{label: t('aboutMission.breadcrumbParent'), url: (locals.langPrefix || '') + '/about'}, {label: t('aboutMission.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- MISSION STATEMENT -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutMission.missionLabel') %></span>
+      <h2><%= t('aboutMission.missionHeading') %></h2>
+    </div>
+    <div class="about-text" style="max-width:800px;margin:0 auto;text-align:center;">
+      <blockquote style="font-size:1.35rem;line-height:1.8;color:var(--primary);border-left:4px solid var(--accent);padding:20px 30px;margin:0 0 30px;background:rgba(0,83,159,.05);border-radius:0 8px 8px 0;text-align:left;">
+        <%= t('aboutMission.missionQuote') %>
+      </blockquote>
+      <p style="text-align:left;"><%= t('aboutMission.missionP1') %></p>
+      <p style="text-align:left;"><%= t('aboutMission.missionP2') %></p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION PILLARS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutMission.pillarsLabel') %></span>
+      <h2><%= t('aboutMission.pillarsTitle') %></h2>
+      <p><%= t('aboutMission.pillarsText') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+        <div>
+          <h3><%= t('aboutMission.reliabilityTitle') %></h3>
+          <p><%= t('aboutMission.reliabilityP1') %></p>
+          <p><%= t('aboutMission.reliabilityP2') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-lightbulb"></i></div>
+        <div>
+          <h3><%= t('aboutMission.innovationTitle') %></h3>
+          <p><%= t('aboutMission.innovationP1') %></p>
+          <p><%= t('aboutMission.innovationP2') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-users"></i></div>
+        <div>
+          <h3><%= t('aboutMission.customerTitle') %></h3>
+          <p><%= t('aboutMission.customerP1') %></p>
+          <p><%= t('aboutMission.customerP2') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-seedling"></i></div>
+        <div>
+          <h3><%= t('aboutMission.sustainabilityTitle') %></h3>
+          <p><%= t('aboutMission.sustainabilityP1') %></p>
+          <p><%= t('aboutMission.sustainabilityP2') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE DELIVER -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutMission.deliverLabel') %></span>
+      <h2><%= t('aboutMission.deliverTitle') %></h2>
+      <p><%= t('aboutMission.deliverText') %></p>
+    </div>
+    <div class="content-grid">
+      <div>
+        <h3><%= t('aboutMission.dedicatedTeamsTitle') %></h3>
+        <p><%= t('aboutMission.dedicatedTeamsText') %></p>
+      </div>
+      <div>
+        <h3><%= t('aboutMission.robustNetworkTitle') %></h3>
+        <p><%= t('aboutMission.robustNetworkText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2><%= t('aboutMission.ctaTitle') %></h2>
+    <p><%= t('aboutMission.ctaText') %></p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-primary"><%= t('aboutMission.ctaButton') %> <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

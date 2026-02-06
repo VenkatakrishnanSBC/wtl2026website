@@ -1,0 +1,93 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('contactInquirySuccess.pageTitle'); locals.pageSubtitle = t('contactInquirySuccess.pageSubtitle'); locals.breadcrumb = [{label: t('contactInquirySuccess.breadcrumbParent'), url: (locals.langPrefix || '') + '/contact'}, {label: t('contactInquirySuccess.breadcrumbInquiry'), url: (locals.langPrefix || '') + '/contact/inquiry'}, {label: t('contactInquirySuccess.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Success Message Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+
+    <!-- Success Icon -->
+    <div style="width: 100px; height: 100px; background: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">
+      <i class="fas fa-check" style="color: #fff; font-size: 3rem;"></i>
+    </div>
+
+    <h2 style="font-size: 2rem; margin-bottom: 15px; color: #1a3a5c;"><%= t('contactInquirySuccess.heading') %></h2>
+    <p style="font-size: 1.15rem; color: #555; margin-bottom: 15px;"><%= t('contactInquirySuccess.thankYouText') %></p>
+
+    <!-- Reference Number -->
+    <div style="background: #f0f7ff; border: 2px solid #1a3a5c; border-radius: 10px; padding: 25px; margin: 35px 0; display: inline-block;">
+      <p style="margin: 0 0 5px; font-size: 0.95rem; color: #666;"><%= t('contactInquirySuccess.referenceLabel') %></p>
+      <p style="margin: 0; font-size: 1.6rem; font-weight: 700; color: #1a3a5c; letter-spacing: 2px;">
+        <% if (typeof referenceNumber !== 'undefined') { %>
+          <%= referenceNumber %>
+        <% } else { %>
+          WTL-<%= new Date().getFullYear() %><%= String(new Date().getMonth() + 1).padStart(2, '0') %><%= String(new Date().getDate()).padStart(2, '0') %>-<%= Math.floor(Math.random() * 9000 + 1000) %>
+        <% } %>
+      </p>
+      <p style="margin: 8px 0 0; font-size: 0.85rem; color: #888;"><%= t('contactInquirySuccess.referenceNote') %></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- What Happens Next Section -->
+<section class="section" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container" style="max-width: 850px; margin: 0 auto;">
+    <div class="section-header" style="text-align: center;">
+      <div class="section-label"><%= t('contactInquirySuccess.nextStepsLabel') %></div>
+      <h2><%= t('contactInquirySuccess.nextStepsHeading') %></h2>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: 1fr; gap: 0;">
+
+      <div style="display: flex; align-items: flex-start; padding: 25px 0; border-bottom: 1px solid #e0e0e0;">
+        <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; color: #fff; font-weight: 700; font-size: 1.2rem;">1</div>
+        <div>
+          <h4 style="margin-bottom: 5px;"><%= t('contactInquirySuccess.step1Title') %></h4>
+          <p style="margin: 0; color: #666;"><%= t('contactInquirySuccess.step1Text') %></p>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; padding: 25px 0; border-bottom: 1px solid #e0e0e0;">
+        <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; color: #fff; font-weight: 700; font-size: 1.2rem;">2</div>
+        <div>
+          <h4 style="margin-bottom: 5px;"><%= t('contactInquirySuccess.step2Title') %></h4>
+          <p style="margin: 0; color: #666;"><%= t('contactInquirySuccess.step2Text') %></p>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; padding: 25px 0; border-bottom: 1px solid #e0e0e0;">
+        <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; color: #fff; font-weight: 700; font-size: 1.2rem;">3</div>
+        <div>
+          <h4 style="margin-bottom: 5px;"><%= t('contactInquirySuccess.step3Title') %></h4>
+          <p style="margin: 0; color: #666;"><%= t('contactInquirySuccess.step3Text') %></p>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; padding: 25px 0;">
+        <div style="width: 50px; height: 50px; background: #1a3a5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; color: #fff; font-weight: 700; font-size: 1.2rem;">4</div>
+        <div>
+          <h4 style="margin-bottom: 5px;"><%= t('contactInquirySuccess.step4Title') %></h4>
+          <p style="margin: 0; color: #666;"><%= t('contactInquirySuccess.step4Text') %></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Action Buttons -->
+<section class="section" style="padding: 60px 0; text-align: center;">
+  <div class="container">
+    <h3 style="margin-bottom: 10px;"><%= t('contactInquirySuccess.actionsHeading') %></h3>
+    <p style="color: #666; margin-bottom: 30px;"><%= t('contactInquirySuccess.actionsText') %></p>
+    <div>
+      <a href="<%= locals.langPrefix || '' %>/" class="btn-primary" style="margin-right: 15px;"><%= t('contactInquirySuccess.returnHome') %></a>
+      <a href="<%= locals.langPrefix || '' %>/services" class="btn-quote" style="margin-right: 15px;"><%= t('contactInquirySuccess.exploreServices') %></a>
+      <a href="<%= locals.langPrefix || '' %>/contact/contact" class="btn-quote"><%= t('contactInquirySuccess.contactTeam') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,155 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('servicesLand.pageTitle'); locals.pageSubtitle = t('servicesLand.pageSubtitle'); locals.breadcrumb = [{label: t('servicesLand.breadcrumbParent'), url: (locals.langPrefix || '') + '/services'}, {label: t('servicesLand.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div class="about-text">
+        <span class="section-label"><%= t('servicesLand.sectionLabel') %></span>
+        <h2><%= t('servicesLand.overviewTitle') %></h2>
+        <p>
+          <%= t('servicesLand.overviewText1') %>
+        </p>
+        <p>
+          <%= t('servicesLand.overviewText2') %>
+        </p>
+        <p>
+          <%= t('servicesLand.overviewText3') %>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/images/4-front-view-of-a-commercial-truck-on-the-road-at-sunset-in-eastern-washington-usa-e1665412064608.jpg" alt="WTL Land Freight Truck" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="section" style="padding: 80px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesLand.ourServices') %></span>
+      <h2><%= t('servicesLand.servicesTitle') %></h2>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesLand.ftlTitle') %></h3>
+          <p><%= t('servicesLand.ftlText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesLand.ftlFeature1') %></li>
+            <li><%= t('servicesLand.ftlFeature2') %></li>
+            <li><%= t('servicesLand.ftlFeature3') %></li>
+            <li><%= t('servicesLand.ftlFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesLand.ltlTitle') %></h3>
+          <p><%= t('servicesLand.ltlText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesLand.ltlFeature1') %></li>
+            <li><%= t('servicesLand.ltlFeature2') %></li>
+            <li><%= t('servicesLand.ltlFeature3') %></li>
+            <li><%= t('servicesLand.ltlFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesLand.crossBorderTitle') %></h3>
+          <p><%= t('servicesLand.crossBorderText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesLand.crossBorderFeature1') %></li>
+            <li><%= t('servicesLand.crossBorderFeature2') %></li>
+            <li><%= t('servicesLand.crossBorderFeature3') %></li>
+            <li><%= t('servicesLand.crossBorderFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesLand.capabilities') %></span>
+      <h2><%= t('servicesLand.capabilitiesTitle') %></h2>
+    </div>
+
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128225;</div>
+        <h4><%= t('servicesLand.gpsTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesLand.gpsText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128119;</div>
+        <h4><%= t('servicesLand.driversTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesLand.driversText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128736;</div>
+        <h4><%= t('servicesLand.maintenanceTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesLand.maintenanceText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128737;</div>
+        <h4><%= t('servicesLand.safetyTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesLand.safetyText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Routes Section -->
+<section class="section" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+      <span class="section-label"><%= t('servicesLand.network') %></span>
+      <h2><%= t('servicesLand.networkTitle') %></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto;">
+      <div style="background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <strong>Dakar &rarr; Bamako</strong><br><span style="color: #666;"><%= t('servicesLand.routeMali') %></span>
+      </div>
+      <div style="background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <strong>Dakar &rarr; Conakry</strong><br><span style="color: #666;"><%= t('servicesLand.routeGuinea') %></span>
+      </div>
+      <div style="background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <strong>Dakar &rarr; Banjul</strong><br><span style="color: #666;"><%= t('servicesLand.routeGambia') %></span>
+      </div>
+      <div style="background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <strong>Dakar &rarr; Nouakchott</strong><br><span style="color: #666;"><%= t('servicesLand.routeMauritania') %></span>
+      </div>
+      <div style="background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <strong>Dakar &rarr; Ouagadougou</strong><br><span style="color: #666;"><%= t('servicesLand.routeBurkina') %></span>
+      </div>
+      <div style="background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <strong>Dakar &rarr; Bissau</strong><br><span style="color: #666;"><%= t('servicesLand.routeBissau') %></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2a5a8c); text-align: center; color: #fff;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><%= t('servicesLand.ctaTitle') %></h2>
+    <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <%= t('servicesLand.ctaText') %>
+    </p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote" style="display: inline-block; padding: 15px 40px; background: #f0a500; color: #1a3a5c; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1.1rem;"><%= t('servicesLand.ctaButton') %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

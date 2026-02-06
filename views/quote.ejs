@@ -1,0 +1,143 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<% locals.pageTitle = t('quote.pageTitle'); locals.pageSubtitle = t('quote.pageSubtitle'); locals.breadcrumb = [{label: t('quote.pageTitle')}]; %>
+<%- include('partials/page-hero') %>
+
+<section class="quote-section">
+  <div class="container">
+    <div class="quote-grid">
+      <div class="quote-info">
+        <span class="section-label"><%= t('quote.freeQuote') %></span>
+        <h2><%= t('quote.heading') %></h2>
+        <p><%= t('quote.text') %></p>
+
+        <div class="quote-info-item">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <strong><%= t('quote.headOffice') %></strong><br>
+            RUE Du Liban X Brazza, Dakar, Senegal
+          </div>
+        </div>
+        <div class="quote-info-item">
+          <div class="icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <strong><%= t('quote.phone') %></strong><br>
+            +221 33 822 71 11
+          </div>
+        </div>
+        <div class="quote-info-item">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <strong><%= t('quote.email') %></strong><br>
+            info@worldtransgroup.com
+          </div>
+        </div>
+        <div class="quote-info-item">
+          <div class="icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <strong><%= t('quote.responseTime') %></strong><br>
+            <%= t('quote.within24h') %>
+          </div>
+        </div>
+      </div>
+
+      <form class="quote-form" method="POST" action="<%= locals.langPrefix %>/quote">
+        <h3><i class="fas fa-ship" style="color:var(--blue);margin-right:8px"></i> <%= t('quote.shipmentDetails') %></h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label><%= t('quote.companyName') %></label>
+            <input type="text" name="company" placeholder="<%= t('quote.companyPlaceholder') %>" required>
+          </div>
+          <div class="form-group">
+            <label><%= t('quote.contactPerson') %></label>
+            <input type="text" name="contact" placeholder="<%= t('quote.contactPlaceholder') %>" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><%= t('quote.emailAddress') %></label>
+            <input type="email" name="email" placeholder="<%= t('quote.emailPlaceholder') %>" required>
+          </div>
+          <div class="form-group">
+            <label><%= t('quote.phoneNumber') %></label>
+            <input type="tel" name="phone" placeholder="<%= t('quote.phonePlaceholder') %>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label><%= t('quote.shipmentType') %></label>
+          <select name="shipment_type" required>
+            <option value=""><%= t('quote.selectOption') %></option>
+            <option><%= t('quote.airFreight') %></option>
+            <option><%= t('quote.oceanFCL') %></option>
+            <option><%= t('quote.oceanLCL') %></option>
+            <option><%= t('quote.roadTransport') %></option>
+            <option><%= t('quote.multimodal') %></option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><%= t('quote.originCountry') %></label>
+            <input type="text" name="origin" placeholder="<%= t('quote.originPlaceholder') %>" required>
+          </div>
+          <div class="form-group">
+            <label><%= t('quote.destinationCountry') %></label>
+            <input type="text" name="destination" placeholder="<%= t('quote.destinationPlaceholder') %>" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><%= t('quote.cargoDescription') %></label>
+          <textarea name="cargo" placeholder="<%= t('quote.cargoPlaceholder') %>"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><%= t('quote.weight') %></label>
+            <input type="text" name="weight" placeholder="<%= t('quote.weightPlaceholder') %>">
+          </div>
+          <div class="form-group">
+            <label><%= t('quote.dimensions') %></label>
+            <input type="text" name="dimensions" placeholder="<%= t('quote.dimensionsPlaceholder') %>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><%= t('quote.shippingDate') %></label>
+            <input type="date" name="shipping_date">
+          </div>
+          <div class="form-group">
+            <label><%= t('quote.incoterms') %></label>
+            <select name="incoterms">
+              <option value=""><%= t('quote.selectIncoterm') %></option>
+              <option>EXW</option>
+              <option>FCA</option>
+              <option>FOB</option>
+              <option>CFR</option>
+              <option>CIF</option>
+              <option>DAP</option>
+              <option>DDP</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><%= t('quote.additionalServices') %></label>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);padding:var(--space-2) 0">
+            <label style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);cursor:pointer"><input type="checkbox" name="services[]" value="insurance"> <%= t('quote.insurance') %></label>
+            <label style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);cursor:pointer"><input type="checkbox" name="services[]" value="customs"> <%= t('quote.customsClearance') %></label>
+            <label style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);cursor:pointer"><input type="checkbox" name="services[]" value="door-to-door"> <%= t('quote.doorToDoor') %></label>
+            <label style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);cursor:pointer"><input type="checkbox" name="services[]" value="warehousing"> <%= t('quote.warehousing') %></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><%= t('quote.specialHandling') %></label>
+          <textarea name="special" placeholder="<%= t('quote.specialPlaceholder') %>"></textarea>
+        </div>
+        <div class="form-group">
+          <label><%= t('quote.comments') %></label>
+          <textarea name="comments" placeholder="<%= t('quote.commentsPlaceholder') %>"></textarea>
+        </div>
+        <button type="submit" class="btn-submit"><%= t('quote.submit') %> <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

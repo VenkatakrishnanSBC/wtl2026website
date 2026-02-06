@@ -1,0 +1,84 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = post.title; locals.pageSubtitle = post.category + ' &bull; ' + post.date + ' &bull; ' + post.readTime; locals.breadcrumb = [{label: t('nav.blog'), url: '/blog'}, {label: post.title.substring(0, 40) + '...'}]; %>
+<%- include('../partials/page-hero') %>
+
+<section class="section">
+  <div class="container">
+    <div class="blog-post-layout">
+      <!-- Main Content -->
+      <article class="blog-post-content">
+        <div class="blog-post-hero-img">
+          <img src="/images/<%= post.image %>" alt="<%= post.title %>" style="width:100%;border-radius:16px;margin-bottom:30px">
+        </div>
+
+        <div class="blog-post-meta-bar">
+          <div class="blog-post-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong><%= post.author %></strong>
+              <span><%= post.date %></span>
+            </div>
+          </div>
+          <div class="blog-post-share">
+            <span><%= t('blog.share') %></span>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-post-body">
+          <%- post.content %>
+        </div>
+
+        <!-- Tags -->
+        <div class="blog-post-tags">
+          <span class="blog-category"><%= post.category %></span>
+          <span class="blog-read"><i class="far fa-clock"></i> <%= post.readTime %></span>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-widget">
+          <h4><%= t('blog.aboutWTL') %></h4>
+          <p><%= t('blog.aboutWTLText') %></p>
+          <a href="<%= locals.langPrefix %>/about" class="read-more"><%= t('blog.learnMore') %> <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4><%= t('blog.needQuote') %></h4>
+          <p><%= t('blog.needQuoteText') %></p>
+          <a href="<%= locals.langPrefix %>/quote" class="btn-quote" style="display:inline-block;margin-top:10px"><%= t('nav.getQuote') %></a>
+        </div>
+
+        <% if (related.length > 0) { %>
+        <div class="sidebar-widget">
+          <h4><%= t('blog.relatedPosts') %></h4>
+          <% related.forEach(function(r) { %>
+          <div class="sidebar-post">
+            <img src="/images/<%= r.image %>" alt="<%= r.title %>">
+            <div>
+              <a href="<%= locals.langPrefix %>/blog/<%= r.slug %>"><%= r.title.substring(0, 50) %>...</a>
+              <span><%= r.date %></span>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <% } %>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2><%= t('blog.ctaTitle') %></h2>
+    <p><%= t('blog.ctaText') %></p>
+    <a href="<%= locals.langPrefix %>/quote" class="btn-primary"><%= t('blog.ctaButton') %> <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

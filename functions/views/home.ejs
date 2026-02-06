@@ -1,0 +1,278 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="/images/aerial-view-of-containers-loading-and-unloading-to-the-ship-in-the-sea-port-logistic-and.jpg" alt="Container port aerial view">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="section-label"><i class="fas fa-globe-americas"></i> <%= t('home.heroLabel') %></span>
+      <h1><%- t('home.heroTitle') %></h1>
+      <p><%= t('home.heroText') %></p>
+      <div class="hero-buttons">
+        <a href="<%= locals.langPrefix %>/quote" class="btn-primary"><%= t('home.heroGetQuote') %> <i class="fas fa-arrow-right"></i></a>
+        <a href="<%= locals.langPrefix %>/about/overview" class="btn-outline"><%= t('home.heroAbout') %> <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">25+</div>
+        <div class="stat-label"><%= t('home.statYears') %></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label"><%= t('home.statCountries') %></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2,000+</div>
+        <div class="stat-label"><%= t('home.statShipments') %></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">98%</div>
+        <div class="stat-label"><%= t('home.statSatisfaction') %></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/images/634ab3e0-733d-430f-8c37-31a6e151f386.jpeg" alt="Logistics operations">
+        <div class="about-badge">
+          <span class="number">25+</span>
+          <span><%= t('home.yearsExcellence') %></span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label"><%= t('home.aboutLabel') %></span>
+        <h2><%= t('home.aboutTitle') %></h2>
+        <p><%= t('home.aboutText') %></p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-globe"></i></div>
+            <div>
+              <h4><%= t('home.globalReach') %></h4>
+              <p><%= t('home.globalReachText') %></p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4><%= t('home.localExpertise') %></h4>
+              <p><%= t('home.localExpertiseText') %></p>
+            </div>
+          </div>
+        </div>
+        <a href="<%= locals.langPrefix %>/about/overview" class="btn-primary" style="margin-top:var(--space-6)"><%= t('home.readMore') %> <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('home.servicesLabel') %></span>
+      <h2><%= t('home.servicesTitle') %></h2>
+      <p><%= t('home.servicesText') %></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-img"><img src="/images/6e541ab7-cd52-4f32-9beb-1ae2e81a5954.jpg" alt="<%= t('home.airFreight') %>"></div>
+        <div class="service-card-body">
+          <h3><%= t('home.airFreight') %></h3>
+          <p><%= t('home.airFreightText') %></p>
+          <a href="<%= locals.langPrefix %>/services/freight" class="read-more"><%= t('home.readMore') %> <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img"><img src="/images/4-front-view-of-a-commercial-truck-on-the-road-at-sunset-in-eastern-washington-usa-e1665412064608.jpg" alt="<%= t('home.roadTransport') %>"></div>
+        <div class="service-card-body">
+          <h3><%= t('home.roadTransport') %></h3>
+          <p><%= t('home.roadTransportText') %></p>
+          <a href="<%= locals.langPrefix %>/services/land-freight" class="read-more"><%= t('home.readMore') %> <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img"><img src="/images/a-large-tanker-cargo-ship-is-being-renovated-and-painted-in-shipyard-dry-dock.jpg" alt="<%= t('home.oceanFreight') %>"></div>
+        <div class="service-card-body">
+          <h3><%= t('home.oceanFreight') %></h3>
+          <p><%= t('home.oceanFreightText') %></p>
+          <a href="<%= locals.langPrefix %>/services/ocean-freight" class="read-more"><%= t('home.readMore') %> <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('home.whyLabel') %></span>
+      <h2><%= t('home.whyTitle') %></h2>
+      <p><%= t('home.whyText') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <div>
+          <h3><%= t('home.whyCustomer') %></h3>
+          <p><%= t('home.whyCustomerText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-credit-card"></i></div>
+        <div>
+          <h3><%= t('home.whyPayment') %></h3>
+          <p><%= t('home.whyPaymentText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-chart-line"></i></div>
+        <div>
+          <h3><%= t('home.whyManagement') %></h3>
+          <p><%= t('home.whyManagementText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+        <div>
+          <h3><%= t('home.whyCompliance') %></h3>
+          <p><%= t('home.whyComplianceText') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-banner-bg">
+    <img src="/images/608468a5-4b88-4999-85f1-990bf2000d51.jpeg" alt="Logistics operations">
+  </div>
+  <div class="container">
+    <h2><%= t('home.ctaTitle') %></h2>
+    <p><%= t('home.ctaText') %></p>
+    <a href="<%= locals.langPrefix %>/quote" class="btn-white"><%= t('home.ctaButton') %> <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('home.portfolioLabel') %></span>
+      <h2><%= t('home.portfolioTitle') %></h2>
+      <p><%= t('home.portfolioText') %></p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-card-img"><img src="/images/cardboard-boxes-on-shelves-in-warehouse.jpg" alt="<%= t('home.portfolioWarehousing') %>"></div>
+        <div class="portfolio-card-body">
+          <span class="portfolio-tag"><%= t('home.portfolioWarehousing') %></span>
+          <h3><%= t('home.portfolioWarehouseTitle') %></h3>
+          <p><%= t('home.portfolioWarehouseText') %></p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-card-img"><img src="/images/853d7894-c185-403b-896f-a5b174ab99e8.jpeg" alt="<%= t('home.portfolioTransportation') %>"></div>
+        <div class="portfolio-card-body">
+          <span class="portfolio-tag"><%= t('home.portfolioTransportation') %></span>
+          <h3><%= t('home.portfolioFreightTitle') %></h3>
+          <p><%= t('home.portfolioFreightText') %></p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-card-img"><img src="/images/634ab3e0-733d-430f-8c37-31a6e151f386.jpeg" alt="<%= t('home.portfolioPartnership') %>"></div>
+        <div class="portfolio-card-body">
+          <span class="portfolio-tag"><%= t('home.portfolioPartnership') %></span>
+          <h3><%= t('home.portfolioPartnerTitle') %></h3>
+          <p><%= t('home.portfolioPartnerText') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('home.testimonialsLabel') %></span>
+      <h2><%= t('home.testimonialsTitle') %></h2>
+    </div>
+    <% var testimonialData = t('testimonials'); %>
+    <div class="testimonial-card">
+      <blockquote><%= testimonialData[0].text %></blockquote>
+      <div class="testimonial-author"><%= testimonialData[0].name %></div>
+      <div class="testimonial-role"><%= testimonialData[0].role %></div>
+      <div class="testimonial-avatars">
+        <div class="avatar active">GC</div>
+        <div class="avatar">MT</div>
+        <div class="avatar">WG</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('home.clientsLabel') %></span>
+      <h2><%= t('home.clientsTitle') %></h2>
+    </div>
+    <div class="clients-track">
+      <img src="/images/client_logo1.jpg" alt="Client 1">
+      <img src="/images/client_logo2-1.jpg" alt="Client 2">
+      <img src="/images/client_logo3.jpg" alt="Client 3">
+      <img src="/images/client_logo4.jpg" alt="Client 4">
+      <img src="/images/client_logo5.jpg" alt="Client 5">
+    </div>
+  </div>
+</section>
+
+<!-- RECENT BLOG POSTS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('home.blogLabel') %></span>
+      <h2><%= t('home.blogTitle') %></h2>
+      <p><%= t('home.blogText') %></p>
+    </div>
+    <div class="blog-grid">
+      <% recentPosts.forEach(function(post) { %>
+      <div class="blog-card">
+        <div class="blog-card-img"><img src="/images/<%= post.image %>" alt="<%= post.title %>"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-category"><%= post.category %></span>
+            <span class="blog-date"><i class="far fa-calendar"></i> <%= post.date %></span>
+          </div>
+          <h3><a href="<%= locals.langPrefix %>/blog/<%= post.slug %>"><%= post.title %></a></h3>
+          <p><%= post.excerpt.substring(0, 120) %>...</p>
+          <a href="<%= locals.langPrefix %>/blog/<%= post.slug %>" class="read-more"><%= t('home.readMore') %> <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <div style="text-align:center;margin-top:var(--space-10)">
+      <a href="<%= locals.langPrefix %>/blog" class="btn-primary"><%= t('home.viewAllPosts') %> <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

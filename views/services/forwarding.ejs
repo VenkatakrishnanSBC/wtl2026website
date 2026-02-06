@@ -1,0 +1,170 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('servicesForwarding.pageTitle'); locals.pageSubtitle = t('servicesForwarding.pageSubtitle'); locals.breadcrumb = [{label: t('servicesForwarding.breadcrumbParent'), url: (locals.langPrefix || '') + '/services'}, {label: t('servicesForwarding.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div class="about-text">
+        <span class="section-label"><%= t('servicesForwarding.sectionLabel') %></span>
+        <h2><%= t('servicesForwarding.overviewTitle') %></h2>
+        <p>
+          <%= t('servicesForwarding.overviewText1') %>
+        </p>
+        <p>
+          <%= t('servicesForwarding.overviewText2') %>
+        </p>
+        <p>
+          <%= t('servicesForwarding.overviewText3') %>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/images/608468a5-4b88-4999-85f1-990bf2000d51.jpeg" alt="Freight Forwarding Operations" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Services Section -->
+<section class="section" style="padding: 80px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesForwarding.coreServicesLabel') %></span>
+      <h2><%= t('servicesForwarding.coreServicesTitle') %></h2>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesForwarding.docsTitle') %></h3>
+          <p><%= t('servicesForwarding.docsText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesForwarding.docsFeature1') %></li>
+            <li><%= t('servicesForwarding.docsFeature2') %></li>
+            <li><%= t('servicesForwarding.docsFeature3') %></li>
+            <li><%= t('servicesForwarding.docsFeature4') %></li>
+            <li><%= t('servicesForwarding.docsFeature5') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesForwarding.customsTitle') %></h3>
+          <p><%= t('servicesForwarding.customsText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesForwarding.customsFeature1') %></li>
+            <li><%= t('servicesForwarding.customsFeature2') %></li>
+            <li><%= t('servicesForwarding.customsFeature3') %></li>
+            <li><%= t('servicesForwarding.customsFeature4') %></li>
+            <li><%= t('servicesForwarding.customsFeature5') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesForwarding.insuranceTitle') %></h3>
+          <p><%= t('servicesForwarding.insuranceText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesForwarding.insuranceFeature1') %></li>
+            <li><%= t('servicesForwarding.insuranceFeature2') %></li>
+            <li><%= t('servicesForwarding.insuranceFeature3') %></li>
+            <li><%= t('servicesForwarding.insuranceFeature4') %></li>
+            <li><%= t('servicesForwarding.insuranceFeature5') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesForwarding.consolidationTitle') %></h3>
+          <p><%= t('servicesForwarding.consolidationText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesForwarding.consolidationFeature1') %></li>
+            <li><%= t('servicesForwarding.consolidationFeature2') %></li>
+            <li><%= t('servicesForwarding.consolidationFeature3') %></li>
+            <li><%= t('servicesForwarding.consolidationFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesForwarding.complianceTitle') %></h3>
+          <p><%= t('servicesForwarding.complianceText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesForwarding.complianceFeature1') %></li>
+            <li><%= t('servicesForwarding.complianceFeature2') %></li>
+            <li><%= t('servicesForwarding.complianceFeature3') %></li>
+            <li><%= t('servicesForwarding.complianceFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesForwarding.advisoryTitle') %></h3>
+          <p><%= t('servicesForwarding.advisoryText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesForwarding.advisoryFeature1') %></li>
+            <li><%= t('servicesForwarding.advisoryFeature2') %></li>
+            <li><%= t('servicesForwarding.advisoryFeature3') %></li>
+            <li><%= t('servicesForwarding.advisoryFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why WTL Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesForwarding.advantage') %></span>
+      <h2><%= t('servicesForwarding.whyTitle') %></h2>
+    </div>
+
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#127891;</div>
+        <h4><%= t('servicesForwarding.whyLicensedTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesForwarding.whyLicensedText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#127760;</div>
+        <h4><%= t('servicesForwarding.whyNetworkTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesForwarding.whyNetworkText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128187;</div>
+        <h4><%= t('servicesForwarding.whyDigitalTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesForwarding.whyDigitalText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#129309;</div>
+        <h4><%= t('servicesForwarding.whyPersonalTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesForwarding.whyPersonalText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2a5a8c); text-align: center; color: #fff;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><%= t('servicesForwarding.ctaTitle') %></h2>
+    <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <%= t('servicesForwarding.ctaText') %>
+    </p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote" style="display: inline-block; padding: 15px 40px; background: #f0a500; color: #1a3a5c; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1.1rem;"><%= t('servicesForwarding.ctaButton') %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

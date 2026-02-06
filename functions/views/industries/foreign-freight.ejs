@@ -1,0 +1,126 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('industriesForeign.pageTitle'); locals.pageSubtitle = t('industriesForeign.pageSubtitle'); locals.breadcrumb = [{label: t('industriesForeign.breadcrumbParent'), url: (locals.langPrefix || '') + '/industries'}, {label: t('industriesForeign.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label"><%= t('industriesForeign.overviewLabel') %></div>
+        <h2><%= t('industriesForeign.overviewTitle') %></h2>
+        <p><%= t('industriesForeign.overviewText1') %></p>
+        <p><%= t('industriesForeign.overviewText2') %></p>
+        <p><%= t('industriesForeign.overviewText3') %></p>
+      </div>
+      <div class="about-image">
+        <img src="/images/aerial-view-of-containers-loading-and-unloading-to-the-ship-in-the-sea-port-logistic-and.jpg" alt="<%= t('industriesForeign.overviewImageAlt') %>">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Grid -->
+<section class="section" style="padding: 80px 0; background-color: #f8f9fa;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('industriesForeign.benefitsLabel') %></div>
+      <h2><%= t('industriesForeign.benefitsTitle') %></h2>
+      <p><%= t('industriesForeign.benefitsSubtitle') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-globe-americas"></i>
+        </div>
+        <h3><%= t('industriesForeign.benefit1Title') %></h3>
+        <p><%= t('industriesForeign.benefit1Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-file-invoice"></i>
+        </div>
+        <h3><%= t('industriesForeign.benefit2Title') %></h3>
+        <p><%= t('industriesForeign.benefit2Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3><%= t('industriesForeign.benefit3Title') %></h3>
+        <p><%= t('industriesForeign.benefit3Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3><%= t('industriesForeign.benefit4Title') %></h3>
+        <p><%= t('industriesForeign.benefit4Text') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('industriesForeign.processLabel') %></div>
+      <h2><%= t('industriesForeign.processTitle') %></h2>
+      <p><%= t('industriesForeign.processSubtitle') %></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesForeign.step1Title') %></h3>
+          <p><%= t('industriesForeign.step1Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesForeign.step2Title') %></h3>
+          <p><%= t('industriesForeign.step2Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesForeign.step3Title') %></h3>
+          <p><%= t('industriesForeign.step3Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesForeign.step4Title') %></h3>
+          <p><%= t('industriesForeign.step4Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesForeign.step5Title') %></h3>
+          <p><%= t('industriesForeign.step5Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesForeign.step6Title') %></h3>
+          <p><%= t('industriesForeign.step6Text') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: #fff; text-align: center;">
+  <div class="container">
+    <h2><%= t('industriesForeign.ctaTitle') %></h2>
+    <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem; opacity: 0.9;"><%= t('industriesForeign.ctaText') %></p>
+    <div style="margin-top: 30px;">
+      <a href="<%= locals.langPrefix || '' %>/contact/inquiry" class="btn-primary" style="margin-right: 15px;"><%= t('industriesForeign.ctaButton1') %></a>
+      <a href="<%= locals.langPrefix || '' %>/contact/contact" class="btn-quote"><%= t('industriesForeign.ctaButton2') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

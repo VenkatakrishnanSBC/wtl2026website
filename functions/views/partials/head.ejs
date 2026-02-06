@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="<%= locals.lang || 'en' %>">
+<head>
+  <!-- Google Consent Mode v2 (must be before gtag) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    // If user already accepted, grant immediately
+    if (document.cookie.indexOf('wtl_consent=granted') !== -1) {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVG2LR3XV1"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-QVG2LR3XV1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= typeof description !== 'undefined' && description ? description : 'World Trans & Logistics — comprehensive logistics solutions by sea, air, and land across West Africa and beyond.' %>">
+  <link rel="canonical" href="<%= typeof canonicalUrl !== 'undefined' && canonicalUrl ? canonicalUrl : 'https://worldtransgroup.com' %>">
+
+  <!-- Hreflang tags -->
+  <link rel="alternate" hreflang="en" href="<%= typeof enUrl !== 'undefined' ? enUrl : 'https://worldtransgroup.com' %>">
+  <link rel="alternate" hreflang="fr" href="<%= typeof frUrl !== 'undefined' ? frUrl : 'https://worldtransgroup.com/fr/' %>">
+  <link rel="alternate" hreflang="de" href="<%= typeof deUrl !== 'undefined' ? deUrl : 'https://worldtransgroup.com/de/' %>">
+  <link rel="alternate" hreflang="x-default" href="<%= typeof enUrl !== 'undefined' ? enUrl : 'https://worldtransgroup.com' %>">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="World Trans & Logistics">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= typeof description !== 'undefined' && description ? description : 'World Trans & Logistics — comprehensive logistics solutions by sea, air, and land across West Africa and beyond.' %>">
+  <meta property="og:url" content="<%= typeof canonicalUrl !== 'undefined' && canonicalUrl ? canonicalUrl : 'https://worldtransgroup.com' %>">
+  <meta property="og:image" content="<%= typeof ogImage !== 'undefined' && ogImage ? ogImage : 'https://worldtransgroup.com/images/cropped-WTLS-192x192.png' %>">
+  <meta property="og:locale" content="<%= (locals.lang || 'en') === 'fr' ? 'fr_FR' : (locals.lang || 'en') === 'de' ? 'de_DE' : 'en_US' %>">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= title %>">
+  <meta name="twitter:description" content="<%= typeof description !== 'undefined' && description ? description : 'World Trans & Logistics — comprehensive logistics solutions by sea, air, and land across West Africa and beyond.' %>">
+  <meta name="twitter:image" content="<%= typeof ogImage !== 'undefined' && ogImage ? ogImage : 'https://worldtransgroup.com/images/cropped-WTLS-192x192.png' %>">
+
+  <title><%= title %></title>
+  <link rel="icon" href="/images/cropped-WTLS-192x192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Organization Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "World Trans & Logistics",
+    "alternateName": "WTL",
+    "url": "https://worldtransgroup.com",
+    "logo": "https://worldtransgroup.com/images/WORLD-TRANS-AND-LOGISTICS-1.png",
+    "image": "https://worldtransgroup.com/images/cropped-WTLS-192x192.png",
+    "description": "Comprehensive logistics solutions by sea, air, and land across West Africa and beyond.",
+    "foundingDate": "2000",
+    "founder": {
+      "@type": "Person",
+      "name": "Mamadou Sall"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dakar",
+      "addressCountry": "SN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+221-33-822-7111",
+      "contactType": "customer service",
+      "email": "info@worldtransgroup.com",
+      "availableLanguage": ["English", "French", "German"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/worldtransgroup",
+      "https://www.linkedin.com/company/worldtransgroup"
+    ]
+  }
+  </script>
+  <% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
+  <script type="application/ld+json"><%- JSON.stringify(jsonLd) %></script>
+  <% } %>
+</head>
+<body>
+<div class="page-loader" id="pageLoader">
+  <div class="loader-icon">
+    <img src="/images/cropped-WTLS-192x192.png" alt="WTL">
+    <div class="loader-ring"></div>
+    <div class="loader-ring-outer"></div>
+  </div>
+</div>

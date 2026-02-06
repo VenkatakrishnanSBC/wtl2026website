@@ -1,0 +1,170 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('servicesOcean.pageTitle'); locals.pageSubtitle = t('servicesOcean.pageSubtitle'); locals.breadcrumb = [{label: t('servicesOcean.breadcrumbParent'), url: (locals.langPrefix || '') + '/services'}, {label: t('servicesOcean.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div class="about-text">
+        <span class="section-label"><%= t('servicesOcean.sectionLabel') %></span>
+        <h2><%= t('servicesOcean.overviewTitle') %></h2>
+        <p>
+          <%= t('servicesOcean.overviewText1') %>
+        </p>
+        <p>
+          <%= t('servicesOcean.overviewText2') %>
+        </p>
+        <p>
+          <%= t('servicesOcean.overviewText3') %>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/images/a-large-tanker-cargo-ship-is-being-renovated-and-painted-in-shipyard-dry-dock.jpg" alt="Ocean Freight - WTL Ship Operations" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Options Section -->
+<section class="section" style="padding: 80px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesOcean.serviceOptions') %></span>
+      <h2><%= t('servicesOcean.serviceOptionsTitle') %></h2>
+      <p style="max-width: 700px; margin: 0 auto; color: #666;">
+        <%= t('servicesOcean.serviceOptionsText') %>
+      </p>
+    </div>
+
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesOcean.fclTitle') %></h3>
+          <p><%= t('servicesOcean.fclText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesOcean.fclFeature1') %></li>
+            <li><%= t('servicesOcean.fclFeature2') %></li>
+            <li><%= t('servicesOcean.fclFeature3') %></li>
+            <li><%= t('servicesOcean.fclFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesOcean.lclTitle') %></h3>
+          <p><%= t('servicesOcean.lclText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesOcean.lclFeature1') %></li>
+            <li><%= t('servicesOcean.lclFeature2') %></li>
+            <li><%= t('servicesOcean.lclFeature3') %></li>
+            <li><%= t('servicesOcean.lclFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesOcean.breakbulkTitle') %></h3>
+          <p><%= t('servicesOcean.breakbulkText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesOcean.breakbulkFeature1') %></li>
+            <li><%= t('servicesOcean.breakbulkFeature2') %></li>
+            <li><%= t('servicesOcean.breakbulkFeature3') %></li>
+            <li><%= t('servicesOcean.breakbulkFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Services Row -->
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px;">
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesOcean.reeferTitle') %></h3>
+          <p><%= t('servicesOcean.reeferText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesOcean.reeferFeature1') %></li>
+            <li><%= t('servicesOcean.reeferFeature2') %></li>
+            <li><%= t('servicesOcean.reeferFeature3') %></li>
+            <li><%= t('servicesOcean.reeferFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesOcean.portToPortTitle') %></h3>
+          <p><%= t('servicesOcean.portToPortText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesOcean.portToPortFeature1') %></li>
+            <li><%= t('servicesOcean.portToPortFeature2') %></li>
+            <li><%= t('servicesOcean.portToPortFeature3') %></li>
+            <li><%= t('servicesOcean.portToPortFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        <div class="service-card-body" style="padding: 30px;">
+          <h3 style="color: #1a3a5c;"><%= t('servicesOcean.customsTitle') %></h3>
+          <p><%= t('servicesOcean.customsText') %></p>
+          <ul style="padding-left: 20px; color: #555; margin-top: 15px;">
+            <li><%= t('servicesOcean.customsFeature1') %></li>
+            <li><%= t('servicesOcean.customsFeature2') %></li>
+            <li><%= t('servicesOcean.customsFeature3') %></li>
+            <li><%= t('servicesOcean.customsFeature4') %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="section-label"><%= t('servicesOcean.advantage') %></span>
+      <h2><%= t('servicesOcean.whyTitle') %></h2>
+    </div>
+
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#9875;</div>
+        <h4><%= t('servicesOcean.whyPortTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesOcean.whyPortText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128203;</div>
+        <h4><%= t('servicesOcean.whyDocsTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesOcean.whyDocsText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128274;</div>
+        <h4><%= t('servicesOcean.whyInsuranceTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesOcean.whyInsuranceText') %></p>
+      </div>
+      <div class="why-card" style="text-align: center; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06);">
+        <div class="why-icon" style="font-size: 2.5rem; margin-bottom: 15px;">&#128337;</div>
+        <h4><%= t('servicesOcean.whyScheduleTitle') %></h4>
+        <p style="color: #666;"><%= t('servicesOcean.whyScheduleText') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2a5a8c); text-align: center; color: #fff;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><%= t('servicesOcean.ctaTitle') %></h2>
+    <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <%= t('servicesOcean.ctaText') %>
+    </p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-quote" style="display: inline-block; padding: 15px 40px; background: #f0a500; color: #1a3a5c; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1.1rem;"><%= t('servicesOcean.ctaButton') %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

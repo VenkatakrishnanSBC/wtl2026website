@@ -1,0 +1,26 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="section" style="min-height:60vh;display:flex;align-items:center">
+  <div class="container" style="text-align:center;max-width:600px">
+    <div style="font-size:8rem;font-weight:800;color:var(--blue);line-height:1;opacity:0.15">404</div>
+    <h1 style="font-size:2rem;margin-bottom:12px;margin-top:-20px"><%= t('404.heading') %></h1>
+    <p style="color:var(--gray);font-size:1.05rem;margin-bottom:30px"><%= t('404.text') %></p>
+    <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-bottom:40px">
+      <a href="<%= locals.langPrefix %>/" class="btn-primary"><%= t('404.goHome') %> <i class="fas fa-home"></i></a>
+      <a href="<%= locals.langPrefix %>/contact" class="btn-outline" style="border-color:var(--blue);color:var(--blue)"><%= t('404.contactUs') %> <i class="fas fa-envelope"></i></a>
+    </div>
+    <div style="border-top:1px solid #e5e7eb;padding-top:25px">
+      <p style="color:var(--gray);font-size:0.9rem;margin-bottom:15px"><%= t('404.popularPages') %></p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="<%= locals.langPrefix %>/services/freight" style="color:var(--blue);font-size:0.9rem"><%= t('footer.airFreight') %></a>
+        <a href="<%= locals.langPrefix %>/services/ocean-freight" style="color:var(--blue);font-size:0.9rem"><%= t('footer.oceanFreight') %></a>
+        <a href="<%= locals.langPrefix %>/quote" style="color:var(--blue);font-size:0.9rem"><%= t('nav.getQuote') %></a>
+        <a href="<%= locals.langPrefix %>/blog" style="color:var(--blue);font-size:0.9rem"><%= t('nav.blog') %></a>
+        <a href="<%= locals.langPrefix %>/contact/faqs" style="color:var(--blue);font-size:0.9rem"><%= t('nav.faqs') %></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

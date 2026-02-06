@@ -1,0 +1,126 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('industriesImport.pageTitle'); locals.pageSubtitle = t('industriesImport.pageSubtitle'); locals.breadcrumb = [{label: t('industriesImport.breadcrumbParent'), url: (locals.langPrefix || '') + '/industries'}, {label: t('industriesImport.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Overview Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label"><%= t('industriesImport.overviewLabel') %></div>
+        <h2><%= t('industriesImport.overviewTitle') %></h2>
+        <p><%= t('industriesImport.overviewText1') %></p>
+        <p><%= t('industriesImport.overviewText2') %></p>
+        <p><%= t('industriesImport.overviewText3') %></p>
+      </div>
+      <div class="about-image">
+        <img src="/images/608468a5-4b88-4999-85f1-990bf2000d51.jpeg" alt="<%= t('industriesImport.overviewImageAlt') %>">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Import Process Steps -->
+<section class="section" style="padding: 80px 0; background-color: #f8f9fa;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('industriesImport.processLabel') %></div>
+      <h2><%= t('industriesImport.processTitle') %></h2>
+      <p><%= t('industriesImport.processSubtitle') %></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesImport.step1Title') %></h3>
+          <p><%= t('industriesImport.step1Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesImport.step2Title') %></h3>
+          <p><%= t('industriesImport.step2Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesImport.step3Title') %></h3>
+          <p><%= t('industriesImport.step3Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesImport.step4Title') %></h3>
+          <p><%= t('industriesImport.step4Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesImport.step5Title') %></h3>
+          <p><%= t('industriesImport.step5Text') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <h3><%= t('industriesImport.step6Title') %></h3>
+          <p><%= t('industriesImport.step6Text') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compliance Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('industriesImport.complianceLabel') %></div>
+      <h2><%= t('industriesImport.complianceTitle') %></h2>
+      <p><%= t('industriesImport.complianceSubtitle') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3><%= t('industriesImport.compliance1Title') %></h3>
+        <p><%= t('industriesImport.compliance1Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-balance-scale"></i>
+        </div>
+        <h3><%= t('industriesImport.compliance2Title') %></h3>
+        <p><%= t('industriesImport.compliance2Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3><%= t('industriesImport.compliance3Title') %></h3>
+        <p><%= t('industriesImport.compliance3Text') %></p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <h3><%= t('industriesImport.compliance4Title') %></h3>
+        <p><%= t('industriesImport.compliance4Text') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: #fff; text-align: center;">
+  <div class="container">
+    <h2><%= t('industriesImport.ctaTitle') %></h2>
+    <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem; opacity: 0.9;"><%= t('industriesImport.ctaText') %></p>
+    <div style="margin-top: 30px;">
+      <a href="<%= locals.langPrefix || '' %>/contact/inquiry" class="btn-primary" style="margin-right: 15px;"><%= t('industriesImport.ctaButton1') %></a>
+      <a href="<%= locals.langPrefix || '' %>/contact/contact" class="btn-quote"><%= t('industriesImport.ctaButton2') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,138 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('aboutNetworks.pageTitle'); locals.pageSubtitle = t('aboutNetworks.pageSubtitle'); locals.breadcrumb = [{label: t('aboutNetworks.breadcrumbParent'), url: (locals.langPrefix || '') + '/about'}, {label: t('aboutNetworks.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- NETWORK OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/images/aerial-view-of-containers-loading-and-unloading-to-the-ship-in-the-sea-port-logistic-and.jpg" alt="Aerial view of container port operations">
+      </div>
+      <div class="about-text">
+        <span class="section-label"><%= t('aboutNetworks.networkLabel') %></span>
+        <h2><%= t('aboutNetworks.networkTitle') %></h2>
+        <p><%= t('aboutNetworks.networkP1') %></p>
+        <p><%= t('aboutNetworks.networkP2') %></p>
+        <p><%= t('aboutNetworks.networkP3') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAKAR HQ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutNetworks.hqLabel') %></span>
+      <h2><%= t('aboutNetworks.hqTitle') %></h2>
+      <p><%= t('aboutNetworks.hqText') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-map-pin"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.headOfficeTitle') %></h3>
+          <p><%= t('aboutNetworks.headOfficeText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-anchor"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.portTitle') %></h3>
+          <p><%= t('aboutNetworks.portText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-plane-departure"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.airHubTitle') %></h3>
+          <p><%= t('aboutNetworks.airHubText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-warehouse"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.warehouseTitle') %></h3>
+          <p><%= t('aboutNetworks.warehouseText') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONAL COVERAGE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutNetworks.regionalLabel') %></span>
+      <h2><%= t('aboutNetworks.regionalTitle') %></h2>
+      <p><%= t('aboutNetworks.regionalText') %></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe-africa"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.westAfricaTitle') %></h3>
+          <p><%= t('aboutNetworks.westAfricaText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe-europe"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.europeTitle') %></h3>
+          <p><%= t('aboutNetworks.europeText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe-asia"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.asiaTitle') %></h3>
+          <p><%= t('aboutNetworks.asiaText') %></p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe-americas"></i></div>
+        <div>
+          <h3><%= t('aboutNetworks.americasTitle') %></h3>
+          <p><%= t('aboutNetworks.americasText') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC PORTS & AGENT NETWORK -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><%= t('aboutNetworks.strategicLabel') %></span>
+      <h2><%= t('aboutNetworks.strategicTitle') %></h2>
+      <p><%= t('aboutNetworks.strategicText') %></p>
+    </div>
+    <div class="content-grid">
+      <div>
+        <h3><%= t('aboutNetworks.portConnectionsTitle') %></h3>
+        <p><%= t('aboutNetworks.portConnectionsP1') %></p>
+        <p><%= t('aboutNetworks.portConnectionsP2') %></p>
+      </div>
+      <div>
+        <h3><%= t('aboutNetworks.agentNetworkTitle') %></h3>
+        <p><%= t('aboutNetworks.agentNetworkP1') %></p>
+        <p><%= t('aboutNetworks.agentNetworkP2') %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2><%= t('aboutNetworks.ctaTitle') %></h2>
+    <p><%= t('aboutNetworks.ctaText') %></p>
+    <a href="<%= locals.langPrefix || '' %>/quote" class="btn-primary"><%= t('aboutNetworks.ctaButton') %> <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

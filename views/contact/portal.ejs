@@ -1,0 +1,126 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<% locals.pageTitle = t('contactPortal.pageTitle'); locals.pageSubtitle = t('contactPortal.pageSubtitle'); locals.breadcrumb = [{label: t('contactPortal.breadcrumbParent'), url: (locals.langPrefix || '') + '/contact'}, {label: t('contactPortal.breadcrumbCurrent')}]; %>
+<%- include('../partials/page-hero') %>
+
+<!-- Portal Login & Features Section -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Left: Login Form -->
+      <div class="about-text">
+        <div class="section-label"><%= t('contactPortal.secureAccess') %></div>
+        <h2><%= t('contactPortal.loginHeading') %></h2>
+        <p style="margin-bottom: 30px;"><%= t('contactPortal.loginText') %></p>
+
+        <div class="quote-form" style="background: #f8f9fa; padding: 35px; border-radius: 10px; max-width: 450px;">
+          <form action="<%= locals.langPrefix || '' %>/contact/portal/login" method="POST">
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="email" style="display: block; margin-bottom: 8px; font-weight: 600;"><%= t('contactPortal.labelEmail') %></label>
+              <input type="email" id="email" name="email" placeholder="<%= t('contactPortal.placeholderEmail') %>" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="password" style="display: block; margin-bottom: 8px; font-weight: 600;"><%= t('contactPortal.labelPassword') %></label>
+              <input type="password" id="password" name="password" placeholder="<%= t('contactPortal.placeholderPassword') %>" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+            </div>
+            <div class="form-group" style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center;">
+              <label style="display: flex; align-items: center; cursor: pointer; font-size: 0.95rem; color: #555;">
+                <input type="checkbox" name="remember" style="margin-right: 8px;"> <%= t('contactPortal.rememberMe') %>
+              </label>
+              <a href="#" style="font-size: 0.95rem; color: #1a3a5c; text-decoration: none;"><%= t('contactPortal.forgotPassword') %></a>
+            </div>
+            <button type="submit" class="btn-submit" style="width: 100%; padding: 14px; font-size: 1rem;"><%= t('contactPortal.loginButton') %></button>
+          </form>
+          <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #888;"><%= t('contactPortal.noAccountText') %> <a href="<%= locals.langPrefix || '' %>/contact/contact" style="color: #1a3a5c; text-decoration: underline;"><%= t('contactPortal.noAccountLink') %></a> <%= t('contactPortal.noAccountSuffix') %></p>
+        </div>
+      </div>
+
+      <!-- Right: Portal Image -->
+      <div class="about-image">
+        <img src="/images/634ab3e0-733d-430f-8c37-31a6e151f386.jpeg" alt="WTL Customer Portal Dashboard">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Portal Features -->
+<section class="section" style="padding: 80px 0; background-color: #f8f9fa;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><%= t('contactPortal.featuresLabel') %></div>
+      <h2><%= t('contactPortal.featuresHeading') %></h2>
+      <p><%= t('contactPortal.featuresText') %></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2.5rem; color: #1a3a5c; margin-bottom: 15px;">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3><%= t('contactPortal.trackingTitle') %></h3>
+          <p><%= t('contactPortal.trackingText') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2.5rem; color: #1a3a5c; margin-bottom: 15px;">
+            <i class="fas fa-folder-open"></i>
+          </div>
+          <h3><%= t('contactPortal.documentsTitle') %></h3>
+          <p><%= t('contactPortal.documentsText') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2.5rem; color: #1a3a5c; margin-bottom: 15px;">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <h3><%= t('contactPortal.invoiceTitle') %></h3>
+          <p><%= t('contactPortal.invoiceText') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2.5rem; color: #1a3a5c; margin-bottom: 15px;">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3><%= t('contactPortal.bookingTitle') %></h3>
+          <p><%= t('contactPortal.bookingText') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2.5rem; color: #1a3a5c; margin-bottom: 15px;">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3><%= t('contactPortal.analyticsTitle') %></h3>
+          <p><%= t('contactPortal.analyticsText') %></p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-body">
+          <div style="font-size: 2.5rem; color: #1a3a5c; margin-bottom: 15px;">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3><%= t('contactPortal.supportTitle') %></h3>
+          <p><%= t('contactPortal.supportText') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: #fff; text-align: center;">
+  <div class="container">
+    <h2><%= t('contactPortal.ctaTitle') %></h2>
+    <p style="max-width: 600px; margin: 15px auto; opacity: 0.9;"><%= t('contactPortal.ctaText') %></p>
+    <div style="margin-top: 25px;">
+      <a href="<%= locals.langPrefix || '' %>/contact/contact" class="btn-primary"><%= t('contactPortal.ctaButton') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
