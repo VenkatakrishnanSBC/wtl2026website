@@ -1,45 +1,130 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => res.render('about/overview', {
-  title: res.locals.t('about.overviewTitle'),
-  currentPage: 'about',
-  description: res.locals.t('about.overviewDescription')
-}));
+const DOMAIN = 'https://worldtransgroup.com';
 
-router.get('/overview', (req, res) => res.render('about/overview', {
-  title: res.locals.t('about.overviewTitle2'),
-  currentPage: 'about',
-  description: res.locals.t('about.overviewDescription2')
-}));
+function breadcrumb(lang, items) {
+  const prefix = lang === 'fr' ? '/fr' : lang === 'de' ? '/de' : '';
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": DOMAIN + prefix + item.path
+    }))
+  };
+}
 
-router.get('/vision', (req, res) => res.render('about/vision', {
-  title: res.locals.t('about.visionTitle'),
-  currentPage: 'about',
-  description: res.locals.t('about.visionDescription')
-}));
+router.get('/', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('about/overview', {
+    title: t('about.overviewTitle'),
+    currentPage: 'about',
+    description: t('about.overviewDescription'),
+    keywords: t('about.overviewKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.about'), path: '/about' }
+    ])
+  });
+});
 
-router.get('/mission', (req, res) => res.render('about/mission', {
-  title: res.locals.t('about.missionTitle'),
-  currentPage: 'about',
-  description: res.locals.t('about.missionDescription')
-}));
+router.get('/overview', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('about/overview', {
+    title: t('about.overviewTitle2'),
+    currentPage: 'about',
+    description: t('about.overviewDescription2'),
+    keywords: t('about.overviewKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.about'), path: '/about' },
+      { name: t('nav.overview'), path: '/about/overview' }
+    ])
+  });
+});
 
-router.get('/team', (req, res) => res.render('about/team', {
-  title: res.locals.t('about.teamTitle'),
-  currentPage: 'about',
-  description: res.locals.t('about.teamDescription')
-}));
+router.get('/vision', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('about/vision', {
+    title: t('about.visionTitle'),
+    currentPage: 'about',
+    description: t('about.visionDescription'),
+    keywords: t('about.visionKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.about'), path: '/about' },
+      { name: t('nav.vision'), path: '/about/vision' }
+    ])
+  });
+});
 
-router.get('/values', (req, res) => res.render('about/values', {
-  title: res.locals.t('about.valuesTitle'),
-  currentPage: 'about',
-  description: res.locals.t('about.valuesDescription')
-}));
+router.get('/mission', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('about/mission', {
+    title: t('about.missionTitle'),
+    currentPage: 'about',
+    description: t('about.missionDescription'),
+    keywords: t('about.missionKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.about'), path: '/about' },
+      { name: t('nav.mission'), path: '/about/mission' }
+    ])
+  });
+});
 
-router.get('/networks', (req, res) => res.render('about/networks', {
-  title: res.locals.t('about.networksTitle'),
-  currentPage: 'about',
-  description: res.locals.t('about.networksDescription')
-}));
+router.get('/team', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('about/team', {
+    title: t('about.teamTitle'),
+    currentPage: 'about',
+    description: t('about.teamDescription'),
+    keywords: t('about.teamKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.about'), path: '/about' },
+      { name: t('nav.team'), path: '/about/team' }
+    ])
+  });
+});
+
+router.get('/values', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('about/values', {
+    title: t('about.valuesTitle'),
+    currentPage: 'about',
+    description: t('about.valuesDescription'),
+    keywords: t('about.valuesKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.about'), path: '/about' },
+      { name: t('nav.values'), path: '/about/values' }
+    ])
+  });
+});
+
+router.get('/networks', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('about/networks', {
+    title: t('about.networksTitle'),
+    currentPage: 'about',
+    description: t('about.networksDescription'),
+    keywords: t('about.networksKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.about'), path: '/about' },
+      { name: t('nav.networks'), path: '/about/networks' }
+    ])
+  });
+});
 
 module.exports = router;

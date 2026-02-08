@@ -31,6 +31,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<%= typeof description !== 'undefined' && description ? description : 'World Trans & Logistics — comprehensive logistics solutions by sea, air, and land across West Africa and beyond.' %>">
+  <% if (typeof keywords !== 'undefined' && keywords) { %><meta name="keywords" content="<%= keywords %>"><% } %>
   <link rel="canonical" href="<%= typeof canonicalUrl !== 'undefined' && canonicalUrl ? canonicalUrl : 'https://worldtransgroup.com' %>">
 
   <!-- Hreflang tags -->
@@ -97,7 +98,13 @@
   }
   </script>
   <% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
+    <% if (Array.isArray(jsonLd)) { %>
+      <% jsonLd.forEach(function(schema) { %>
+  <script type="application/ld+json"><%- JSON.stringify(schema) %></script>
+      <% }); %>
+    <% } else { %>
   <script type="application/ld+json"><%- JSON.stringify(jsonLd) %></script>
+    <% } %>
   <% } %>
 </head>
 <body>

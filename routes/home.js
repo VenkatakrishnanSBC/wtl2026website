@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
     currentPage: 'home',
     recentPosts,
     description: t('home.description'),
+    keywords: t('home.keywords'),
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "WebSite",

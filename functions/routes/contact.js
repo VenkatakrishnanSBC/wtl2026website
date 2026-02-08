@@ -1,5 +1,21 @@
 const router = require('express').Router();
 
+const DOMAIN = 'https://worldtransgroup.com';
+
+function breadcrumb(lang, items) {
+  const prefix = lang === 'fr' ? '/fr' : lang === 'de' ? '/de' : '';
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": DOMAIN + prefix + item.path
+    }))
+  };
+}
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -87,36 +103,87 @@ const faqSchema = {
   ]
 };
 
-router.get('/', (req, res) => res.render('contact/contact', {
-  title: res.locals.t('contact.title'),
-  currentPage: 'contact',
-  description: res.locals.t('contact.description')
-}));
+router.get('/', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('contact/contact', {
+    title: t('contact.title'),
+    currentPage: 'contact',
+    description: t('contact.description'),
+    keywords: t('contact.keywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.contact'), path: '/contact' }
+    ])
+  });
+});
 
-router.get('/faqs', (req, res) => res.render('contact/faqs', {
-  title: res.locals.t('contact.faqsTitle'),
-  currentPage: 'contact',
-  description: res.locals.t('contact.faqsDescription'),
-  jsonLd: faqSchema
-}));
+router.get('/faqs', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('contact/faqs', {
+    title: t('contact.faqsTitle'),
+    currentPage: 'contact',
+    description: t('contact.faqsDescription'),
+    keywords: t('contact.faqsKeywords'),
+    jsonLd: [
+      faqSchema,
+      breadcrumb(lang, [
+        { name: t('nav.home'), path: '/' },
+        { name: t('nav.contact'), path: '/contact' },
+        { name: t('nav.faqs'), path: '/contact/faqs' }
+      ])
+    ]
+  });
+});
 
-router.get('/portal', (req, res) => res.render('contact/portal', {
-  title: res.locals.t('contact.portalTitle'),
-  currentPage: 'contact',
-  description: res.locals.t('contact.portalDescription')
-}));
+router.get('/portal', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('contact/portal', {
+    title: t('contact.portalTitle'),
+    currentPage: 'contact',
+    description: t('contact.portalDescription'),
+    keywords: t('contact.portalKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.contact'), path: '/contact' },
+      { name: t('nav.customerPortal'), path: '/contact/portal' }
+    ])
+  });
+});
 
-router.get('/inquiry', (req, res) => res.render('contact/inquiry', {
-  title: res.locals.t('contact.inquiryTitle'),
-  currentPage: 'contact',
-  description: res.locals.t('contact.inquiryDescription')
-}));
+router.get('/inquiry', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('contact/inquiry', {
+    title: t('contact.inquiryTitle'),
+    currentPage: 'contact',
+    description: t('contact.inquiryDescription'),
+    keywords: t('contact.inquiryKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.contact'), path: '/contact' },
+      { name: t('nav.inquiryForm'), path: '/contact/inquiry' }
+    ])
+  });
+});
 
-router.get('/locations', (req, res) => res.render('contact/locations', {
-  title: res.locals.t('contact.locationsTitle'),
-  currentPage: 'contact',
-  description: res.locals.t('contact.locationsDescription')
-}));
+router.get('/locations', (req, res) => {
+  const t = res.locals.t;
+  const lang = res.locals.lang;
+  res.render('contact/locations', {
+    title: t('contact.locationsTitle'),
+    currentPage: 'contact',
+    description: t('contact.locationsDescription'),
+    keywords: t('contact.locationsKeywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.contact'), path: '/contact' },
+      { name: t('nav.officeLocations'), path: '/contact/locations' }
+    ])
+  });
+});
 
 router.post('/inquiry', (req, res) => {
   res.render('contact/inquiry-success', {

@@ -1,6 +1,22 @@
 const router = require('express').Router();
 const posts = require('../data/blog');
 
+const DOMAIN = 'https://worldtransgroup.com';
+
+function breadcrumb(lang, items) {
+  const prefix = lang === 'fr' ? '/fr' : lang === 'de' ? '/de' : '';
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": DOMAIN + prefix + item.path
+    }))
+  };
+}
+
 router.get('/', (req, res) => {
   const t = res.locals.t;
   const lang = res.locals.lang;
@@ -25,7 +41,12 @@ router.get('/', (req, res) => {
     posts: filtered,
     categories,
     activeCategory: category || '',
-    description: t('blog.description')
+    description: t('blog.description'),
+    keywords: t('blog.keywords'),
+    jsonLd: breadcrumb(lang, [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.blog'), path: '/blog' }
+    ])
   });
 });
 
@@ -55,13 +76,46 @@ router.get('/:slug', (req, res) => {
       title: lang === 'fr' && p.fr_title ? p.fr_title : lang === 'de' && p.de_title ? p.de_title : p.title
     }));
 
+  const prefix = lang === 'fr' ? '/fr' : lang === 'de' ? '/de' : '';
+
   res.render('blog/post', {
     title: localizedPost.title + ' — WTL Blog',
     currentPage: 'blog',
     post: localizedPost,
     related,
     description: localizedPost.excerpt,
-    ogImage: 'https://worldtransgroup.com/images/' + post.image
+    ogImage: DOMAIN + '/images/' + post.image,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": localizedPost.title,
+        "description": localizedPost.excerpt,
+        "image": DOMAIN + '/images/' + post.image,
+        "datePublished": post.date,
+        "author": {
+          "@type": "Organization",
+          "name": post.author || "WTL Editorial"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "World Trans & Logistics",
+          "logo": {
+            "@type": "ImageObject",
+            "url": DOMAIN + "/images/WORLD-TRANS-AND-LOGISTICS-1.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": DOMAIN + prefix + '/blog/' + post.slug
+        }
+      },
+      breadcrumb(lang, [
+        { name: t('nav.home'), path: '/' },
+        { name: t('nav.blog'), path: '/blog' },
+        { name: localizedPost.title, path: '/blog/' + post.slug }
+      ])
+    ]
   });
 });
 
