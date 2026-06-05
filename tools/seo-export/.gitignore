@@ -1,0 +1,13 @@
+# Secrets — never commit credentials or local config
+.env
+credentials/
+*.json
+!.env.example
+
+# Exported data
+exports/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
