@@ -120,17 +120,17 @@
   },
   "testimonials": [
     {
-      "text": "\u201cEin herausragender Logistikpartner, der unsere Waren uber drei Kontinente ohne eine einzige Verzogerung geliefert hat. Die Echtzeitverfolgung machte den gesamten Prozess transparent.\u201d",
+      "text": "“Ein herausragender Logistikpartner, der unsere Waren uber drei Kontinente ohne eine einzige Verzogerung geliefert hat. Die Echtzeitverfolgung machte den gesamten Prozess transparent.”",
       "name": "George D. Coffey",
       "role": "Architekt"
     },
     {
-      "text": "\u201cWTL hat unsere Lieferkettenablaufe transformiert. Ihre Expertise in Zollabfertigung und Lagerhaltungslosungen war fur unser wachsendes Unternehmen von unschatzbarem Wert.\u201d",
+      "text": "“WTL hat unsere Lieferkettenablaufe transformiert. Ihre Expertise in Zollabfertigung und Lagerhaltungslosungen war fur unser wachsendes Unternehmen von unschatzbarem Wert.”",
       "name": "Melissa J. Talley",
       "role": "Unternehmerin"
     },
     {
-      "text": "\u201cZuverlassig, professionell und immer punktlich. WTL ist ein unverzichtbarer Bestandteil unserer internationalen Logistikstrategie geworden.\u201d",
+      "text": "“Zuverlassig, professionell und immer punktlich. WTL ist ein unverzichtbarer Bestandteil unserer internationalen Logistikstrategie geworden.”",
       "name": "Wilton Groves",
       "role": "Betriebsleiter"
     }
@@ -380,7 +380,10 @@
     "sustainText": "Als ein in Afrika verwurzeltes Unternehmen sind wir zutiefst nachhaltigen Praktiken verpflichtet. WTL arbeitet aktiv daran, die Umweltauswirkungen unserer Ablaufe durch Routenoptimierung, kraftstoffeffiziente Transportarten und Partnerschaften mit Spediteuren zu minimieren, die unser Engagement fur eine grunere Zukunft teilen. Wir sind uberzeugt, dass verantwortungsvolle Logistik nicht nur ethisch richtig ist -- sondern auch wirtschaftlich sinnvoll.",
     "ctaTitle": "Bereit, mit einem Logistikunternehmen zusammenzuarbeiten, das Westafrika wirklich versteht?",
     "ctaText": "Ob Sie Waren in den Senegal versenden, uber den Kontinent exportieren oder eine komplexe internationale Lieferkette verwalten, WTL hat die Expertise und das Netzwerk, um Ergebnisse zu liefern.",
-    "ctaButton": "Kontaktieren Sie uns noch heute"
+    "ctaButton": "Kontaktieren Sie uns noch heute",
+    "forwardingLead": "Unser Kernservice ist heute die",
+    "forwardingAnchor": "Spedition in Senegal",
+    "forwardingEnd": "-- gestutzt auf Zolllager, Zollabfertigung und Landtransport in der ECOWAS."
   },
   "aboutVision": {
     "pageTitle": "Unsere Vision",
@@ -496,7 +499,7 @@
     "breadcrumbCurrent": "Unsere Werte",
     "introLabel": "Woran wir glauben",
     "introTitle": "Kernwerte, die unser gesamtes Handeln leiten",
-    "introText": "Bei World Trans & Logistics sind unsere Werte nicht nur Worte auf Papier -- sie sind die Prinzipien, die unsere Entscheidungen formen, unsere Kultur definieren und bestimmen, wie wir mit unseren Kunden, Partnern und Gemeinschaften interagieren. Diese sechs Kernwerte sind in jeden Aspekt unserer Tatigkeit eingebettet, vom Vorstandszimmer bis zum Lagerboden.",
+    "introText": "WTL steht fur World Trans & Logistics. Unsere Werte sind nicht nur Worte auf Papier -- sie sind die Prinzipien, die unsere Entscheidungen formen, unsere Kultur definieren und bestimmen, wie wir mit unseren Kunden, Partnern und Gemeinschaften interagieren. Diese sechs Kernwerte sind in jeden Aspekt unserer Tatigkeit eingebettet, vom Vorstandszimmer bis zum Lagerboden.",
     "integrityTitle": "Integritat",
     "integrityP1": "Integritat ist das Fundament jeder Beziehung, die wir aufbauen. Bei WTL fuhren wir alle Geschaftsbeziehungen mit Ehrlichkeit, Transparenz und ethischen Standards, die die Branchennormen ubertreffen. Wir sind uberzeugt, dass Vertrauen durch konsequentes, prinzipientreues Verhalten verdient wird -- und wir arbeiten jeden Tag hart daran, das Vertrauen aufrechtzuerhalten, das unsere Kunden, Partner und Gemeinschaften in uns setzen.",
     "integrityP2": "Von transparenter Preisgestaltung und praziser Dokumentation bis hin zu ehrlicher Kommunikation uber Zeitplane und Herausforderungen durchzieht Integritat jede Interaktion bei WTL. Wir tun, was wir sagen, und wir sagen, was wir meinen.",
@@ -618,7 +621,20 @@
     "benefitGlobalText": "Umfangreiches Netzwerk von Buros und Agenten in Westafrika, Europa, Asien und Amerika.",
     "ctaTitle": "Bereit zum Versand? Holen Sie sich ein kostenloses Frachtangebot",
     "ctaText": "Teilen Sie uns Ihre Sendungsdetails mit und unser Team wird Ihnen innerhalb von 24 Stunden ein wettbewerbsfahiges Angebot unterbreiten.",
-    "ctaButton": "Angebot anfordern"
+    "ctaButton": "Angebot anfordern",
+    "breakbulkHeroTitle": "Breakbulk- & Luftfracht nach Senegal",
+    "breakbulkHeroSub": "Schwer, ubergross oder dringend -- abgewickelt im Hafen von Dakar von dem Team, das dies seit 2000 ubernimmt.",
+    "breakbulkLabel": "Spezialfracht",
+    "breakbulkTitle": "Breakbulk- & Out-of-Gauge-Fracht nach Senegal",
+    "breakbulkText1": "Nicht alles passt in einen Container. Bergbauausrustung, Transformatoren, Baumaschinen und Projektsendungen brauchen einen Spediteur, der die Schwerlast-Liegeplatze, Krankapazitaten und Zollverfahren des Hafens von Dakar aus erster Hand kennt.",
+    "breakbulkText2": "WTL plant jede Breakbulk-Verladung von Anfang bis Ende: Schiffscharter und Stauplanung, Hafenumschlag, BESC/COSEC, Zollabfertigung und Weitertransport im Senegal und in der ECOWAS.",
+    "breakbulkFeature1": "Out-of-Gauge- und Schwergutumschlag im Hafen von Dakar",
+    "breakbulkFeature2": "Schiffscharter, Stauplanung und Laschsurveys",
+    "breakbulkFeature3": "BESC/COSEC und Zolldokumentation komplett ubernommen",
+    "breakbulkFeature4": "Landtransport im Senegal, in Mali und der ECOWAS",
+    "breakbulkCta": "Breakbulk-Sendung anfragen",
+    "breakbulkProjectLead": "Sie planen ein Industrieprojekt mit mehreren Sendungen? Entdecken Sie",
+    "breakbulkProjectAnchor": "unseren Projektfracht-Service"
   },
   "servicesOcean": {
     "pageTitle": "Seefracht",
@@ -1239,7 +1255,11 @@
     "ctaTitle": "Mussen Sie Waren in den Senegal importieren?",
     "ctaText": "Von der Zollabfertigung bis zur Letzte-Meile-Lieferung ubernimmt WTL jeden Schritt Ihres Importprozesses. Holen Sie sich noch heute eine kostenlose Zollschatzung und einen Importplan von unseren Spezialisten.",
     "ctaButton1": "Importangebot anfordern",
-    "ctaButton2": "Mit unserem Zollteam sprechen"
+    "ctaButton2": "Mit unserem Zollteam sprechen",
+    "bescNote": "Sie importieren per Seefracht? Jede Sendung nach Senegal benotigt ein validiertes BESC vor Ankunft des Schiffes.",
+    "bescGuideAnchor": "Lesen Sie unseren kompletten BESC/COSEC-Leitfaden",
+    "bescOr": "oder lassen Sie",
+    "bescForwardingAnchor": "unser Speditionsteam in Senegal das fur Sie ubernehmen"
   },
   "contactMain": {
     "pageTitle": "Kontaktieren Sie uns",
@@ -1570,6 +1590,8 @@
     "ctaTitle": "Benotigen Sie Logistikunterstutzung in Westafrika?",
     "ctaText": "Kontaktieren Sie das WTL-Buro in Ihrer Nahe oder erreichen Sie unseren Hauptsitz in Dakar fur jede Logistikanfrage. Wir sind bereit, Ihnen in der Region und daruber hinaus zu dienen.",
     "ctaContactButton": "Hauptsitz kontaktieren",
-    "ctaQuoteButton": "Angebot anfordern"
+    "ctaQuoteButton": "Angebot anfordern",
+    "portGuideLead": "Sie versenden uber den Hafen von Dakar?",
+    "portGuideAnchor": "Lesen Sie unseren praktischen Hafen-Leitfaden"
   }
 }

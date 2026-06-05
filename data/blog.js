@@ -286,6 +286,106 @@ const posts = [
     author: 'WTL Trade Advisory',
     date: '2024-11-15',
     readTime: '6 min read'
+  },
+  {
+    id: 7,
+    slug: 'besc-cosec-waiver-senegal-guide',
+    title: 'BESC / COSEC Waiver for Senegal: The Complete Guide',
+    excerpt: 'Every sea shipment to Senegal needs a validated BESC (Electronic Cargo Tracking Note) from COSEC. What it is, how to get one, what it costs to skip it, and how to avoid delays at the Port of Dakar.',
+    content: `<p>If you are shipping cargo by sea to Senegal, there is one document that can hold your entire shipment hostage at the Port of Dakar: the BESC. This guide explains what it is, who is responsible for it, and how to make sure it never becomes your problem.</p>
+    <h3>What Is the BESC?</h3>
+    <p>The BESC (Bordereau Electronique de Suivi des Cargaisons), also called the Electronic Cargo Tracking Note (ECTN), is a mandatory document for all sea freight destined for Senegal. It is issued under the authority of COSEC (Conseil Senegalais des Chargeurs), the Senegalese Shippers' Council, and allows the authorities to track cargo from the port of loading to arrival in Dakar.</p>
+    <h3>Who Needs One and When</h3>
+    <p>Every bill of lading covering cargo discharged in Senegal requires its own validated BESC -- containerized cargo, breakbulk, vehicles, and personal effects alike. The BESC must be created at the port of loading and validated before the vessel arrives in Dakar. A missing or late BESC exposes the consignee to fines and your cargo to costly storage charges while the paperwork is regularized.</p>
+    <h3>How to Obtain It</h3>
+    <p>The BESC is requested through an approved agent at origin with copies of the bill of lading, commercial invoice, and freight invoice. Validation typically takes one to three working days once documents are complete. As a licensed freight forwarder in Senegal, WTL handles BESC creation and validation as a standard part of our <a href="/services/forwarding">freight forwarding service</a> -- our team checks every document against COSEC requirements before the vessel sails.</p>
+    <h3>Common Mistakes That Cause Delays</h3>
+    <p>The errors we correct most often: BESC requested after vessel departure, cargo descriptions that do not match the bill of lading, missing freight invoices, and waivers validated for the wrong port. Each one is avoidable with a document check at booking time.</p>
+    <h3>Get It Handled for You</h3>
+    <p>WTL has processed BESC waivers for importers into Dakar for over two decades. If you are planning a shipment, <a href="/quote">request a quote</a> and we will take the BESC, customs clearance, and port handling off your plate entirely. You can also read our <a href="/blog/customs-clearance-guide-west-africa">customs clearance guide for West Africa</a> for the broader picture.</p>`,
+    fr_title: 'BESC / COSEC pour le Senegal : Le Guide Complet',
+    fr_excerpt: "Toute expedition maritime vers le Senegal exige un BESC valide par le COSEC. Ce que c'est, comment l'obtenir, ce que coute son absence et comment eviter les retards au Port de Dakar.",
+    fr_content: `<p>Si vous expediez des marchandises par voie maritime vers le Senegal, un seul document peut bloquer toute votre cargaison au Port de Dakar : le BESC. Ce guide explique ce que c'est, qui en est responsable et comment faire en sorte qu'il ne devienne jamais votre probleme.</p>
+    <h3>Qu'est-ce que le BESC ?</h3>
+    <p>Le BESC (Bordereau Electronique de Suivi des Cargaisons) est un document obligatoire pour tout fret maritime a destination du Senegal. Il est emis sous l'autorite du COSEC (Conseil Senegalais des Chargeurs) et permet aux autorites de suivre la cargaison du port de chargement jusqu'a son arrivee a Dakar.</p>
+    <h3>Qui en a besoin et quand</h3>
+    <p>Chaque connaissement couvrant une cargaison dechargee au Senegal exige son propre BESC valide -- conteneurs, fret conventionnel, vehicules et effets personnels. Le BESC doit etre cree au port de chargement et valide avant l'arrivee du navire a Dakar. Un BESC manquant ou tardif expose le destinataire a des amendes et la cargaison a des frais de stockage couteux.</p>
+    <h3>Comment l'obtenir</h3>
+    <p>Le BESC est demande aupres d'un agent agree a l'origine avec copies du connaissement, de la facture commerciale et de la facture de fret. La validation prend generalement un a trois jours ouvrables. En tant que transitaire agree au Senegal, WTL gere la creation et la validation du BESC dans le cadre de notre <a href="/fr/services/forwarding">service de transit et dedouanement</a> -- notre equipe verifie chaque document avant le depart du navire.</p>
+    <h3>Les erreurs courantes qui causent des retards</h3>
+    <p>Les erreurs que nous corrigeons le plus souvent : BESC demande apres le depart du navire, descriptions de marchandises non conformes au connaissement, factures de fret manquantes et bordereaux valides pour le mauvais port. Chacune est evitable avec un controle documentaire au moment de la reservation.</p>
+    <h3>Confiez-le nous</h3>
+    <p>WTL traite les BESC pour les importateurs vers Dakar depuis plus de deux decennies. Si vous planifiez une expedition, <a href="/fr/quote">demandez un devis</a> et nous prenons en charge le BESC, le dedouanement et la manutention portuaire. Consultez aussi notre <a href="/fr/blog/customs-clearance-guide-west-africa">guide du dedouanement en Afrique de l'Ouest</a>.</p>`,
+    fr_category: 'Conformite',
+    de_title: 'BESC / COSEC fur Senegal: Der komplette Leitfaden',
+    de_excerpt: 'Jede Seefracht nach Senegal benotigt ein vom COSEC validiertes BESC (elektronisches Frachtverfolgungsdokument). Was es ist, wie man es erhalt und wie man Verzogerungen im Hafen von Dakar vermeidet.',
+    de_content: `<p>Wenn Sie Fracht per Seeweg nach Senegal versenden, gibt es ein Dokument, das Ihre gesamte Sendung im Hafen von Dakar blockieren kann: das BESC. Dieser Leitfaden erklart, was es ist, wer dafur verantwortlich ist und wie es nie zu Ihrem Problem wird.</p>
+    <h3>Was ist das BESC?</h3>
+    <p>Das BESC (Bordereau Electronique de Suivi des Cargaisons), auch Electronic Cargo Tracking Note (ECTN) genannt, ist ein Pflichtdokument fur alle Seefracht mit Bestimmung Senegal. Es wird unter der Aufsicht des COSEC (Conseil Senegalais des Chargeurs), des senegalesischen Verladerrats, ausgestellt und ermoglicht den Behorden die Verfolgung der Fracht vom Ladehafen bis zur Ankunft in Dakar.</p>
+    <h3>Wer es braucht und wann</h3>
+    <p>Jedes Konnossement uber Fracht, die in Senegal geloscht wird, benotigt ein eigenes validiertes BESC -- Container, Breakbulk, Fahrzeuge und Umzugsgut gleichermassen. Das BESC muss im Ladehafen erstellt und vor Ankunft des Schiffes in Dakar validiert werden. Ein fehlendes oder verspatetes BESC bedeutet Bussgelder fur den Empfanger und teure Lagerkosten fur die Fracht.</p>
+    <h3>So erhalten Sie es</h3>
+    <p>Das BESC wird uber einen zugelassenen Agenten am Ursprungsort mit Kopien von Konnossement, Handelsrechnung und Frachtrechnung beantragt. Die Validierung dauert in der Regel ein bis drei Werktage. Als lizenzierter Spediteur in Senegal ubernimmt WTL die BESC-Abwicklung als festen Bestandteil unseres <a href="/de/services/forwarding">Speditionsservices</a> -- unser Team pruft jedes Dokument vor Abfahrt des Schiffes.</p>
+    <h3>Haufige Fehler, die Verzogerungen verursachen</h3>
+    <p>Die Fehler, die wir am haufigsten korrigieren: BESC nach Schiffsabfahrt beantragt, Warenbeschreibungen, die nicht zum Konnossement passen, fehlende Frachtrechnungen und fur den falschen Hafen validierte Dokumente. Jeder davon ist mit einer Dokumentenprufung bei Buchung vermeidbar.</p>
+    <h3>Wir ubernehmen das fur Sie</h3>
+    <p>WTL wickelt seit uber zwei Jahrzehnten BESC-Dokumente fur Importeure nach Dakar ab. Wenn Sie eine Sendung planen, <a href="/de/quote">fordern Sie ein Angebot an</a> und wir ubernehmen BESC, Zollabfertigung und Hafenumschlag komplett. Lesen Sie auch unseren <a href="/de/blog/customs-clearance-guide-west-africa">Leitfaden zur Zollabfertigung in Westafrika</a>.</p>`,
+    de_category: 'Compliance',
+    image: '853d7894-c185-403b-896f-a5b174ab99e8.jpeg',
+    category: 'Compliance',
+    author: 'WTL Trade Advisory',
+    date: '2026-06-04',
+    readTime: '5 min read'
+  },
+  {
+    id: 8,
+    slug: 'port-of-dakar-shipping-guide',
+    title: 'Shipping Through the Port of Dakar: A Practical Guide',
+    excerpt: "West Africa's westernmost deep-water port is the gateway to Senegal and landlocked Mali. Terminals, documentation, clearance timelines, and how to keep your cargo moving.",
+    content: `<p>The Autonomous Port of Dakar (Port Autonome de Dakar) is the economic front door of Senegal and the principal maritime corridor for landlocked Mali. As the westernmost major deep-water port in Africa, it is often the first -- or last -- African call on Europe-Americas rotations, which keeps transit times to Europe and North America among the shortest on the continent.</p>
+    <h3>Terminals and What They Handle</h3>
+    <p>The port handles containers at its dedicated container terminal, alongside roll-on/roll-off berths for vehicles, conventional quays for breakbulk and project cargo, and specialized facilities for grain, fishing, and petroleum products. Knowing which terminal your cargo routes through determines the documents, equipment, and clearance steps involved.</p>
+    <h3>The Documents That Decide Your Timeline</h3>
+    <p>Three things release cargo in Dakar: a validated <a href="/blog/besc-cosec-waiver-senegal-guide">BESC waiver</a>, a complete customs declaration, and original shipping documents that match each other exactly. Discrepancies between invoice, packing list, and bill of lading are the single most common cause of clearance delays we see.</p>
+    <h3>Typical Clearance Timelines</h3>
+    <p>With complete and consistent documentation, containerized import clearance commonly completes within a few working days of discharge. Incomplete files can stretch that into weeks, with storage and demurrage accumulating daily. The difference is almost always preparation before vessel arrival, not speed after it.</p>
+    <h3>Onward to Mali and the Interior</h3>
+    <p>Dakar is the start of the Dakar-Bamako corridor, moving Malian imports and exports by road. If your cargo continues inland, plan the corridor leg with the same care as the ocean leg: transit documents, escort requirements, and truck availability all affect total delivery time. Our <a href="/services/inland-transportation">inland transportation service</a> manages this leg end-to-end.</p>
+    <h3>Working With a Forwarder on the Ground</h3>
+    <p>Every shipment WTL handles through Dakar is managed by people who work at this port every day. From <a href="/services/forwarding">freight forwarding in Senegal</a> to <a href="/services/warehousing">bonded warehousing</a> near the port, we keep cargo moving because we know exactly where it can get stuck. <a href="/quote">Request a quote</a> for your next shipment, or visit our <a href="/contact/locations">Dakar office</a>.</p>`,
+    fr_title: 'Expedier via le Port de Dakar : Guide Pratique',
+    fr_excerpt: "Le port en eau profonde le plus occidental d'Afrique est la porte d'entree du Senegal et du Mali. Terminaux, documentation, delais de dedouanement et comment garder votre cargaison en mouvement.",
+    fr_content: `<p>Le Port Autonome de Dakar est la porte d'entree economique du Senegal et le principal corridor maritime du Mali enclave. Port en eau profonde le plus occidental d'Afrique, il est souvent la premiere -- ou la derniere -- escale africaine des rotations Europe-Ameriques, ce qui maintient des temps de transit parmi les plus courts du continent.</p>
+    <h3>Les terminaux et leurs specialites</h3>
+    <p>Le port traite les conteneurs a son terminal dedie, avec des postes rouliers pour les vehicules, des quais conventionnels pour le fret conventionnel et les cargaisons de projet, et des installations specialisees pour les cereales, la peche et les produits petroliers. Le terminal par lequel transite votre cargaison determine les documents, les equipements et les etapes de dedouanement.</p>
+    <h3>Les documents qui decident de vos delais</h3>
+    <p>Trois elements liberent une cargaison a Dakar : un <a href="/fr/blog/besc-cosec-waiver-senegal-guide">BESC valide</a>, une declaration en douane complete et des documents d'expedition originaux parfaitement concordants. Les ecarts entre facture, liste de colisage et connaissement sont la premiere cause de retard que nous constatons.</p>
+    <h3>Delais de dedouanement typiques</h3>
+    <p>Avec une documentation complete et coherente, le dedouanement d'un conteneur a l'import se termine generalement en quelques jours ouvrables apres dechargement. Un dossier incomplet peut s'etirer sur des semaines, avec stockage et surestaries qui s'accumulent chaque jour. La difference se joue presque toujours dans la preparation avant l'arrivee du navire.</p>
+    <h3>Vers le Mali et l'interieur</h3>
+    <p>Dakar est le point de depart du corridor Dakar-Bamako, qui achemine les importations et exportations maliennes par route. Si votre cargaison continue vers l'interieur, planifiez ce trajet avec le meme soin que le trajet maritime. Notre <a href="/fr/services/inland-transportation">service de transport terrestre</a> gere cette etape de bout en bout.</p>
+    <h3>Travailler avec un transitaire sur place</h3>
+    <p>Chaque expedition que WTL traite via Dakar est geree par des personnes qui travaillent dans ce port chaque jour. Du <a href="/fr/services/forwarding">transit et dedouanement au Senegal</a> a l'<a href="/fr/services/warehousing">entreposage sous douane</a> pres du port, nous gardons les cargaisons en mouvement parce que nous savons exactement ou elles peuvent se bloquer. <a href="/fr/quote">Demandez un devis</a> ou visitez notre <a href="/fr/contact/locations">bureau de Dakar</a>.</p>`,
+    fr_category: 'Guides',
+    de_title: 'Versand uber den Hafen von Dakar: Ein praktischer Leitfaden',
+    de_excerpt: 'Der westlichste Tiefwasserhafen Afrikas ist das Tor zu Senegal und Mali. Terminals, Dokumentation, Abfertigungszeiten und wie Ihre Fracht in Bewegung bleibt.',
+    de_content: `<p>Der Autonome Hafen von Dakar (Port Autonome de Dakar) ist das wirtschaftliche Eingangstor Senegals und der wichtigste maritime Korridor fur das Binnenland Mali. Als westlichster grosser Tiefwasserhafen Afrikas ist er oft der erste -- oder letzte -- afrikanische Anlauf auf Europa-Amerika-Rotationen, was die Transitzeiten zu den kurzesten des Kontinents zahlen lasst.</p>
+    <h3>Terminals und ihre Aufgaben</h3>
+    <p>Der Hafen fertigt Container an seinem dedizierten Containerterminal ab, daneben RoRo-Liegeplatze fur Fahrzeuge, konventionelle Kais fur Breakbulk- und Projektfracht sowie Spezialanlagen fur Getreide, Fischerei und Mineralolprodukte. Das Terminal Ihrer Fracht bestimmt Dokumente, Ausrustung und Abfertigungsschritte.</p>
+    <h3>Die Dokumente, die uber Ihre Zeitplanung entscheiden</h3>
+    <p>Drei Dinge geben Fracht in Dakar frei: ein validiertes <a href="/de/blog/besc-cosec-waiver-senegal-guide">BESC</a>, eine vollstandige Zollanmeldung und exakt ubereinstimmende Originaldokumente. Abweichungen zwischen Rechnung, Packliste und Konnossement sind die haufigste Ursache fur Verzogerungen.</p>
+    <h3>Typische Abfertigungszeiten</h3>
+    <p>Mit vollstandiger und konsistenter Dokumentation ist die Importabfertigung eines Containers ublicherweise innerhalb weniger Werktage nach Loschung abgeschlossen. Unvollstandige Unterlagen konnen Wochen kosten, wahrend Lager- und Standgelder taglich auflaufen. Der Unterschied liegt fast immer in der Vorbereitung vor Schiffsankunft.</p>
+    <h3>Weiter nach Mali und ins Landesinnere</h3>
+    <p>Dakar ist der Ausgangspunkt des Dakar-Bamako-Korridors, uber den malische Im- und Exporte per Strasse laufen. Geht Ihre Fracht weiter ins Landesinnere, planen Sie diese Etappe mit derselben Sorgfalt wie die Seestrecke. Unser <a href="/de/services/inland-transportation">Landtransport-Service</a> ubernimmt diese Etappe komplett.</p>
+    <h3>Mit einem Spediteur vor Ort arbeiten</h3>
+    <p>Jede Sendung, die WTL uber Dakar abwickelt, wird von Menschen betreut, die taglich in diesem Hafen arbeiten. Von der <a href="/de/services/forwarding">Spedition in Senegal</a> bis zum <a href="/de/services/warehousing">Zolllager</a> am Hafen halten wir Fracht in Bewegung, weil wir genau wissen, wo sie stecken bleiben kann. <a href="/de/quote">Fordern Sie ein Angebot an</a> oder besuchen Sie unser <a href="/de/contact/locations">Buro in Dakar</a>.</p>`,
+    de_category: 'Ratgeber',
+    image: 'aerial-view-of-containers-loading-and-unloading-to-the-ship-in-the-sea-port-logistic-and.jpg',
+    category: 'Guides',
+    author: 'WTL Trade Advisory',
+    date: '2026-06-04',
+    readTime: '6 min read'
   }
 ];
 

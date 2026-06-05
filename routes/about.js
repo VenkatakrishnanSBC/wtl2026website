@@ -87,11 +87,20 @@ router.get('/team', (req, res) => {
     currentPage: 'about',
     description: t('about.teamDescription'),
     keywords: t('about.teamKeywords'),
-    jsonLd: breadcrumb(lang, [
-      { name: t('nav.home'), path: '/' },
-      { name: t('nav.about'), path: '/about' },
-      { name: t('nav.team'), path: '/about/team' }
-    ])
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mamadou Sall",
+        "jobTitle": "Founder",
+        "worksFor": { "@id": "https://worldtransgroup.com/#organization" }
+      },
+      breadcrumb(lang, [
+        { name: t('nav.home'), path: '/' },
+        { name: t('nav.about'), path: '/about' },
+        { name: t('nav.team'), path: '/about/team' }
+      ])
+    ]
   });
 });
 

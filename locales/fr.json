@@ -120,17 +120,17 @@
   },
   "testimonials": [
     {
-      "text": "\u201cUn partenaire logistique exceptionnel qui a livre nos marchandises sur trois continents sans le moindre retard. Leur suivi en temps reel a rendu l'ensemble du processus transparent.\u201d",
+      "text": "“Un partenaire logistique exceptionnel qui a livre nos marchandises sur trois continents sans le moindre retard. Leur suivi en temps reel a rendu l'ensemble du processus transparent.”",
       "name": "George D. Coffey",
       "role": "Architecte"
     },
     {
-      "text": "\u201cWTL a transforme nos operations de chaine d'approvisionnement. Leur expertise en dedouanement et solutions d'entreposage a ete inestimable pour notre entreprise en croissance.\u201d",
+      "text": "“WTL a transforme nos operations de chaine d'approvisionnement. Leur expertise en dedouanement et solutions d'entreposage a ete inestimable pour notre entreprise en croissance.”",
       "name": "Melissa J. Talley",
       "role": "Entrepreneure"
     },
     {
-      "text": "\u201cFiable, professionnel et toujours ponctuel. WTL est devenu une partie indispensable de notre strategie logistique internationale.\u201d",
+      "text": "“Fiable, professionnel et toujours ponctuel. WTL est devenu une partie indispensable de notre strategie logistique internationale.”",
       "name": "Wilton Groves",
       "role": "Directeur des Operations"
     }
@@ -248,8 +248,8 @@
     "landTitle": "Transport Routier Afrique de l'Ouest | WTL",
     "landDescription": "Transport routier et ferroviaire fiable a travers l'Afrique de l'Ouest. Flotte moderne, chauffeurs experimentes et suivi GPS pour une visibilite complete du cargo.",
     "landKeywords": "transport routier Senegal, fret terrestre Afrique de l'Ouest, fret ferroviaire Dakar, transport camion Senegal, expedition terrestre Afrique de l'Ouest",
-    "warehousingTitle": "Entreposage & Stockage Dakar Senegal | WTL",
-    "warehousingDescription": "Installations d'entreposage de pointe a Dakar, Senegal. Stockage climatise, gestion des stocks et services de cross-docking par WTL.",
+    "warehousingTitle": "Stockage de Marchandises a Dakar | Entrepot WTL Senegal",
+    "warehousingDescription": "Stockage de marchandises a Dakar : entrepots securises, stockage climatise, gestion des stocks et cross-docking par WTL au Senegal.",
     "warehousingKeywords": "entreposage Dakar, installations stockage Senegal, gestion inventaire Afrique de l'Ouest, cross-docking Dakar, entrepot sous douane Senegal",
     "nvoccTitle": "Services NVOCC Afrique de l'Ouest | WTL",
     "nvoccDescription": "Services de transporteur maritime non exploitant (NVOCC) par WTL. Solutions d'expedition consolidees avec des tarifs competitifs et une planification flexible.",
@@ -466,11 +466,15 @@
     "ctaTitle": "Besoin d'Importer des Marchandises au Senegal ?",
     "ctaText": "Du dedouanement a la livraison du dernier kilometre, WTL gere chaque etape de votre processus d'importation. Obtenez une estimation gratuite des droits et un plan d'importation de nos specialistes des aujourd'hui.",
     "ctaButton1": "Demander un Devis Import",
-    "ctaButton2": "Parler a Notre Equipe Douaniere"
+    "ctaButton2": "Parler a Notre Equipe Douaniere",
+    "bescNote": "Vous importez par voie maritime ? Chaque expedition vers le Senegal exige un BESC valide avant l'arrivee du navire.",
+    "bescGuideAnchor": "Consultez notre guide complet BESC/COSEC",
+    "bescOr": "ou laissez",
+    "bescForwardingAnchor": "notre equipe de transit au Senegal s'en charger pour vous"
   },
   "contactMain": {
-    "pageTitle": "Contactez-nous",
-    "pageSubtitle": "Prenez Contact avec World Trans & Logistics",
+    "pageTitle": "Parlez a une Vraie Personne a Dakar",
+    "pageSubtitle": "+221 33 822 71 11 -- reponse aux heures de bureau de Dakar. Devis sous 24 heures.",
     "breadcrumbParent": "Contact",
     "breadcrumbCurrent": "Contactez-nous",
     "sectionLabel": "Prenez Contact",
@@ -797,7 +801,9 @@
     "ctaTitle": "Besoin d'un Support Logistique en Afrique de l'Ouest ?",
     "ctaText": "Contactez le bureau WTL le plus proche de vous ou adressez-vous a notre siege a Dakar pour toute demande logistique. Nous sommes prets a vous servir dans toute la region et au-dela.",
     "ctaContactButton": "Contacter le Siege",
-    "ctaQuoteButton": "Demander un Devis"
+    "ctaQuoteButton": "Demander un Devis",
+    "portGuideLead": "Vous expediez via le Port de Dakar ?",
+    "portGuideAnchor": "Consultez notre guide pratique du port"
   },
   "aboutOverview": {
     "pageTitle": "Apercu de l'Entreprise",
@@ -837,7 +843,10 @@
     "sustainText": "En tant qu'entreprise enracinee en Afrique, nous sommes profondement engages dans des pratiques durables. WTL travaille activement a minimiser l'impact environnemental de nos operations par l'optimisation des itineraires, des modes de transport economes en carburant et des partenariats avec des transporteurs partageant notre engagement pour un avenir plus vert. Nous croyons qu'une logistique responsable n'est pas seulement une question d'ethique -- c'est aussi une bonne strategie commerciale.",
     "ctaTitle": "Pret a vous associer avec une entreprise logistique qui comprend vraiment l'Afrique de l'Ouest ?",
     "ctaText": "Que vous expediiez des marchandises vers le Senegal, exportiez a travers le continent ou geriez une chaine d'approvisionnement internationale complexe, WTL a l'expertise et le reseau pour produire des resultats.",
-    "ctaButton": "Contactez-nous aujourd'hui"
+    "ctaButton": "Contactez-nous aujourd'hui",
+    "forwardingLead": "Aujourd'hui, notre service principal est le",
+    "forwardingAnchor": "transit et dedouanement au Senegal",
+    "forwardingEnd": "-- soutenu par l'entreposage sous douane, le dedouanement et le transport terrestre dans la CEDEAO."
   },
   "aboutVision": {
     "pageTitle": "Notre Vision",
@@ -953,7 +962,7 @@
     "breadcrumbCurrent": "Nos Valeurs",
     "introLabel": "Ce en quoi nous croyons",
     "introTitle": "Des valeurs fondamentales qui guident tout ce que nous faisons",
-    "introText": "Chez World Trans & Logistics, nos valeurs ne sont pas simplement des mots sur une page -- ce sont les principes qui faconnent nos decisions, definissent notre culture et determinent la maniere dont nous interagissons avec nos clients, partenaires et communautes. Ces six valeurs fondamentales sont ancrees dans chaque aspect de nos operations, de la salle de conseil au sol de l'entrepot.",
+    "introText": "WTL signifie World Trans & Logistics. Nos valeurs ne sont pas simplement des mots sur une page -- ce sont les principes qui faconnent nos decisions, definissent notre culture et determinent la maniere dont nous interagissons avec nos clients, partenaires et communautes. Ces six valeurs fondamentales sont ancrees dans chaque aspect de nos operations, de la salle de conseil au sol de l'entrepot.",
     "integrityTitle": "Integrite",
     "integrityP1": "L'integrite est le fondement de chaque relation que nous construisons. Chez WTL, nous menons toutes nos affaires avec honnetete, transparence et des standards ethiques qui depassent les normes de l'industrie. Nous croyons que la confiance se gagne par un comportement coherent et respectueux des principes -- et nous travaillons dur chaque jour pour maintenir la confiance que nos clients, partenaires et communautes placent en nous.",
     "integrityP2": "De la tarification transparente et de la documentation precise a la communication honnete sur les delais et les defis, l'integrite traverse chaque interaction chez WTL. Nous faisons ce que nous disons, et nous disons ce que nous pensons.",
@@ -1075,7 +1084,20 @@
     "benefitGlobalText": "Reseau etendu de bureaux et d'agents a travers l'Afrique de l'Ouest, l'Europe, l'Asie et les Ameriques.",
     "ctaTitle": "Pret a Expedier ? Obtenez un Devis Gratuit",
     "ctaText": "Parlez-nous de votre expedition et notre equipe vous fournira un devis competitif sous 24 heures.",
-    "ctaButton": "Demander un Devis"
+    "ctaButton": "Demander un Devis",
+    "breakbulkHeroTitle": "Fret Conventionnel & Aerien vers le Senegal",
+    "breakbulkHeroSub": "Charges lourdes, hors gabarit ou urgentes -- traitees au Port de Dakar par l'equipe qui s'en charge depuis 2000.",
+    "breakbulkLabel": "Cargaisons Speciales",
+    "breakbulkTitle": "Fret Conventionnel & Hors Gabarit vers le Senegal",
+    "breakbulkText1": "Tout ne rentre pas dans un conteneur. Equipements miniers, transformateurs, engins de chantier et expeditions de projet exigent un transitaire qui connait de premiere main les postes a quai gros porteurs, les capacites de levage et les procedures douanieres du Port de Dakar.",
+    "breakbulkText2": "WTL planifie chaque operation de bout en bout : affretement et plan de chargement, manutention portuaire, BESC/COSEC, dedouanement et acheminement terrestre au Senegal et dans la CEDEAO.",
+    "breakbulkFeature1": "Manutention hors gabarit et colis lourds au Port de Dakar",
+    "breakbulkFeature2": "Affretement, plan d'arrimage et surveys de saisissage",
+    "breakbulkFeature3": "BESC/COSEC et documentation douaniere pris en charge",
+    "breakbulkFeature4": "Livraison terrestre au Senegal, au Mali et dans la CEDEAO",
+    "breakbulkCta": "Devis pour votre fret conventionnel",
+    "breakbulkProjectLead": "Vous planifiez un projet industriel multi-expeditions ? Decouvrez",
+    "breakbulkProjectAnchor": "notre service cargo de projet"
   },
   "servicesOcean": {
     "pageTitle": "Fret Maritime",
