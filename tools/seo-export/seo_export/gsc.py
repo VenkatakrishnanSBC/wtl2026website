@@ -171,6 +171,108 @@ def _parse_query_rows(raw: list[dict], dimensions: list[str]) -> list[dict]:
     return out
 
 
+def bucket_for(verdict: str, coverage_state: str) -> str:
+    """Roll a URL Inspection result into one coarse indexation bucket.
+
+    The raw ``coverageState`` string is preserved on each row; this is only for
+    the summary roll-up so the user sees indexed / crawled-not-indexed /
+    discovered-not-indexed / unknown / excluded counts at a glance.
+    """
+    cs = (coverage_state or "").lower()
+    if "unknown to google" in cs:
+        return "unknown"
+    if "indexed" in cs and "not indexed" not in cs:
+        return "indexed"
+    if "crawled" in cs and "not indexed" in cs:
+        return "crawled_not_indexed"
+    if "discovered" in cs and "not indexed" in cs:
+        return "discovered_not_indexed"
+    if any(
+        k in cs
+        for k in ("excluded", "noindex", "redirect", "alternate", "canonical",
+                  "blocked", "not found", "soft 404")
+    ):
+        return "excluded"
+    return "indexed" if (verdict or "").upper() == "PASS" else "other"
+
+
+def inspect_url(config: Config, url: str) -> dict:
+    """Inspect one URL via the URL Inspection API and normalize the result.
+
+    A single failing URL records its error inline (bucket="error") rather than
+    aborting the whole sample, except for 403s which mean a permission problem
+    worth surfacing immediately.
+
+    Returns a row with keys: url, verdict, coverage_state, bucket,
+    indexing_state, robots_txt_state, page_fetch_state, last_crawl_time,
+    google_canonical, user_canonical, canonical_match, in_sitemap,
+    referring_urls, inspection_link, error.
+    """
+    service = _service(config)
+
+    def _call():
+        return (
+            service.urlInspection()
+            .index()
+            .inspect(body={"inspectionUrl": url, "siteUrl": config.gsc_site_url})
+            .execute()
+        )
+
+    try:
+        resp = with_retry(_call)
+    except Exception as exc:  # noqa: BLE001
+        msg = str(exc)
+        if "403" in msg or "PERMISSION_DENIED" in msg:
+            raise _wrap_permission_error(exc, config) from exc
+        return {
+            "url": url, "verdict": "", "coverage_state": "", "bucket": "error",
+            "indexing_state": "", "robots_txt_state": "", "page_fetch_state": "",
+            "last_crawl_time": "", "google_canonical": "", "user_canonical": "",
+            "canonical_match": "", "in_sitemap": "", "referring_urls": 0,
+            "inspection_link": "", "error": msg[:200],
+        }
+
+    result = resp.get("inspectionResult", {})
+    idx = result.get("indexStatusResult", {})
+    google_canonical = idx.get("googleCanonical", "")
+    user_canonical = idx.get("userCanonical", "")
+    verdict = idx.get("verdict", "")
+    coverage = idx.get("coverageState", "")
+    return {
+        "url": url,
+        "verdict": verdict,
+        "coverage_state": coverage,
+        "bucket": bucket_for(verdict, coverage),
+        "indexing_state": idx.get("indexingState", ""),
+        "robots_txt_state": idx.get("robotsTxtState", ""),
+        "page_fetch_state": idx.get("pageFetchState", ""),
+        "last_crawl_time": idx.get("lastCrawlTime", ""),
+        "google_canonical": google_canonical,
+        "user_canonical": user_canonical,
+        "canonical_match": bool(google_canonical) and google_canonical == user_canonical,
+        "in_sitemap": bool(idx.get("sitemap")),
+        "referring_urls": len(idx.get("referringUrls", []) or []),
+        "inspection_link": result.get("inspectionResultLink", ""),
+        "error": "",
+    }
+
+
+def inspect_urls(config: Config, urls: list[str], *, on_progress=None) -> list[dict]:
+    """Inspect each URL sequentially (the Inspection API is per-URL, not batched).
+
+    Args:
+        on_progress: optional callback(index, total, row) for live feedback.
+    """
+    rows: list[dict] = []
+    total = len(urls)
+    for i, url in enumerate(urls, 1):
+        row = inspect_url(config, url)
+        rows.append(row)
+        if on_progress is not None:
+            on_progress(i, total, row)
+    return rows
+
+
 def pages(
     config: Config,
     start: str,

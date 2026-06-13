@@ -87,12 +87,38 @@ python -m seo_export gsc-queries --country sen --device mobile
 # GSC page-level aggregates
 python -m seo_export gsc-pages --min-impressions 10
 
+# Indexation coverage: sample sitemap URLs through the URL Inspection API
+python -m seo_export gsc-inspect --sample 40
+# Force-inspect specific pages (repeatable); --sample 0 = only these
+python -m seo_export gsc-inspect --sample 0 \
+  --url https://worldtransgroup.com/services/forwarding \
+  --url https://worldtransgroup.com/blog/besc-cosec-waiver-senegal-guide
+
 # The joined report (the main deliverable)
 python -m seo_export reconcile --channel organic
 
 # Everything in one dated output set
 python -m seo_export export-all
 ```
+
+## Indexation coverage (`gsc-inspect`)
+
+Samples sitemap URLs (evenly, default 40) through the **URL Inspection API** and
+writes `gsc-inspect.csv` plus a console roll-up. Per-URL columns include the raw
+`coverage_state`, `verdict`, `indexing_state`, `robots_txt_state`,
+`page_fetch_state`, `google_canonical` vs `user_canonical` (+ `canonical_match`),
+`in_sitemap`, and `referring_urls`. Each URL is rolled into one `bucket`:
+
+| bucket | meaning |
+|---|---|
+| `indexed` | submitted/indexed — the win |
+| `crawled_not_indexed` | Google crawled it but declined (quality/priority) |
+| `discovered_not_indexed` | known but not yet crawled (crawl starvation) |
+| `unknown` | URL is unknown to Google (discovery failure) |
+| `excluded` | noindex / redirect / alternate / non-self canonical / blocked |
+
+Inspection is per-URL (not batchable) and sequential; mind the ~2000/day quota.
+Use `--url` (repeatable) to force-inspect specific money pages alongside the sample.
 
 ## Reconcile output & anomaly logic
 

@@ -123,6 +123,27 @@ def build_parser() -> argparse.ArgumentParser:
                    help="Keep only pages with impressions >= N.")
 
     p = sub.add_parser(
+        "gsc-inspect",
+        help="URL Inspection API: bucket sitemap URLs by indexation coverage state.",
+    )
+    _add_common(p)
+    _add_output(p)
+    p.add_argument(
+        "--sitemap", metavar="URL",
+        help="Sitemap URL to sample from (default: https://worldtransgroup.com/sitemap.xml).",
+    )
+    p.add_argument(
+        "--sample", type=int, default=40, metavar="N",
+        help="Number of URLs to inspect, spread evenly across the sitemap (default 40). "
+        "Mind the ~2000/day Inspection quota.",
+    )
+    p.add_argument(
+        "--url", action="append", metavar="URL",
+        help="Inspect a specific URL (repeatable). Bypasses sitemap sampling; "
+        "combine with --sample 0 to inspect only these.",
+    )
+
+    p = sub.add_parser(
         "reconcile",
         help="Join GSC pages/queries with GA4 landing behavior; flag anomalies.",
     )
@@ -257,6 +278,67 @@ def cmd_gsc_pages(args: argparse.Namespace) -> int:
     return 0
 
 
+DEFAULT_SITEMAP = "https://worldtransgroup.com/sitemap.xml"
+
+# Stable column order for the inspection CSV.
+INSPECT_COLUMNS = [
+    "url", "bucket", "coverage_state", "verdict", "indexing_state",
+    "robots_txt_state", "page_fetch_state", "last_crawl_time",
+    "google_canonical", "user_canonical", "canonical_match",
+    "in_sitemap", "referring_urls", "inspection_link", "error",
+]
+
+
+def cmd_gsc_inspect(args: argparse.Namespace) -> int:
+    from seo_export import gsc
+    from seo_export.sitemap import even_sample, fetch_sitemap_urls
+
+    config = load_config(
+        credentials_override=args.credentials,
+        env_file=args.env_file,
+        token_override=args.access_token,
+    )
+
+    urls: list[str] = list(args.url or [])
+    if args.sample > 0:
+        sitemap_url = args.sitemap or DEFAULT_SITEMAP
+        print(f"Fetching sitemap {sitemap_url} ...")
+        all_urls = fetch_sitemap_urls(sitemap_url)
+        print(f"  {len(all_urls)} URLs in sitemap; sampling {args.sample} evenly.")
+        sampled = even_sample(all_urls, args.sample)
+        # Keep any explicit --url first, then the sample (de-duped).
+        for u in sampled:
+            if u not in urls:
+                urls.append(u)
+    if not urls:
+        print("error: nothing to inspect (use --url or a positive --sample).", file=sys.stderr)
+        return 2
+
+    print(f"Inspecting {len(urls)} URLs (sequential; ~2000/day quota)...")
+
+    def _progress(i, total, row):
+        print(f"  [{i}/{total}] {row['bucket']:<22} {row['url']}")
+
+    rows = gsc.inspect_urls(config, urls, on_progress=_progress)
+
+    # Roll-up summary by bucket.
+    counts: dict[str, int] = {}
+    for r in rows:
+        counts[r["bucket"]] = counts.get(r["bucket"], 0) + 1
+    indexed = counts.get("indexed", 0)
+    print("\n=== Indexation buckets ===")
+    for bucket in ("indexed", "crawled_not_indexed", "discovered_not_indexed",
+                   "unknown", "excluded", "other", "error"):
+        if counts.get(bucket):
+            print(f"  {bucket:<24} {counts[bucket]}")
+    print(f"  {'TOTAL inspected':<24} {len(rows)}")
+    if rows:
+        print(f"  indexed share: {indexed}/{len(rows)} = {indexed/len(rows)*100:.0f}%")
+
+    _emit(rows, "gsc-inspect", args, columns=INSPECT_COLUMNS)
+    return 0
+
+
 def cmd_reconcile(args: argparse.Namespace) -> int:
     from seo_export import ga4, gsc
     from seo_export.reconcile import RECONCILE_COLUMNS, reconcile
@@ -315,6 +397,7 @@ COMMANDS = {
     "ga4-key-events": cmd_ga4_key_events,
     "gsc-queries": cmd_gsc_queries,
     "gsc-pages": cmd_gsc_pages,
+    "gsc-inspect": cmd_gsc_inspect,
     "reconcile": cmd_reconcile,
     "export-all": cmd_export_all,
 }
