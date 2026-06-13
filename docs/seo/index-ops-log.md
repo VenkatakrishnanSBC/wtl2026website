@@ -26,10 +26,11 @@ Production is served by Firebase Cloud Function `app` sourced from `functions/`,
 
 **Fix shipped:** Synced 12 changed files (locales ×3, blog data, routes ×2, views ×5, sitemap) root→`functions/`; verified the `functions/` app boots and serves new titles, breakbulk section, ItemList schema, and new posts. Commit `d64f00a`. (Prior session: `24339bd` SEO fixes, `aec2454` export pipeline.)
 
-**Human actions pending:**
-1. **Deploy to production:** `firebase deploy --only functions,hosting --project wtl2026website` (no CI exists — nothing is live until this runs). This is the unlock for the entire prior session.
-2. After deploy + propagation: GSC → **Sitemaps** → resubmit `https://worldtransgroup.com/sitemap.xml` (it had a 404'd URL until this session).
-3. GSC → **URL Inspection → Request indexing** for the 5 retitled pages (`/services/forwarding`, `/services/freight`, `/about/team`, `/about/values`, `/about/overview`) and the 2 new guides.
-4. Fix the deploy-path desync permanently: either make `functions/` a build artifact (sync script + predeploy hook) or collapse to a single source of truth. Until then, **every future edit must be mirrored into `functions/`.**
+**DEPLOYED 2026-06-05** ✅ `firebase deploy --only functions,hosting --project wtl2026website`. Verified live on production: new titles (`/services/forwarding`, `/services/freight`, `/about/values`, `/about/team`, `/fr/services/warehousing`), breakbulk section, founder Person schema (`Mamadou Sall`), both new guides 200 in EN/FR/DE, sitemap = 114 URLs with broken incoterms slug gone (0) and new posts present. Note: the CLI reported `functions[app] Skipped (No changes detected)` yet dynamic content updated old→new — don't trust that message; always curl-verify after deploy.
 
-**Next cycle:** First confirm production serves new titles (curl) and is deployed. Get a fresh OAuth token, run `export-all`, and pull URL-Inspection buckets for a real indexation count. Then measure CTR/position movement on the targeted queries vs this baseline. If deploy still hasn't happened, the diagnosis is unchanged — chase the deploy.
+**Human actions pending (UI-only, no API):**
+1. GSC → **URL Inspection → Request indexing** for the 5 retitled pages (`/services/forwarding`, `/services/freight`, `/about/team`, `/about/values`, `/about/overview`) and the 2 new guides — speeds snippet/title refresh.
+2. Sitemap resubmit attempted programmatically this cycle (see below); confirm "Success" status in GSC → Sitemaps.
+3. **Permanent deploy-path fix:** make `functions/` a build artifact (sync script + `predeploy` hook in firebase.json) or collapse to one source of truth. Until then **every future root edit must be mirrored into `functions/`.** Also: Node 20 runtime deprecated (decommission 2026-10-30) and firebase-functions is outdated — upgrade before October.
+
+**Next cycle:** Get a fresh OAuth token, run `export-all`, pull URL-Inspection buckets for a real indexation count (baseline established: 1108 impr / 21 clicks / 156 sessions / 42 events). Measure CTR/position movement on the now-deployed targeted queries vs this baseline (~4–6 weeks for recrawl). Run the deferred competitor teardown. Enrich `/services/project-cargo` (breakbulk cluster) and decide invest-vs-deprioritize on DE service pages.
