@@ -7,6 +7,25 @@ Auth note: SA-key flow does NOT work here (SA was never granted access to the GS
 
 ---
 
+## 2026-06-13 — cycle 2 (Phase 0: indexation baseline)
+| sampled | indexed | crawled-not-idx | unknown | excluded | impressions 28d | clicks | organic sessions |
+|---|---|---|---|---|---|---|---|
+| 42 | 8 (19%) | 6 | 27 (64%) | 1 | — | — | — |
+
+First real indexation measurement, via new `gsc-inspect` (URL Inspection API, 40 even sample + 5 money pages). Exports in `exports/2026-06-13/`.
+
+**Diagnosis (named blocker): CRAWL / DISCOVERY STARVATION (Gate 1).** 64% of sampled URLs are "URL is unknown to Google" — Google has never crawled them — including just-deployed money pages (`/services/forwarding`, BESC guide, port guide, `/quote`). Root cause confirmed via API: the **sitemap was last downloaded by Google on 2026-02-06** (>4 months stale); the updated sitemap (new posts + retitled pages) has never been re-fetched. URL Inspection shows `in_sitemap=0` for **every** sampled URL incl. indexed ones, and the 27 unknown pages have **0 referring URLs** known to Google. Internal nav links DO exist (`/services/forwarding` in header+footer, `/quote` linked from 18 views), so this is not a missing-link problem — it's crawl-budget/sitemap-staleness on a low-authority domain. → **crawl-starvation branch (Phases 1+3)**, not the targeting branch.
+
+**Action taken:** programmatic sitemap resubmit attempted (PUT) → **403**: the OAuth token is `webmasters.readonly`, which can't submit. Resubmit must be GSC-UI or a read-write token.
+
+**Human actions pending (the unlock):**
+1. **Resubmit sitemap** — GSC → Sitemaps → `sitemap.xml` → Submit (forces re-download of all 111 URLs after 4 months stale). *Highest leverage.* OR regenerate an OAuth token with the read-write `https://www.googleapis.com/auth/webmasters` scope and I'll PUT it.
+2. **Request indexing** (URL Inspection, no API exists) for `/services/forwarding`, `/blog/besc-cosec-waiver-senegal-guide`, `/blog/port-of-dakar-shipping-guide`, `/quote`.
+
+**Durable fix I can ship (Phase 1 #3):** add **in-content contextual links** from the 8 indexed pages → the unknown money pages. In-content links carry more crawl priority than boilerplate nav (which Google discounts), raising discovery durably rather than relying on one sitemap nudge.
+
+**Next cycle:** re-run `gsc-inspect --sample 40` after the resubmit + recrawl (~1–2 weeks); watch unknown→crawled→indexed migration. Target: indexed share 19% → 50%+.
+
 ## 2026-06-05 — cycle 1
 | indexed | unknown | crawled-not-idx | impressions 28d | clicks 28d | organic sessions 28d | key events |
 |---|---|---|---|---|---|---|
