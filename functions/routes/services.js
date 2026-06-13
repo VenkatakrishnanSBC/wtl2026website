@@ -9,6 +9,7 @@ function serviceJsonLd(name, description, url) {
     "serviceType": name,
     "provider": {
       "@type": "Organization",
+      "@id": DOMAIN + "/#organization",
       "name": "World Trans & Logistics",
       "url": DOMAIN
     },
@@ -44,7 +45,20 @@ router.get('/', (req, res) => {
     description: t('services.freightDescription'),
     keywords: t('services.freightKeywords'),
     jsonLd: [
-      serviceJsonLd('Air Freight', t('services.freightDescription'), DOMAIN + '/services'),
+      serviceJsonLd('Freight & Logistics Services', t('services.freightDescription'), DOMAIN + '/services'),
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "WTL Logistics Services",
+        "itemListElement": [
+          'freight', 'ocean-freight', 'land-freight', 'forwarding', 'warehousing',
+          'nvocc', 'project-cargo', 'door-to-door', 'inland-transportation', 'distribution'
+        ].map((slug, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "url": DOMAIN + '/services/' + slug
+        }))
+      },
       breadcrumb(lang, [
         { name: t('nav.home'), path: '/' },
         { name: t('nav.services'), path: '/services' }
@@ -61,8 +75,10 @@ router.get('/freight', (req, res) => {
     currentPage: 'services',
     description: t('services.airFreightDescription'),
     keywords: t('services.airFreightKeywords'),
+    heroTitle: t('servicesFreight.breakbulkHeroTitle'),
+    heroSubtitle: t('servicesFreight.breakbulkHeroSub'),
     jsonLd: [
-      serviceJsonLd('Air Freight', t('services.airFreightDescription'), DOMAIN + '/services/freight'),
+      serviceJsonLd('Breakbulk & Air Freight', t('services.airFreightDescription'), DOMAIN + '/services/freight'),
       breadcrumb(lang, [
         { name: t('nav.home'), path: '/' },
         { name: t('nav.services'), path: '/services' },
