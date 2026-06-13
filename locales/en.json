@@ -116,7 +116,14 @@
     "blogTitle": "From our blog",
     "blogText": "Stay updated with the latest trends, guides, and news in global logistics.",
     "viewAllPosts": "View All Posts",
-    "yearsExcellence": "Years of Excellence"
+    "yearsExcellence": "Years of Excellence",
+    "flagshipLead": "Our flagship service is",
+    "flagshipForwarding": "freight forwarding in Senegal",
+    "flagshipMid": "— backed by 25 years at the Port of Dakar. We handle",
+    "flagshipBesc": "BESC/COSEC clearance",
+    "flagshipAnd": "and",
+    "flagshipPort": "shipping through the Port of Dakar",
+    "flagshipEnd": "end to end, so nothing gets stuck at port."
   },
   "testimonials": [
     {

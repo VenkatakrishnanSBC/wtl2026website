@@ -4,7 +4,12 @@ const posts = require('../data/blog');
 router.get('/', (req, res) => {
   const t = res.locals.t;
   const lang = res.locals.lang;
-  const recentPosts = posts.slice(0, 3).map(p => ({
+  // Newest-first so the homepage (highest-authority, most-crawled page) surfaces
+  // the latest guides in-content — a primary discovery path for new posts.
+  const recentPosts = [...posts]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3)
+    .map(p => ({
     ...p,
     title: lang === 'fr' && p.fr_title ? p.fr_title : lang === 'de' && p.de_title ? p.de_title : p.title,
     excerpt: lang === 'fr' && p.fr_excerpt ? p.fr_excerpt : lang === 'de' && p.de_excerpt ? p.de_excerpt : p.excerpt,
