@@ -12,7 +12,12 @@ from __future__ import annotations
 
 from typing import Optional
 
-from seo_export.auth import GSC_SCOPES, credentials_for, service_account_email
+from seo_export.auth import (
+    GSC_SCOPES,
+    GSC_WRITE_SCOPES,
+    credentials_for,
+    service_account_email,
+)
 from seo_export.config import Config
 from seo_export.normalize import normalize_path, to_float, to_int
 from seo_export.retry import with_retry
@@ -51,6 +56,23 @@ def _wrap_permission_error(exc: Exception, config: Config) -> GSCError:
     )
 
 
+def _service_write(config: Config):
+    """Build a Search Console client with the read-WRITE scope (sitemap submit).
+
+    For raw OAuth bearer tokens the granted scope is fixed at token-mint time, so
+    this only succeeds if the token itself carries the ``webmasters`` write scope;
+    otherwise the API returns 403 (handled by the caller with clear guidance).
+    """
+    try:
+        from googleapiclient.discovery import build
+    except ImportError as exc:  # pragma: no cover
+        raise GSCError(
+            "google-api-python-client is not installed. Run: pip install -r requirements.txt"
+        ) from exc
+    creds = credentials_for(config, GSC_WRITE_SCOPES)
+    return build("searchconsole", "v1", credentials=creds, cache_discovery=False)
+
+
 def list_sites(config: Config) -> list[dict]:
     """Return the list of sites the service account can access (for ``verify``)."""
     service = _service(config)
@@ -59,6 +81,56 @@ def list_sites(config: Config) -> list[dict]:
     except Exception as exc:  # noqa: BLE001
         raise _wrap_permission_error(exc, config) from exc
     return resp.get("siteEntry", [])
+
+
+def list_sitemaps(config: Config) -> list[dict]:
+    """List sitemaps submitted to the property (readonly scope is sufficient).
+
+    Each entry includes path, lastSubmitted, lastDownloaded, isPending, errors,
+    warnings, and a contents[] breakdown (submitted/indexed counts) — the data
+    that reveals a stale sitemap (lastDownloaded far in the past).
+    """
+    service = _service(config)
+    try:
+        resp = with_retry(
+            lambda: service.sitemaps().list(siteUrl=config.gsc_site_url).execute()
+        )
+    except Exception as exc:  # noqa: BLE001
+        raise _wrap_permission_error(exc, config) from exc
+    return resp.get("sitemap", [])
+
+
+def submit_sitemap(config: Config, feedpath: str) -> None:
+    """(Re)submit a sitemap to force Google to re-download it.
+
+    Requires the read-WRITE ``webmasters`` scope. A readonly token raises a clear
+    GSCError explaining the token must be re-minted with the write scope (or the
+    submit done in the GSC UI).
+
+    Args:
+        feedpath: Absolute sitemap URL, e.g. https://worldtransgroup.com/sitemap.xml
+    """
+    service = _service_write(config)
+    try:
+        with_retry(
+            lambda: service.sitemaps()
+            .submit(siteUrl=config.gsc_site_url, feedpath=feedpath)
+            .execute()
+        )
+    except Exception as exc:  # noqa: BLE001
+        msg = str(exc)
+        if "403" in msg or "insufficient" in msg.lower() or "PERMISSION_DENIED" in msg:
+            raise GSCError(
+                f"Sitemap submit was refused for '{config.gsc_site_url}'.\n\n"
+                "Most likely the OAuth token is READ-ONLY. Submitting a sitemap "
+                "needs the read-write scope:\n"
+                "    https://www.googleapis.com/auth/webmasters\n"
+                "Re-mint a token in the OAuth Playground including that scope "
+                "(alongside analytics.readonly), or resubmit in the GSC UI: "
+                "Search Console -> Sitemaps -> enter sitemap.xml -> Submit.\n\n"
+                f"Raw error: {msg}"
+            ) from exc
+        raise _wrap_permission_error(exc, config) from exc
 
 
 def _query_all(config: Config, body: dict) -> list[dict]:

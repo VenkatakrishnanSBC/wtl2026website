@@ -94,6 +94,11 @@ python -m seo_export gsc-inspect --sample 0 \
   --url https://worldtransgroup.com/services/forwarding \
   --url https://worldtransgroup.com/blog/besc-cosec-waiver-senegal-guide
 
+# Sitemap status (stale lastDownloaded = crawl-discovery problem)
+python -m seo_export gsc-sitemap
+# Resubmit to force a re-download — NEEDS a read-write webmasters-scope token
+python -m seo_export gsc-sitemap --resubmit
+
 # The joined report (the main deliverable)
 python -m seo_export reconcile --channel organic
 

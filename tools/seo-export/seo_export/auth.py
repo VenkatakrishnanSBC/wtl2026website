@@ -13,6 +13,10 @@ from typing import Optional
 # Read-only scopes. GA4 Data API needs analytics.readonly; GSC needs webmasters.readonly.
 GA4_SCOPES = ("https://www.googleapis.com/auth/analytics.readonly",)
 GSC_SCOPES = ("https://www.googleapis.com/auth/webmasters.readonly",)
+# Read-WRITE GSC scope — required to SUBMIT a sitemap (sitemaps.submit). The
+# readonly scope can list sitemaps but not submit; a token must be minted with
+# this scope for `gsc-sitemap --resubmit` to work.
+GSC_WRITE_SCOPES = ("https://www.googleapis.com/auth/webmasters",)
 ALL_SCOPES = tuple(set(GA4_SCOPES) | set(GSC_SCOPES))
 
 

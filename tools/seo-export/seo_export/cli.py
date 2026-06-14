@@ -144,6 +144,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     p = sub.add_parser(
+        "gsc-sitemap",
+        help="List submitted sitemaps, or resubmit one to force a re-download.",
+    )
+    _add_common(p)
+    p.add_argument(
+        "--resubmit", nargs="?", const=DEFAULT_SITEMAP, metavar="URL",
+        help="Resubmit a sitemap (default: the site's sitemap.xml). Needs a "
+        "read-write 'webmasters'-scope token.",
+    )
+
+    p = sub.add_parser(
         "reconcile",
         help="Join GSC pages/queries with GA4 landing behavior; flag anomalies.",
     )
@@ -339,6 +350,36 @@ def cmd_gsc_inspect(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_gsc_sitemap(args: argparse.Namespace) -> int:
+    from seo_export import gsc
+
+    config = load_config(
+        credentials_override=args.credentials,
+        env_file=args.env_file,
+        token_override=args.access_token,
+    )
+
+    if args.resubmit:
+        print(f"Resubmitting sitemap: {args.resubmit}")
+        gsc.submit_sitemap(config, args.resubmit)
+        print("  submit accepted (HTTP 204). Google will re-download shortly.")
+
+    # Always show current state (after a resubmit, confirms the new timestamp).
+    sitemaps = gsc.list_sitemaps(config)
+    if not sitemaps:
+        print("No sitemaps submitted to this property.")
+        return 0
+    print(f"\nSitemaps for {config.gsc_site_url}:")
+    for s in sitemaps:
+        contents = s.get("contents", [{}])[0]
+        print(f"  {s.get('path')}")
+        print(f"    lastSubmitted:  {s.get('lastSubmitted')}")
+        print(f"    lastDownloaded: {s.get('lastDownloaded')}  (stale if months old)")
+        print(f"    isPending: {s.get('isPending')}  errors: {s.get('errors')}  warnings: {s.get('warnings')}")
+        print(f"    submitted: {contents.get('submitted')}  indexed: {contents.get('indexed')}")
+    return 0
+
+
 def cmd_reconcile(args: argparse.Namespace) -> int:
     from seo_export import ga4, gsc
     from seo_export.reconcile import RECONCILE_COLUMNS, reconcile
@@ -398,6 +439,7 @@ COMMANDS = {
     "gsc-queries": cmd_gsc_queries,
     "gsc-pages": cmd_gsc_pages,
     "gsc-inspect": cmd_gsc_inspect,
+    "gsc-sitemap": cmd_gsc_sitemap,
     "reconcile": cmd_reconcile,
     "export-all": cmd_export_all,
 }
