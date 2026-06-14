@@ -24,18 +24,47 @@ class AuthError(Exception):
     """Raised when credentials cannot be loaded."""
 
 
-def credentials_for(config, scopes: tuple[str, ...]):
-    """Resolve credentials from a Config: OAuth access token wins, else SA/ADC.
+GOOGLE_TOKEN_URI = "https://oauth2.googleapis.com/token"
 
-    Token-based auth (OAuth Playground model): when ``config.oauth_access_token``
-    is set, build plain OAuth2 credentials from the bearer token. The token must
-    have been authorized with the needed scopes (analytics.readonly,
-    webmasters.readonly) — e.g. via https://developers.google.com/oauthplayground.
-    Access tokens expire after ~1 hour; regenerate and update OAUTH_ACCESS_TOKEN
-    when they do.
+
+def credentials_for(config, scopes: tuple[str, ...]):
+    """Resolve credentials from a Config, by precedence:
+
+    1. **Refresh token** (all-time): if client_id + client_secret + refresh_token
+       are all set, build self-refreshing OAuth2 credentials. google-auth mints a
+       fresh access token automatically whenever the current one expires — no
+       hourly re-paste. This is the permanent path; the refresh token comes from a
+       one-time consent against the user's OWN OAuth client.
+    2. **Access token**: a raw ``ya29...`` bearer token (OAuth Playground default
+       client). Expires ~1h; convenient but not all-time.
+    3. **Service account / ADC**: key file or Application Default Credentials.
     """
-    token = getattr(config, "oauth_access_token", None)
     quota_project = getattr(config, "quota_project", None)
+
+    client_id = getattr(config, "oauth_client_id", None)
+    client_secret = getattr(config, "oauth_client_secret", None)
+    refresh_token = getattr(config, "oauth_refresh_token", None)
+    token = getattr(config, "oauth_access_token", None)
+
+    if client_id and client_secret and refresh_token:
+        try:
+            from google.oauth2.credentials import Credentials as UserCredentials
+        except ImportError as exc:  # pragma: no cover - dependency guard
+            raise AuthError(
+                "google-auth is not installed. Run: pip install -r requirements.txt"
+            ) from exc
+        creds = UserCredentials(
+            token=token or None,  # may be None; refreshed on first use
+            refresh_token=refresh_token,
+            client_id=client_id,
+            client_secret=client_secret,
+            token_uri=GOOGLE_TOKEN_URI,
+            scopes=list(scopes),
+        )
+        if quota_project:
+            creds = creds.with_quota_project(quota_project)
+        return creds
+
     if token:
         try:
             from google.oauth2.credentials import Credentials as UserCredentials

@@ -208,7 +208,9 @@ def cmd_verify(args: argparse.Namespace) -> int:
     print("Configuration OK:")
     print(f"  GA4_PROPERTY_ID = {config.ga4_property_id}")
     print(f"  GSC_SITE_URL    = {config.gsc_site_url}")
-    if config.oauth_access_token:
+    if config.oauth_client_id and config.oauth_client_secret and config.oauth_refresh_token:
+        print("  Auth            = OAuth refresh token (all-time; auto-refreshes)")
+    elif config.oauth_access_token:
         print("  Auth            = OAuth access token (expires ~1h after issue)")
     else:
         sa_email = service_account_email(config.credentials_path)

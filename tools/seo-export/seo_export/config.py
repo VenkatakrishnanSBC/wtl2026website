@@ -44,6 +44,10 @@ class Config:
     credentials_path: Optional[str] = None
     oauth_access_token: Optional[str] = None
     quota_project: Optional[str] = None
+    # All-time auth: a refresh token against the user's own OAuth client.
+    oauth_client_id: Optional[str] = None
+    oauth_client_secret: Optional[str] = None
+    oauth_refresh_token: Optional[str] = None
 
 
 def load_config(
@@ -106,6 +110,11 @@ def load_config(
     oauth_access_token = (token_override or os.getenv("OAUTH_ACCESS_TOKEN") or "").strip() or None
     quota_project = (os.getenv("QUOTA_PROJECT") or "").strip() or None
 
+    # All-time auth: refresh token against the user's own OAuth client.
+    oauth_client_id = (os.getenv("OAUTH_CLIENT_ID") or "").strip() or None
+    oauth_client_secret = (os.getenv("OAUTH_CLIENT_SECRET") or "").strip() or None
+    oauth_refresh_token = (os.getenv("OAUTH_REFRESH_TOKEN") or "").strip() or None
+
     credentials_path = credentials_override or os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
     if credentials_path and not oauth_access_token:
         if not Path(credentials_path).exists():
@@ -122,6 +131,9 @@ def load_config(
         credentials_path=credentials_path,
         oauth_access_token=oauth_access_token,
         quota_project=quota_project,
+        oauth_client_id=oauth_client_id,
+        oauth_client_secret=oauth_client_secret,
+        oauth_refresh_token=oauth_refresh_token,
     )
 
 
