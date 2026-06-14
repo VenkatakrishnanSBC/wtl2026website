@@ -24,7 +24,14 @@ First real indexation measurement, via new `gsc-inspect` (URL Inspection API, 40
 
 **Durable fix I can ship (Phase 1 #3):** add **in-content contextual links** from the 8 indexed pages → the unknown money pages. In-content links carry more crawl priority than boilerplate nav (which Google discounts), raising discovery durably rather than relying on one sitemap nudge.
 
-**Next cycle:** re-run `gsc-inspect --sample 40` after the resubmit + recrawl (~1–2 weeks); watch unknown→crawled→indexed migration. Target: indexed share 19% → 50%+.
+**Fix shipped (2026-06-13, deployed + live-verified):** the homepage (indexed, highest-crawl) now injects discovery to the undiscovered money pages — commit `fe8233f`:
+1. `routes/home.js` sorts `recentPosts` newest-first so the 2 new guides surface on the homepage (was `slice(0,3)` = oldest posts; guides never appeared).
+2. New in-content flagship paragraph on the homepage links `/services/forwarding` + the BESC guide + the Port of Dakar guide, in brand voice, all 3 locales. Verified live: 3× each link on `/`, FR renders with accents.
+Synced into `functions/`, deployed.
+
+**Human actions still pending (the bigger unlock):** sitemap resubmit (readonly token gave 403 — GSC UI or read-write token) + request-indexing the 4 money pages. The homepage links help discovery propagate, but the stale-sitemap resubmit is still the fastest forcing function.
+
+**Next cycle:** re-run `gsc-inspect --sample 40` after the resubmit + recrawl (~1–2 weeks); watch unknown→crawled→indexed migration on `/services/forwarding`, the 2 guides, `/quote`. Target: indexed share 19% → 50%+.
 
 ## 2026-06-05 — cycle 1
 | indexed | unknown | crawled-not-idx | impressions 28d | clicks 28d | organic sessions 28d | key events |
