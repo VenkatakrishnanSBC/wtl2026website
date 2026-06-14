@@ -29,7 +29,9 @@ First real indexation measurement, via new `gsc-inspect` (URL Inspection API, 40
 2. New in-content flagship paragraph on the homepage links `/services/forwarding` + the BESC guide + the Port of Dakar guide, in brand voice, all 3 locales. Verified live: 3× each link on `/`, FR renders with accents.
 Synced into `functions/`, deployed.
 
-**Human actions still pending (the bigger unlock):** sitemap resubmit (readonly token gave 403 — GSC UI or read-write token) + request-indexing the 4 money pages. The homepage links help discovery propagate, but the stale-sitemap resubmit is still the fastest forcing function.
+**Sitemap RESUBMITTED 2026-06-14 ✅** via `gsc-sitemap --resubmit` (new CLI command, write-scope OAuth token). HTTP 204; `lastSubmitted` → 2026-06-14T21:43, `isPending: True`. After 4 months stale (last downloaded 2026-02-06), Google has queued the re-download — this is the crawl-starvation unlock. `lastDownloaded` will flip once fetched. NEW tooling this session: `gsc-inspect` (indexation buckets) + `gsc-sitemap` (list/resubmit) + all-time refresh-token auth support.
+
+**Human action still pending (optional, no API):** request-indexing the 4 money pages in GSC UI. Lower priority now that sitemap resubmit + homepage in-content links are live — those drive discovery.
 
 **Next cycle:** re-run `gsc-inspect --sample 40` after the resubmit + recrawl (~1–2 weeks); watch unknown→crawled→indexed migration on `/services/forwarding`, the 2 guides, `/quote`. Target: indexed share 19% → 50%+.
 
